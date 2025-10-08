@@ -3,12 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:mi_app/models/medicamento.dart';
 import 'package:mi_app/models/paciente.dart';
-import 'package:mi_app/data/medicamento_data.dart'; // Asegúrate de que este archivo exista y esté correcto
+import 'package:mi_app/data/medicamento_data.dart';
 import 'package:mi_app/screens/medicamento_detail_screen.dart';
 import 'package:mi_app/screens/printable_patient_data_screen.dart';
 import 'package:mi_app/models/medicamento_calculado.dart';
-import 'package:mi_app/utils/dosis_calculator.dart'; // Tu clase DosisCalculator
+import 'package:mi_app/utils/dosis_calculator.dart';
 import 'package:mi_app/screens/calculos_especiales_jovenes_screen.dart';
+
+import 'package:mi_app/screens/heart_rate_screen_jovenes.dart';
+import 'package:mi_app/screens/respiratory_rate_screen_jovenes.dart';
+import 'package:mi_app/screens/blood_pressure_screen_jovenes.dart';
+import 'package:mi_app/screens/temperature_screen_jovenes.dart';
+import 'package:mi_app/screens/oxygen_saturation_screen_jovenes.dart';
+import 'package:mi_app/screens/presion_arterial_mujeres_screen_jovenes.dart';
+import 'package:mi_app/screens/presion_arterial_hombres_screen_jovenes.dart';
 
 class SelectMedicamentoScreen extends StatefulWidget {
   final Paciente paciente;
@@ -25,6 +33,8 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
   late Map<String, List<Medicamento>> _groupedMedicamentos;
   final TextEditingController _searchController = TextEditingController();
   String _searchText = '';
+  // Altura de la barra de botones en la parte inferior
+  static const double _buttonBarHeight = 75.0;
 
   @override
   void initState() {
@@ -45,6 +55,111 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
     super.dispose();
   }
 
+  void _showSignosVitalesOptions() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            _buildModalTitle('Signos Vitales (SING V)'),
+            _buildModalListTile(context, 'Heart Rate (Frecuencia Cardíaca)'),
+            _buildModalListTile(
+              context,
+              'Respiratory Rate (Frecuencia Respiratoria)',
+            ),
+            _buildModalListTile(context, 'Blood Pressure (Presión Arterial)'),
+            _buildModalListTile(context, 'Temperature (Temperatura)'),
+            _buildModalListTile(
+              context,
+              'Oxygen Saturation (Saturación de Oxígeno)',
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showPAMOptions() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            _buildModalTitle('Presión Arterial Media (PAM)'),
+            _buildModalListTile(context, 'Presión Arterial Mujeres'),
+            _buildModalListTile(context, 'Presión Arterial Hombres'),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildModalTitle(String title) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Text(
+        title,
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+
+  Widget _buildModalListTile(BuildContext context, String title) {
+    return ListTile(
+      title: Text(title),
+      trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+      onTap: () {
+        // Cierra el modal de opciones al seleccionar una
+        Navigator.pop(context);
+
+        // Lógica de navegación Signos Vitales (JÓVENES)
+        if (title == 'Heart Rate (Frecuencia Cardíaca)') {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const HeartRateScreenJ()),
+          );
+        } else if (title == 'Respiratory Rate (Frecuencia Respiratoria)') {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const RespiratoryRateScreenJ(),
+            ),
+          );
+        } else if (title == 'Blood Pressure (Presión Arterial)') {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const BloodPressureScreenJ(),
+            ),
+          );
+        } else if (title == 'Temperature (Temperatura)') {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const TemperatureScreenJ()),
+          );
+        } else if (title == 'Oxygen Saturation (Saturación de Oxígeno)') {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const OxygenSaturationScreenJ(),
+            ),
+          );
+        }
+        // Lógica de navegación PAM (JÓVENES)
+        else if (title == 'Presión Arterial Mujeres') {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const PresionArterialMujeresScreenJ(),
+            ),
+          );
+        } else if (title == 'Presión Arterial Hombres') {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const PresionArterialHombresScreenJ(),
+            ),
+          );
+        }
+      },
+    );
+  }
+
   List<Medicamento> _getFilteredMedicamentos() {
     return allMedicamentos
         .where(
@@ -55,6 +170,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
         .toList();
   }
 
+  // Tu función _groupAndSortMedicamentos (reubicada)
   Map<String, List<Medicamento>> _groupAndSortMedicamentos(
     List<Medicamento> medicamentos,
   ) {
@@ -73,6 +189,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
     );
   }
 
+  // Tu función _getFilteredMedicamentosForSearch (reubicada)
   List<Medicamento> _getFilteredMedicamentosForSearch() {
     if (_searchText.isEmpty) {
       return [];
@@ -86,6 +203,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
         .toList();
   }
 
+  // Tu función _formatDosis (reubicada)
   String _formatDosis(double dosis) {
     final roundedDosis = double.parse(dosis.toStringAsFixed(2));
     if (roundedDosis == roundedDosis.toInt()) {
@@ -94,6 +212,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
     return roundedDosis.toString();
   }
 
+  // Tu función _getDosisDisplay (reubicada)
   String _getDosisDisplay(Medicamento medicamento) {
     final Map<String, dynamic> calculatedDoses = DosisCalculator.calculateDosis(
       widget.paciente,
@@ -121,6 +240,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
     return display.trim().isEmpty ? 'N/A' : display.trim();
   }
 
+  // Tu función _buildMedicamentoListTile (reubicada)
   Widget _buildMedicamentoListTile(Medicamento medicamento) {
     final String dosisDisplay = _getDosisDisplay(medicamento);
     return Card(
@@ -358,33 +478,124 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
             ),
           ],
         ),
-        body: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                  vertical: 8.0,
-                ),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Paciente: ${widget.paciente.pesoKg.toStringAsFixed(1)} Kg, ${widget.paciente.edadAnios} Años',
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onBackground,
+        body: Stack(
+          children: [
+            // Contenido Principal Desplazable (lista de medicamentos)
+            Padding(
+              // Añade un padding inferior para que el contenido no quede oculto por los botones
+              padding: const EdgeInsets.only(bottom: _buttonBarHeight),
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 8.0,
+                      ),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Paciente: ${widget.paciente.pesoKg.toStringAsFixed(1)} Kg, ${widget.paciente.edadAnios} Años',
+                          style: Theme.of(context).textTheme.bodyLarge!
+                              .copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.onBackground,
+                              ),
+                        ),
+                      ),
                     ),
+                  ),
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate((
+                      BuildContext context,
+                      int index,
+                    ) {
+                      return displayedListItems[index];
+                    }, childCount: displayedListItems.length),
+                  ),
+                ],
+              ),
+            ),
+
+            // Botones SING V y PAM Fijos en la parte inferior
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 15.0),
+                child: Container(
+                  height: _buttonBarHeight,
+                  decoration: const BoxDecoration(
+                    color: Colors
+                        .white, // Fondo blanco para que los botones destaquen
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 10,
+                        offset: Offset(0, -5),
+                      ),
+                    ],
+                  ),
+
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: ElevatedButton(
+                            onPressed: _showSignosVitalesOptions,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.lightGreen,
+                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: const Text(
+                              'SING V',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ElevatedButton(
+                            onPressed: _showPAMOptions,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color.fromARGB(
+                                255,
+                                14,
+                                113,
+                                194,
+                              ), // Color azul
+                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: const Text(
+                              'PAM',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate((
-                BuildContext context,
-                int index,
-              ) {
-                return displayedListItems[index];
-              }, childCount: displayedListItems.length),
             ),
           ],
         ),

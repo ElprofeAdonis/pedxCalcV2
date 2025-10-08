@@ -185,7 +185,6 @@ class _MedicamentoDetailMesesScreenState
                       ),
                     ),
                     const SizedBox(height: 12.0),
-                    // AQUÍ ESTÁ EL CÓDIGO CORREGIDO
                     if (dosisStringFormateada != 'N/A')
                       _buildDoseRow(
                         context,

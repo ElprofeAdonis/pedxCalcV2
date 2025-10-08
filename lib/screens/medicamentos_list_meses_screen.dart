@@ -444,7 +444,7 @@ class _MedicamentosListMesesScreenState
                     )
                   : CustomScrollView(slivers: _buildCategorizedListSlivers()),
             ),
-            // --- BOTONES SING V y PAM ---
+
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
