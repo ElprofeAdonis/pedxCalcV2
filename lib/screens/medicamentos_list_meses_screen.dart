@@ -10,6 +10,7 @@ import 'package:mi_app/screens/calculos_especiales_screen.dart';
 import 'package:mi_app/screens/heart_rate_screen.dart';
 import 'package:mi_app/screens/respiratory_rate_screen.dart';
 import 'package:mi_app/screens/blood_pressure_screen.dart';
+import 'package:mi_app/screens/temperature_screen.dart';
 
 class MedicamentosListMesesScreen extends StatefulWidget {
   final Paciente paciente;
@@ -237,6 +238,13 @@ class _MedicamentosListMesesScreenState
             MaterialPageRoute(
               builder: (context) =>
                   const BloodPressureScreen(), // Navega a la nueva pantalla
+            ),
+          );
+        } else if (title == 'Temperature (Temperatura)') {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) =>
+                  const TemperatureScreen(), // Navega a la nueva pantalla
             ),
           );
         } else {
