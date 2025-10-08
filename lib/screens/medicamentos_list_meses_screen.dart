@@ -9,6 +9,7 @@ import 'package:mi_app/models/medicamento_calculado.dart';
 import 'package:mi_app/screens/calculos_especiales_screen.dart';
 import 'package:mi_app/screens/heart_rate_screen.dart';
 import 'package:mi_app/screens/respiratory_rate_screen.dart';
+import 'package:mi_app/screens/blood_pressure_screen.dart';
 
 class MedicamentosListMesesScreen extends StatefulWidget {
   final Paciente paciente;
@@ -229,6 +230,13 @@ class _MedicamentosListMesesScreenState
             MaterialPageRoute(
               builder: (context) =>
                   const RespiratoryRateScreen(), // Navega a la nueva pantalla
+            ),
+          );
+        } else if (title == 'Blood Pressure (Presión Arterial)') {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) =>
+                  const BloodPressureScreen(), // Navega a la nueva pantalla
             ),
           );
         } else {
