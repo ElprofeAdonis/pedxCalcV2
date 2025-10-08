@@ -1,0 +1,941 @@
+import 'package:mi_app/models/medicamento.dart';
+
+final List<Medicamento> allMedicamentos = [
+  // --- Electrolitos ---
+  Medicamento(
+    nombre: 'Gluconato de calcio 10%',
+    categoria: 'Electrolitos',
+    subcategoria:
+        '(Mantener monitoreo ECG durante correcciones agudas) - hiperkalemia agua sintomatica severa (HCO3 y calcio en vías aparte)',
+    observaciones: '0,5cc/kg IV STAT pasar lento vía periférica',
+    rangoDosisOriginal: '(100mg/ml; 10ml)',
+    dosisActualMG: 'Máximo: 2 g/dosis',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Salbutamol nebulizado',
+    categoria: 'Electrolitos',
+    subcategoria:
+        '(Mantener monitoreo ECG durante correcciones agudas) - hiperkalemia agua sintomatica severa (HCO3 y calcio en vías aparte)',
+    observaciones: '<25kg= 0,5ml; >25kg= 1cc',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Cloruro de calcio 10%',
+    categoria: 'Electrolitos',
+    subcategoria:
+        '(Mantener monitoreo ECG durante correcciones agudas) - hiperkalemia agua sintomatica severa (HCO3 y calcio en vías aparte)',
+    observaciones: '0,1 - 0,2cc/kg IV STAT pasar lento vía central',
+    rangoDosisOriginal: '(100mg/ml; 10ml)',
+    dosisActualMG: 'Máximo: 1 gr dosis',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Bicarbonato de sodio 1M',
+    categoria: 'Electrolitos',
+    subcategoria:
+        '(Mantener monitoreo ECG durante correcciones agudas) - hiperkalemia agua sintomatica severa (HCO3 y calcio en vías aparte)',
+    observaciones:
+        'Diluir con SF: vía central (1 HCO3 : 1 SF); vía periférica: (1 HCO3 : 6 SF)',
+    rangoDosisOriginal: '(1meq/ml)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Solución glucosada al 10%',
+    categoria: 'Electrolitos',
+    subcategoria:
+        '(Mantener monitoreo ECG durante correcciones agudas) - hiperkalemia agua sintomatica severa (HCO3 y calcio en vías aparte)',
+    observaciones: '5cc/kg +',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Insulina simple',
+    categoria: 'Electrolitos',
+    subcategoria:
+        '(Mantener monitoreo ECG durante correcciones agudas) - hiperkalemia agua sintomatica severa (HCO3 y calcio en vías aparte)',
+    observaciones: '0,1U/kg pasar IV en 1h junto con glucosado al 10%',
+    rangoDosisOriginal: '(100 UI/ml; 10ml) (0,5cc insulina en 50cc SF)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  // --- Calcio de mantenimiento ---
+  Medicamento(
+    nombre: 'Gluconato de calcio 10%',
+    categoria: 'Calcio de mantenimiento',
+    observaciones: '0,5cc/kg IV STAT pasar lento vía periférica',
+    rangoDosisOriginal: '(100mg/ml; 10ml)',
+    dosisActualMG: 'Máximo: 2 g/dosis',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Anafilaxia ---
+  Medicamento(
+    nombre: 'Adrenalina IV',
+    categoria: 'Anafilaxia',
+    observaciones: 'Solución 1:1000  (sin diluir)',
+    rangoDosisOriginal: '(0.01mg/kg)',
+    dosisActualMG: '0,01 mg/kg cada 2-30 min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Adrenalina IM',
+    categoria: 'Anafilaxia',
+    observaciones: ' 1:1000',
+    rangoDosisOriginal: '≤ 30 kg ( 0.01mL/kg)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Adrenalina IM.',
+    categoria: 'Anafilaxia',
+    observaciones: ' 1:1000',
+    rangoDosisOriginal: '> a 30 kg (0.3-0.5mL/dosis)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  // --- Bradiarritmias ---
+  Medicamento(
+    nombre: 'Adrenalina IV',
+    categoria: 'Bradiarritmias',
+    observaciones: 'Máximo 10 ml',
+    rangoDosisOriginal: '1mg/ml (1 ml + 9 ml SF)',
+    dosisActualMG: '0,1mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Atropina',
+    categoria: 'Bradiarritmias',
+    observaciones: 'Máximo 10 ml',
+    rangoDosisOriginal: '0.5mg/ml (Diluir 2ml + 8cc SF)',
+    dosisActualMG: '0,2mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Analgesia ---
+  Medicamento(
+    nombre: 'Morfina.',
+    categoria: 'Analgesia',
+    observaciones: 'Puede repetir la misma dosis una vez.',
+    rangoDosisOriginal: '(15mg/ml; 1ml) (diluir 1ml + 14cc SF)',
+    dosisActualMG: '0,1 mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Fentanilo.',
+    categoria: 'Analgesia',
+    observaciones: 'Puede repetir la misma dosis una vez. (por 50 o por 100?)',
+    rangoDosisOriginal: '(50mcg/ml; 2ml) (diluir 2 cc + 13 cc SF)',
+    dosisActualMG: '1-5 mcg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Ketamina',
+    categoria: 'Analgesia',
+    observaciones: 'Puede repetir la misma dosis una vez. ',
+    rangoDosisOriginal: '(10mg/ml; 20ml)',
+    dosisActualMG: '1-2 mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  // --- ANTIBIÓTICOS ---
+  Medicamento(
+    nombre: 'Ampicilina',
+    categoria: 'Antibióticos',
+    observaciones: 'Máximo: 3 gr/dosis, cada 6 h',
+    rangoDosisOriginal: '(50mg/Kg/dosis)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Cefotaxima',
+    categoria: 'Antibióticos',
+    observaciones: 'Máximo: 2-4 gr/dosis, cada 6 h',
+    rangoDosisOriginal: '(150-200mg/kg/día)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Ceftazidime',
+    categoria: 'Antibióticos',
+    observaciones: 'Máximo: 6g/dia, cada 8 h',
+    rangoDosisOriginal: '(50mg/kg/dosis)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Meropenem',
+    categoria: 'Antibióticos',
+    observaciones: 'Máximo: 1 gr /dosis, cada 8 h',
+    rangoDosisOriginal: '(60mg/kg/día)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Vancomicina',
+    categoria: 'Antibióticos',
+    observaciones: 'Máximo: 500mg/dosis, cada 6 h',
+    rangoDosisOriginal: '(15mg/Kg/dosis)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Aciclovir',
+    categoria: 'Antibióticos',
+    observaciones: 'Máximo: 1 gr, cada 8 h',
+    rangoDosisOriginal: '(60mg/Kg/día)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Ceftriaxona',
+    categoria: 'Antibióticos',
+    observaciones: 'Maximo: 4g/dia, cada 24 h',
+    rangoDosisOriginal: '(100mg/kg/d)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Pipe-tazo',
+    categoria: 'Antibióticos',
+    observaciones:
+        'Dosis renal --> ACr: 30 - 50 dar 50 al 75% de la dosis c/6h - ACr:<30 dar 50 a 75% de la dosis c/8 h  (dosis max: 3.5G?)',
+    rangoDosisOriginal: '(300mg/kg/día)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Amoxi-clav',
+    categoria: 'Antibióticos',
+    observaciones:
+        'Maximo: 1g/dia si <5 a - 4g/d si mayor o igual a 5 a, cada 12 h',
+    rangoDosisOriginal: '(90mg/kg/día)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Amikacina',
+    categoria: 'Antibióticos',
+    observaciones: 'Maximo: 1.5 g/dia, cada 8 h',
+    rangoDosisOriginal: '(22.5 mg/kg/día)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Clindamicina',
+    categoria: 'Antibióticos',
+    observaciones: 'Maximo: 1.8 g/dia, cada 8 h',
+    rangoDosisOriginal: '(40mg/kg/día)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Bronquiolitis / Laringitis/Croup ---
+  Medicamento(
+    nombre: 'Adrenalina nebulizada',
+    categoria: 'Bronquiolitis / Laringitis/Croup',
+    subcategoria: 'Medicación específica según enfermedades',
+    observaciones: 'Repetir si no mejora; máximo 5ml  (5 ampollas)',
+    rangoDosisOriginal: '(L-adrenalina 1:1000)',
+    dosisActualMG: '0,5 mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Budesonida nebulizada',
+    categoria: 'Bronquiolitis / Laringitis/Croup',
+    subcategoria: 'Medicación específica según enfermedades',
+    observaciones: '2.5 mg en la nebulización con adrenalina',
+    rangoDosisOriginal: '(0,5mg/ml; 2ml)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Dexametasona IV',
+    categoria: 'Bronquiolitis / Laringitis/Croup',
+    subcategoria: 'Medicación específica según enfermedades',
+    observaciones: 'Dosis única a 0,6 mg/kg',
+    rangoDosisOriginal: '4mg/ml',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Broncoespasmo/Asma ---
+  Medicamento(
+    nombre: 'Salbutamol neb 1-5 años',
+    categoria: 'Broncoespasmo/Asma',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Salbutamol neb > 5 años',
+    categoria: 'Broncoespasmo/Asma',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Atrovent neb 1-5 años',
+    categoria: 'Broncoespasmo/Asma',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Atrovent neb > 5 años',
+    categoria: 'Broncoespasmo/Asma',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Dexametazona',
+    categoria: 'Broncoespasmo/Asma',
+    observaciones: 'cada 6 hrs x 24 hrs',
+    rangoDosisOriginal: '(4mg/ml)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Hidrocortisona IV',
+    categoria: 'Broncoespasmo/Asma',
+    observaciones:
+        'Max: 100 mgr (cada 6 hrs 1er día) (cada 12 hrs 2do día) (cada 24 hrs 3er día)',
+    rangoDosisOriginal: '(50mg/ml; 2ml)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Metilprednisolona',
+    categoria: 'Broncoespasmo/Asma',
+    observaciones:
+        'Max 60 mg (luego de dosis inicial calcular a 1 mg/kg/ dosis cada 6 hrs primer día)',
+    rangoDosisOriginal: '(Dosis de carga: 2mg/kg)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Sulf magnesio IV bolus',
+    categoria: 'Broncoespasmo/Asma',
+    observaciones:
+        'En 100 cc sf a pasar en 20 min IV una sola dosis  // Máximo: 2 g',
+    rangoDosisOriginal: '(200mg/ml; 10ml)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Ipratropium neb 1 - 5 años',
+    categoria: 'Broncoespasmo/Asma',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Ipratropium neb > 5 años',
+    categoria: 'Broncoespasmo/Asma',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- DESFIBRILACION -> ---
+  Medicamento(
+    nombre: 'Primera descarga eléctrica',
+    categoria: 'Desfibrilación',
+    observaciones: '2 J/kg',
+    rangoDosisOriginal: ' (2 J/kg)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Segunda descarga eléctrica',
+    categoria: 'Desfibrilación',
+    observaciones: '2 J/kg',
+    rangoDosisOriginal: ' (4 J/kg)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Descarga máxima',
+    categoria: 'Desfibrilación',
+    observaciones: '10 J/kg',
+    rangoDosisOriginal: '...',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Endocrino / Renal ---
+  Medicamento(
+    nombre: 'Insulina simple',
+    categoria: 'Endocrino / Renal',
+    observaciones: 'RANG: 0,05 - 0,1 UI/kg/h',
+    rangoDosisOriginal: '(100 UI/ml; 10ml) (0,5cc insulina en 50cc SF)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Furosemida',
+    categoria: 'Endocrino / Renal',
+    observaciones: '0,5-1 mg/kg/dosis',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Fiebre ---
+  Medicamento(
+    nombre: 'Paracetamol oral IV',
+    categoria: 'Fiebre',
+    observaciones: 'c/6 horas',
+    rangoDosisOriginal: '(15 mg/kg/dosis)',
+    dosisActualMG: 'Maximo: 1 g/dosis o 4 g/dia',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Metamizol IV',
+    categoria: 'Fiebre',
+    observaciones: 'c/8 horas',
+    rangoDosisOriginal: '(15 mg/kg/dosis)',
+    dosisActualMG: 'Maximo: 1g/dosis o 4 g/dia',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Ibuprofeno VO',
+    categoria: 'Fiebre',
+    observaciones: 'c/8 horas',
+    rangoDosisOriginal: '(10 mg/kg/dosis)',
+    dosisActualMG: 'Maximo: 400 mg/dosis',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Hipocalcemia severa, Hipermagnesemia ó Intoxicación con bloqueadores de los canales de calcio' ---
+  Medicamento(
+    nombre: 'Gluconato de calcio 10%',
+    categoria:
+        'Hipocalcemia severa, Hipermagnesemia ó Intoxicación con bloqueadores de los canales de calcio',
+    observaciones: '0,5cc/kg IV STAT pasar lento vía periférica',
+    rangoDosisOriginal: '(100mg/ml; 10ml)',
+    dosisActualMG: 'Máximo: 2 g/dosis',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Cloruro de calcio 10%',
+    categoria:
+        'Hipocalcemia severa, Hipermagnesemia ó Intoxicación con bloqueadores de los canales de calcio',
+    observaciones: '0,1 - 0,2cc/kg IV STAT pasar lento vía central',
+    rangoDosisOriginal: '(100mg/ml; 10ml)',
+    dosisActualMG: 'Máximo: 1 gr dosis',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Hipoglicemia ---
+  Medicamento(
+    nombre: 'Solución glucosada al 10%',
+    categoria: 'Hipoglicemia',
+    subcategoria: 'Glicemia <60mg/dl)',
+    observaciones: '0.5-1g/kg/dosis = 5-10cc/kg/dosis IV STAT',
+    dosisActualMG: 'Control de GMM en 1min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Hemorragia severa intratable  ---
+  Medicamento(
+    nombre: 'Ácido tranexámico',
+    categoria: 'Hemorragia severa intratable',
+    observaciones: 'Fluidos tibios',
+    rangoDosisOriginal: '100mg/ml',
+    dosisActualMG: '15 mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'GRE/PFC',
+    categoria: 'Hemorragia severa intratable',
+    observaciones: 'Fluidos tibios',
+    rangoDosisOriginal: '(dilución 1:1)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Plaquetas',
+    categoria: 'Hemorragia severa intratable',
+    observaciones: 'Fluidos tibios',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Crioprecipitados',
+    categoria: 'Hemorragia severa intratable',
+    observaciones: 'Fluidos tibios',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  // --- HIPERTENSION INTRACRANEAL  ---
+  // --- Hipertension intracraneal  ---
+  Medicamento(
+    nombre: 'Solución hipertónica',
+    categoria: 'Hipertension intracraneal',
+    observaciones: 'Vigilar aumento de FC',
+    rangoDosisOriginal: '3% (30ml NaCl 4M + 70ml SF)',
+    dosisActualMG: '2-5ml/kg a pasar en 10min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Manitol',
+    categoria: 'Hipertension intracraneal',
+    observaciones: 'Vigilar aumento de FC',
+    rangoDosisOriginal: '20g/100ml',
+    dosisActualMG: '0,5-1g/kg a pasar en 10min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Hiponatremia aguda sintomatica (convulsiones)  ---
+  Medicamento(
+    nombre: 'Solución hipertónica.',
+    categoria: 'Hiponatremia aguda sintomatica (convulsiones)',
+    observaciones: 'Vigilar cese de convulsión',
+    rangoDosisOriginal: '3% (30ml NaCl 4M + 70ml SF)',
+    dosisActualMG: '4ml/kg a pasar en 20min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Infusiones ---
+  Medicamento(
+    nombre: 'Morfina',
+    categoria: 'Infusiones - Sedación',
+    subcategoria:
+        '(Toda solución se diluye en 50cc SG 5% y se pasa inicialmente a 1 cm/h)',
+    observaciones: '1 mg/kg en 50 cc SG5% iniciar a 1 mL/h (máximo 2 cc/h)',
+    rangoDosisOriginal: '(15 mg/ml; 1 ml)',
+    dosisActualMG: '20mcg/kg/h',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Midazolam',
+    categoria: 'Infusiones - Sedación',
+    subcategoria:
+        '(Toda solución se diluye en 50cc SG 5% y se pasa inicialmente a 1 cm/h)',
+    observaciones: '6mg/kg en 50 cc SG5% iniciar a 1 mL/h (máximo 2cc/h)',
+    rangoDosisOriginal: '(5 mg/ml; 3ml)',
+    dosisActualMG: '2mcg/kg/min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Fentanilo',
+    categoria: 'Infusiones - Sedación',
+    subcategoria:
+        '(Toda solución se diluye en 50cc SG 5% y se pasa inicialmente a 1 cm/h)',
+    observaciones: '250µg/kg en 50 cc SG 5% iniciar a 1 mL/h (máximo a 2cc/h)',
+    rangoDosisOriginal: '(50 µg /ml; 2 ml)',
+    dosisActualMG: '5mcg/kg/h',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Inotrópicos ---
+  Medicamento(
+    nombre: 'Adrenalina / Noradrenalina',
+    categoria: 'Inotrópicos',
+    subcategoria:
+        '(Se prefieren por vía central pero pueden pasarse por vía periférica o intraosea)',
+    observaciones: '0.3mg/kg en 50 cc SG5% iniciar a 1 mL/h hasta 5 cc/h',
+    dosisActualMG: '0,1mcg/kg/min',
+    dosisMl: 0.0, // Puedes dejarlo en 0.0 o null si se calcula
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Dopamina / Dobutamina',
+    categoria: 'Inotrópicos',
+    subcategoria:
+        '(Se prefieren por vía central pero pueden pasarse por vía periférica o intraosea)',
+    observaciones: '15mg/kg en 50 cc SG5% iniciar a 1 mL/h hasta 4 cc/h',
+    dosisActualMG: '5mcg/kg/min',
+    dosisMl: 0.0, // Puedes dejarlo en 0.0 o null si se calcula
+    dosisJulios: null,
+  ),
+
+  // --- Líquidos endovenosos ---
+  //falta estos dos
+  Medicamento(
+    nombre: 'Sol glucosada mayor 1 mes edad',
+    categoria: 'Líquidos endovenosos',
+    rangoDosisOriginal: '(0.5-1g/kg/dosis)',
+    dosisActualMG: 'Usar SG 25% ',
+  ),
+  Medicamento(
+    nombre: 'SG 25%',
+    categoria: 'Líquidos endovenosos',
+    rangoDosisOriginal: '(2-4 mL/kg/dosis)',
+    dosisActualMG: 'Usar SG 25% ',
+  ),
+
+  // --- Parálisis muscular ---
+  Medicamento(
+    nombre: 'Rocuronio IV',
+    categoria: 'Parálisis muscular',
+    observaciones: 'Efecto por 30min.',
+    rangoDosisOriginal: ' (10mg/ml; 5ml)',
+    dosisActualMG: '0,5 mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Pancuronio',
+    categoria: 'Parálisis muscular',
+    observaciones: 'Efecto por 40min.',
+    rangoDosisOriginal: '(2mg/ml; 2ml)',
+    dosisActualMG: '0,1 mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Succinilcolina',
+    categoria: 'Parálisis muscular',
+    observaciones: 'Efecto de minutos.',
+    rangoDosisOriginal: ' (50mg/ml; 10ml) (Diluir 1ml + 5cc SF)',
+    dosisActualMG: 'CI:Miopatia, quemados,hiperK.',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Atracurio',
+    categoria: 'Parálisis muscular',
+    observaciones: 'Efecto por 20 min.',
+    rangoDosisOriginal: '(10mg/ml)',
+    dosisActualMG: '0,4 mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Paro cardiaco ---
+  Medicamento(
+    nombre: 'Adrenalina IV',
+    categoria: 'Paro cardiaco',
+    observaciones: 'Máximo 10 ml',
+    rangoDosisOriginal: '1 mg/ml (1 ml + 9 ml SSF)',
+    dosisActualMG: '(1ml= 0,1mg) (0,01mg/kg)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Adrenalina ET',
+    categoria: 'Paro cardiaco',
+    observaciones: 'Máximo 10 ml',
+    rangoDosisOriginal: '1 mg/ml (1 ml + 9 ml SSF)',
+    dosisActualMG: '(1ml= 0.1mg) (0.1 mg/kg)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Bicarbonato de sodio 1M',
+    categoria: 'Paro cardiaco',
+    observaciones: 'Máximo 100 ml diluido',
+    rangoDosisOriginal: '(diluir 1:1 con SF)',
+    dosisActualMG: '(1ml= 0,5 mEqs) (0,5-1mEq/kg)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Sulfato de magnesio',
+    categoria: 'Paro cardiaco',
+    observaciones: 'Máximo 2 g',
+    rangoDosisOriginal: '(200mg/ml; 10ml)',
+    dosisActualMG: '50mg/kg; Llevar a 5ml con SF y pasar en 3-5 min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Amiodarona',
+    categoria: 'Paro cardiaco',
+    observaciones: 'Máximo 300 mg',
+    rangoDosisOriginal: '(50mg/ml; 3ml) (3ml + 22ml SG5%)',
+    dosisActualMG: '5mg/kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  // --- Revertir ---
+  Medicamento(
+    nombre: 'Flumazenilo IV',
+    categoria: 'Revertir',
+    observaciones: 'MÁX 0,25 cada 1 min (5 dosis o BIC a 5 microg/kg/h)',
+    rangoDosisOriginal: '(0,1 mg/ml)',
+    dosisActualMG: '0,01 mg/kg (Antidoto Opioides) ',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Naloxona',
+    categoria: 'Revertir',
+    observaciones: 'MÁX 0,4 mg / 2 mins (4 dosis)',
+    rangoDosisOriginal: '(0,4mg/ml)',
+    dosisActualMG: '0,01 mg/kg (Antidoto Benzodiazepinas)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  // --- Resposición de potasio ---
+  Medicamento(
+    nombre: 'Volumen de SF',
+    categoria: 'Resposición de potasio',
+    subcategoria: '(K<2,5mEq/l)',
+    observaciones:
+        'Pasar en 2h por vía periférica, control de K posterior al bolo',
+    rangoDosisOriginal: '500cc + 10cc KCL2M (1mEq/kg en 2h)',
+    dosisActualMG: 'frasco con 2 mEql/cc, contraindicado en anuria',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Midazolam IV ---ß
+  Medicamento(
+    nombre: 'Midazolam IV',
+    categoria: 'Sedación y amnesia',
+    subcategoria: 'Secuencia rapida de intubación',
+    observaciones: 'Sin diluir y luego pasar bolo de 5 cc de sol fisiológica',
+    rangoDosisOriginal: '(5mg/ml; 3ml)',
+    dosisActualMG: '0.3 mg/Kg',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  // --- SHOCK ---
+  Medicamento(
+    nombre: 'Solución fisiológica',
+    categoria: 'Shock',
+    observaciones: 'Considerar inotrópicos',
+    rangoDosisOriginal: '0.9%',
+    dosisActualMG: '10-20cc/kg cada 5min. Máximo 3 bolos.',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Status epileptico ---
+  Medicamento(
+    nombre: 'Diazepam IV',
+    categoria: 'Status epileptico',
+    observaciones: 'Máximo 2ml',
+    rangoDosisOriginal: '(5mg/ml; 2ml)',
+    dosisActualMG: '0,3mg/kg cada 5min #3 dosis',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Diazepam VR',
+    categoria: 'Status epileptico',
+    observaciones: 'Máximo 2ml',
+    rangoDosisOriginal: '(5mg/ml; 2ml)',
+    dosisActualMG: '0,5mg/kg; Introducir Angiocath rectal 5cm',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Midazolam IV o IM',
+    categoria: 'Status epileptico',
+    observaciones: 'Máximo 2ml',
+    rangoDosisOriginal: '(5mg/ml; 3ml)',
+    dosisActualMG: '0,3mg/kg  cada 5min #3 dosis',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Midazolam IN',
+    categoria: 'Status epileptico',
+    observaciones: 'Máximo 2ml',
+    rangoDosisOriginal: '(5mg/ml; 3ml)',
+    dosisActualMG: '0,4mg/kg cada 5min #3 dosis. Utilizar atomizador nasal',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Fenitoína IV',
+    categoria: 'Status epileptico',
+    observaciones: 'Diluir en SF, nunca en glucosado',
+    rangoDosisOriginal: '(50mg/ml; 5ml)',
+    dosisActualMG: '20mg/kg; Diluir en 10x el volumen de SF y pasar en 30min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Fenobarbital',
+    categoria: 'Status epileptico',
+    observaciones: 'Diluir en SF, nunca en glucosado',
+    rangoDosisOriginal: '(50mg/ml; 1ml)',
+    dosisActualMG: '20mg/kg; Diluir en 10x el volumen de SF y pasar en 15min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  // --- SNC  (crisis convulsivas) ---
+  Medicamento(
+    nombre: 'Diazepam IV.',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones: 'MAX 10 mg (menores de 5 años: 0.5 mg/kg/dosis máximo 5 mg',
+    rangoDosisOriginal: '(1mg/kg/dosis cada 2-4 min)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Valproato IV',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones: 'Max 1 gr una sola dosis',
+    rangoDosisOriginal: '(20mg/kg/dosis)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Fenitoína IV.',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones:
+        'Max: dos dosis (cada 20 min) iniciar mantenimiento 12h despues de última dosis',
+    rangoDosisOriginal: '(20mg/kg/dosis)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Clonazepam VO',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones: '>10 años cada 8-12 hrs, aumentar cada 2 días',
+    rangoDosisOriginal: '(0,01-0,03mg/kg/día)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Tiopental',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones: 'Max: 500 mgr',
+    rangoDosisOriginal: '(3-5 mg/kg/dosis)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Levetirazetam',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones: 'Max: 4.5 gr',
+    rangoDosisOriginal: '(20-30 mg/kg/día)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Sol hipertónica 3%',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones: 'Sol fisiológica 455mL + 45 mL de NaCl al 4 molar',
+    rangoDosisOriginal: '(2-5 mL/kg/dosis)* en 20 min',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Fenobarbital.',
+    categoria: 'SNC  (crisis convulsivas)',
+    rangoDosisOriginal: '(20mg/kg/dosis carga)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Paracetamol',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones: 'Oral, IV o rectal',
+    rangoDosisOriginal: '(15 mg/Kg/dosis cada 6 hrs)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Midazolam IV.',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones: 'Mayor de 3 años: 5mg/kg/dosis',
+    rangoDosisOriginal: '(0.15 mg/kg/dosis)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Metamizol IV.',
+    categoria: 'SNC  (crisis convulsivas)',
+    observaciones: 'Max: 1 gr por dosis max: 4 gr por día',
+    rangoDosisOriginal: '(6 mg/kg/dosis)',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+
+  // --- Taquicardia supraventrivular ---
+  Medicamento(
+    nombre: 'Adenosina primera',
+    categoria: 'Taquicardia supraventrivular',
+    observaciones: 'Máximo 2ml',
+    rangoDosisOriginal: '3mg/ml Primera dosis',
+    dosisActualMG: '0,1mg/kg ',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Adenosina segunda',
+    categoria: 'Taquicardia supraventrivular',
+    observaciones: 'Máximo 4ml',
+    rangoDosisOriginal: '3mg/ml Segunda dosis',
+    dosisActualMG: '0,2mg/kg ',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Adenosina tercera',
+    categoria: 'Taquicardia supraventrivular',
+    observaciones: 'Máximo 4ml',
+    rangoDosisOriginal: '3mg/ml Tercera dosis',
+    dosisActualMG: '0,3mg/kg ',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  Medicamento(
+    nombre: 'Amiodarona',
+    categoria: 'Taquicardia supraventrivular',
+    observaciones: 'Máximo 300mg',
+    rangoDosisOriginal: '(50mg/ml; 3ml)',
+    dosisActualMG: '5mg/kg pasar en 30min-1h ',
+    dosisMl: 0.0,
+    dosisJulios: null,
+  ),
+  // --- Vías centrales y drenajes pleurales ---
+  Medicamento(
+    nombre: 'Catéter femoral:',
+    categoria: 'Vías centrales y drenajes pleurales',
+    dosisActualMG: '2-6a: 5-5,5F -------30cm',
+    observaciones: '>7a: 7F ------30-50cm',
+  ),
+  Medicamento(
+    nombre: 'Catéter yugular:',
+    categoria: 'Vías centrales y drenajes pleurales',
+    dosisActualMG: '2-6 a: 5-5.5 F------8-3-15 cm',
+    observaciones: '>7a: 7F-------15-20 cm',
+  ),
+  Medicamento(
+    nombre: 'Catéter para drenaje pleural:',
+    categoria: 'Vías centrales y drenajes pleurales',
+    dosisActualMG: 'Pre-escolar 8-20F',
+    observaciones: 'Adolescente 14-36F',
+  ),
+  // ... y así sucesivamente para todos los medicamentos.
+];
+
+List<String> getMedicamentoCategories() {
+  return allMedicamentos.map((e) => e.categoria).toSet().toList();
+}
+
+List<Medicamento> getMedicamentosByCategory(String category) {
+  return allMedicamentos.where((e) => e.categoria == category).toList();
+}
+
+List<Medicamento> searchMedicamentos(String query) {
+  return allMedicamentos
+      .where((e) => e.nombre.toLowerCase().contains(query.toLowerCase()))
+      .toList();
+}
