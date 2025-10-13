@@ -72,7 +72,7 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
           backgroundColor: Theme.of(
             // ignore: use_build_context_synchronously
             context,
-          ).colorScheme.secondary, // Un color de acento
+          ).colorScheme.secondary,
           duration: const Duration(seconds: 2),
         ),
       );
@@ -89,7 +89,6 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
           dosisJuliosDisplay: dosisJuliosFormateada,
         );
 
-    // Colores del tema para consistencia
     final Color onSurfaceColor = Theme.of(context).colorScheme.onSurface;
 
     return Scaffold(
@@ -186,7 +185,6 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
                     ),
                     const SizedBox(height: 12.0),
 
-                    // Dosis Calculadas con botón de copiar
                     if (dosisMlFormateada != 'N/A')
                       _buildDoseRow(
                         context,
