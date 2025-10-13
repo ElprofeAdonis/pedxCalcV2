@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TemperatureScreen extends StatelessWidget {
-  const TemperatureScreen({Key? key}) : super(key: key);
+  const TemperatureScreen({super.key});
 
-  static const Color tableHeaderColor = Color.fromARGB(255, 230, 160, 0);
+  static const Color tableHeaderColor = Color.fromARGB(255, 14, 113, 194);
   static const TextStyle headerTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     color: Colors.white,
@@ -66,7 +66,10 @@ class TemperatureScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Table(
-              border: TableBorder.all(color: Colors.black, width: 1.0),
+              border: TableBorder.all(
+                color: const Color.fromARGB(255, 83, 232, 103),
+                width: 1.0,
+              ),
               columnWidths: const {
                 0: FlexColumnWidth(1.5),
                 1: FlexColumnWidth(1.0),
@@ -94,7 +97,7 @@ class TemperatureScreen extends StatelessWidget {
                 ).style.copyWith(fontSize: 14),
                 children: const <TextSpan>[
                   TextSpan(
-                    text: 'Screening (Tamizaje): ',
+                    text: 'Tamizaje: ',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   TextSpan(text: 'axilar, temporal, tímpano (↓ precisión)\n'),

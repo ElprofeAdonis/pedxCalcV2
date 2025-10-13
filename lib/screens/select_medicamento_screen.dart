@@ -106,9 +106,18 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
   }
 
   Widget _buildModalListTile(BuildContext context, String title) {
+    final Color primaryBlueDark = const Color.fromARGB(255, 14, 113, 194);
+    final Color highlightGreen = const Color.fromARGB(255, 83, 232, 103);
     return ListTile(
-      title: Text(title),
-      trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+      title: Text(
+        title,
+        style: TextStyle(
+          color: primaryBlueDark,
+          fontSize: 17,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      trailing: Icon(Icons.arrow_forward_ios, size: 18, color: highlightGreen),
       onTap: () {
         Navigator.pop(context);
 
@@ -532,7 +541,12 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
                           child: ElevatedButton(
                             onPressed: _showSignosVitalesOptions,
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.lightGreen,
+                              backgroundColor: const Color.fromARGB(
+                                255,
+                                83,
+                                232,
+                                103,
+                              ),
                               padding: const EdgeInsets.symmetric(vertical: 15),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),

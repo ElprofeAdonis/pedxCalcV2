@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class PresionArterialHombresScreen extends StatelessWidget {
   const PresionArterialHombresScreen({super.key});
 
-  // Definimos estilos y colores
   static const Color tableHeaderColor = Color.fromARGB(255, 0, 0, 0);
   static const TextStyle headerTextStyle = TextStyle(
     fontWeight: FontWeight.bold,

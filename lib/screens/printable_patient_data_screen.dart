@@ -15,10 +15,10 @@ class PrintablePatientDataScreen extends StatelessWidget {
   final List<MedicamentoCalculado> medicamentosCalculados;
 
   const PrintablePatientDataScreen({
-    Key? key,
+    super.key,
     required this.paciente,
     required this.medicamentosCalculados,
-  }) : super(key: key);
+  });
 
   Future<Uint8List> _generatePdf(PdfPageFormat format) async {
     final pdf = pw.Document();
@@ -77,7 +77,6 @@ class PrintablePatientDataScreen extends StatelessWidget {
             pw.Divider(color: PdfColors.blueGrey200, thickness: 1.5),
             pw.SizedBox(height: 10),
 
-            // Patient Data Section
             pw.Container(
               padding: const pw.EdgeInsets.all(8),
               decoration: pw.BoxDecoration(
@@ -114,7 +113,6 @@ class PrintablePatientDataScreen extends StatelessWidget {
             ),
             pw.SizedBox(height: 15),
 
-            // Calculated Medications Section
             pw.Text(
               'Medicamentos Calculados:',
               style: pw.TextStyle(
@@ -125,7 +123,6 @@ class PrintablePatientDataScreen extends StatelessWidget {
             ),
             pw.SizedBox(height: 8),
 
-            // Iterate and display by category
             ...groupedCalculatedMedicamentos.keys.map((categoria) {
               final List<MedicamentoCalculado> medsInGroup =
                   groupedCalculatedMedicamentos[categoria]!;
@@ -147,6 +144,7 @@ class PrintablePatientDataScreen extends StatelessWidget {
                     height: 8,
                     thickness: 0.8,
                   ),
+                  // ignore: deprecated_member_use
                   pw.Table.fromTextArray(
                     border: null,
                     cellPadding: const pw.EdgeInsets.symmetric(
@@ -163,19 +161,17 @@ class PrintablePatientDataScreen extends StatelessWidget {
                     ),
                     cellAlignment: pw.Alignment.centerLeft,
                     cellStyle: const pw.TextStyle(fontSize: 6),
-                    // Cambia los encabezados de la tabla a solo los que necesitas
+
                     headers: [
                       'Medicamento',
-                      'Dosis Calculada', // Un solo encabezado para la dosis
+                      'Dosis Calculada',
                       'Observaciones',
                     ],
                     data: medsInGroup.map((med) {
-                      // **Lógica corregida para mostrar la dosis calculada**
                       final String dosisToDisplay;
                       if (med.dosisDisplayString != 'N/A') {
                         dosisToDisplay = med.dosisDisplayString;
                       } else {
-                        // Combina las dosis numéricas si existen
                         final List<String> numericDoses = [];
                         if (med.dosisMgDisplay != 'N/A') {
                           numericDoses.add(med.dosisMgDisplay);
@@ -198,10 +194,9 @@ class PrintablePatientDataScreen extends StatelessWidget {
                   ),
                 ],
               );
-            }).toList(),
+            }),
 
             pw.Spacer(),
-            // Footer Section
             pw.Divider(color: PdfColors.blueGrey200, thickness: 1),
             pw.Row(
               mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,

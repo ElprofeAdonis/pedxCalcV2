@@ -1,5 +1,3 @@
-// lib/screens/liquid_iv_detail_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mi_app/models/paciente.dart';
@@ -13,20 +11,19 @@ class LiquidIVDetailScreen extends StatefulWidget {
   final Medicamento medicamento;
   final double porcentajeLiquidos;
   final double? sodioValor;
-
-  // Nuevo: Parámetro opcional para pasar el valor de HCO3
   final double? hco3Valor;
 
   const LiquidIVDetailScreen({
-    Key? key,
+    super.key,
     required this.paciente,
     required this.medicamento,
     required this.porcentajeLiquidos,
     this.hco3Valor, // Ahora acepta un valor de HCO3
     this.sodioValor,
-  }) : super(key: key);
+  });
 
   @override
+  // ignore: library_private_types_in_public_api
   _LiquidIVDetailScreenState createState() => _LiquidIVDetailScreenState();
 }
 
@@ -44,7 +41,7 @@ class _LiquidIVDetailScreenState extends State<LiquidIVDetailScreen> {
     if (widget.medicamento.categoria == 'Reposición de HCO3') {
       _calculateHco3Doses();
     } else if (widget.medicamento.categoria == 'Reposición de Sodio') {
-      _calculateSodioDoses(); // <-- ADD THIS
+      _calculateSodioDoses();
     } else {
       _calculateAndFormatDoses();
     }
@@ -59,7 +56,6 @@ class _LiquidIVDetailScreenState extends State<LiquidIVDetailScreen> {
   }
 
   void _calculateHco3Doses() {
-    // Si el valor de HCO3 se pasa, lo usamos. De lo contrario, usamos un valor por defecto.
     final double hco3Valor = widget.hco3Valor ?? 0.0;
 
     _hco3Doses = DosisCalculatorMeses.calculateHco3Dosis(
@@ -86,13 +82,13 @@ class _LiquidIVDetailScreenState extends State<LiquidIVDetailScreen> {
       final double dosisJulios = (calculatedDoses['julios'] as double?) ?? 0.0;
 
       dosisDisplay = dosisMl > 0.005
-          ? DosisCalculatorMeses.formatDosis(dosisMl) + ' ml'
+          ? '${DosisCalculatorMeses.formatDosis(dosisMl)} ml'
           : 'N/A';
       dosisMgFormateada = dosisMg > 0.005
-          ? DosisCalculatorMeses.formatDosis(dosisMg) + ' mg'
+          ? '${DosisCalculatorMeses.formatDosis(dosisMg)} mg'
           : 'N/A';
       dosisJuliosFormateada = dosisJulios > 0.005
-          ? DosisCalculatorMeses.formatDosis(dosisJulios) + ' J'
+          ? '${DosisCalculatorMeses.formatDosis(dosisJulios)} J'
           : 'N/A';
     }
   }
@@ -100,9 +96,11 @@ class _LiquidIVDetailScreenState extends State<LiquidIVDetailScreen> {
   void copyToClipboard(String text) {
     if (text == 'N/A') return;
     Clipboard.setData(ClipboardData(text: text)).then((_) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('"${text}" copiado al portapapeles'),
+          content: Text('"$text" copiado al portapapeles'),
+          // ignore: use_build_context_synchronously
           backgroundColor: Theme.of(context).colorScheme.secondary,
           duration: const Duration(seconds: 2),
         ),
@@ -177,28 +175,25 @@ class _LiquidIVDetailScreenState extends State<LiquidIVDetailScreen> {
                         widget.medicamento.subcategoria!,
                         onSurfaceColor,
                       ),
-                    if (widget.medicamento.rangoDosisOriginal != null &&
-                        widget.medicamento.rangoDosisOriginal!.isNotEmpty)
+                    if (widget.medicamento.rangoDosisOriginal.isNotEmpty)
                       _buildDetailRow(
                         context,
                         'Rango Dosis Original:',
-                        widget.medicamento.rangoDosisOriginal!,
+                        widget.medicamento.rangoDosisOriginal,
                         onSurfaceColor,
                       ),
-                    if (widget.medicamento.dosisActualMG != null &&
-                        widget.medicamento.dosisActualMG!.isNotEmpty)
+                    if (widget.medicamento.dosisActualMG.isNotEmpty)
                       _buildDetailRow(
                         context,
                         'Dosis:',
-                        widget.medicamento.dosisActualMG!,
+                        widget.medicamento.dosisActualMG,
                         onSurfaceColor,
                       ),
-                    if (widget.medicamento.observaciones != null &&
-                        widget.medicamento.observaciones!.isNotEmpty)
+                    if (widget.medicamento.observaciones.isNotEmpty)
                       _buildDetailRow(
                         context,
                         'Observaciones:',
-                        widget.medicamento.observaciones!,
+                        widget.medicamento.observaciones,
                         onSurfaceColor,
                       ),
                     const SizedBox(height: 18.0),

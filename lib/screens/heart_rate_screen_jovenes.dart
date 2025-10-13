@@ -4,7 +4,7 @@ class HeartRateScreenJ extends StatelessWidget {
   const HeartRateScreenJ({super.key});
 
   // Definimos estilos y colores
-  static const Color tableHeaderColor = Color.fromARGB(255, 230, 0, 0);
+  static const Color tableHeaderColor = Color.fromARGB(255, 14, 113, 194);
   static const TextStyle headerTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     color: Colors.white,
@@ -72,7 +72,10 @@ class HeartRateScreenJ extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Table(
-              border: TableBorder.all(color: Colors.black, width: 1.0),
+              border: TableBorder.all(
+                color: const Color.fromARGB(255, 83, 232, 103),
+                width: 1.0,
+              ),
               columnWidths: const {
                 0: FlexColumnWidth(1.3),
                 1: FlexColumnWidth(1.0),

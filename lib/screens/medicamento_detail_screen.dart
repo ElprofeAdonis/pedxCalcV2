@@ -12,12 +12,13 @@ class MedicamentoDetailScreen extends StatefulWidget {
   final Paciente paciente;
 
   const MedicamentoDetailScreen({
-    Key? key,
+    super.key,
     required this.medicamento,
     required this.paciente,
-  }) : super(key: key);
+  });
 
   @override
+  // ignore: library_private_types_in_public_api
   _MedicamentoDetailScreenState createState() =>
       _MedicamentoDetailScreenState();
 }
@@ -64,10 +65,12 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
   // Función para copiar al portapapeles
   void copyToClipboard(String text) {
     Clipboard.setData(ClipboardData(text: text)).then((_) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('"${text}" copiado al portapapeles'),
+          content: Text('"$text" copiado al portapapeles'),
           backgroundColor: Theme.of(
+            // ignore: use_build_context_synchronously
             context,
           ).colorScheme.secondary, // Un color de acento
           duration: const Duration(seconds: 2),
@@ -115,9 +118,6 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Tarjeta de Información del Paciente
-
-            // Tarjeta de Información del Medicamento y Dosis
             Card(
               elevation: 1,
               shape: RoundedRectangleBorder(
@@ -153,28 +153,25 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
                         widget.medicamento.subcategoria!,
                         onSurfaceColor,
                       ),
-                    if (widget.medicamento.rangoDosisOriginal != null &&
-                        widget.medicamento.rangoDosisOriginal!.isNotEmpty)
+                    if (widget.medicamento.rangoDosisOriginal.isNotEmpty)
                       _buildDetailRow(
                         context,
                         'Rango Dosis Original:',
-                        widget.medicamento.rangoDosisOriginal!,
+                        widget.medicamento.rangoDosisOriginal,
                         onSurfaceColor,
                       ),
-                    if (widget.medicamento.dosisActualMG != null &&
-                        widget.medicamento.dosisActualMG!.isNotEmpty)
+                    if (widget.medicamento.dosisActualMG.isNotEmpty)
                       _buildDetailRow(
                         context,
                         'Dosis Pediátrica:',
-                        widget.medicamento.dosisActualMG!,
+                        widget.medicamento.dosisActualMG,
                         onSurfaceColor,
                       ),
-                    if (widget.medicamento.observaciones != null &&
-                        widget.medicamento.observaciones!.isNotEmpty)
+                    if (widget.medicamento.observaciones.isNotEmpty)
                       _buildDetailRow(
                         context,
                         'Observaciones:',
-                        widget.medicamento.observaciones!,
+                        widget.medicamento.observaciones,
                         onSurfaceColor,
                       ),
                     const SizedBox(height: 18.0),
@@ -224,7 +221,6 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
     );
   }
 
-  // Helper para construir filas de detalles
   Widget _buildDetailRow(
     BuildContext context,
     String label,
@@ -242,6 +238,7 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
               label,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontWeight: FontWeight.w500,
+                // ignore: deprecated_member_use
                 color: textColor.withOpacity(0.6),
               ),
             ),
@@ -259,7 +256,6 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
     );
   }
 
-  // Helper para construir filas de dosis con botón de copiar
   Widget _buildDoseRow(
     BuildContext context,
     String label,
@@ -273,7 +269,6 @@ class _MedicamentoDetailScreenState extends State<MedicamentoDetailScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            // AÑADIDO PARA EVITAR EL DESBORDAMIENTO
             child: Text(
               '$label $displayValue',
               style: Theme.of(context).textTheme.titleMedium!.copyWith(

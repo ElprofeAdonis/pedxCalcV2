@@ -116,7 +116,10 @@ class BloodPressureScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Table(
-              border: TableBorder.all(color: Colors.black, width: 1.0),
+              border: TableBorder.all(
+                color: const Color.fromARGB(255, 83, 232, 103),
+                width: 1.0,
+              ),
               columnWidths: const {
                 0: FlexColumnWidth(1.5),
                 1: FlexColumnWidth(1.3),
@@ -129,7 +132,7 @@ class BloodPressureScreen extends StatelessWidget {
                 _buildDataRow('Birth (12 h) 3 kg', '60-76', '31-45', '<50'),
 
                 _buildDataRow('Neonate (96 h)', '67-84', '35-53', '<60'),
-                _buildDataRow('Infant (1-12 mos)', '72-104', '37-56', '<70'),
+                _buildDataRow('Infant (1-12 años)', '72-104', '37-56', '<70'),
               ],
             ),
 

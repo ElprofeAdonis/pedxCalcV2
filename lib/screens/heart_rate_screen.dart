@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HeartRateScreen extends StatelessWidget {
-  const HeartRateScreen({Key? key}) : super(key: key);
+  const HeartRateScreen({super.key});
 
-  // Definimos estilos y colores
-  static const Color tableHeaderColor = Color.fromARGB(255, 230, 0, 0);
+  static const Color tableHeaderColor = Color.fromARGB(255, 14, 113, 194);
   static const TextStyle headerTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     color: Colors.white,
@@ -14,7 +13,7 @@ class HeartRateScreen extends StatelessWidget {
 
   TableRow _buildHeaderRow() {
     return TableRow(
-      decoration: const BoxDecoration(color: tableHeaderColor),
+      decoration: const BoxDecoration(color: Color.fromARGB(255, 14, 113, 194)),
       children: [
         _buildHeaderCell('Edad'),
         _buildHeaderCell('Despierto'),
@@ -72,9 +71,12 @@ class HeartRateScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Table(
-              border: TableBorder.all(color: Colors.black, width: 1.0),
+              border: TableBorder.all(
+                color: Color.fromARGB(255, 83, 232, 103),
+                width: 1.0,
+              ),
               columnWidths: const {
-                0: FlexColumnWidth(1.5), // Ancho para la columna Age
+                0: FlexColumnWidth(1.5),
                 1: FlexColumnWidth(1.0),
                 2: FlexColumnWidth(1.0),
               },

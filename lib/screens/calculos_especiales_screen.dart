@@ -1,5 +1,3 @@
-// lib/screens/calculos_especiales_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:mi_app/models/paciente.dart';
 import 'package:mi_app/utils/dosis_calculator_meses.dart';
@@ -8,7 +6,6 @@ import 'package:mi_app/screens/liquid_iv_detail_screen.dart';
 import 'package:mi_app/screens/printable_patient_data_screen.dart';
 import 'package:mi_app/models/medicamento_calculado.dart';
 
-// Definir los medicamentos de la categoría "Reposición de HCO3" aquí
 final List<Medicamento> hco3Medicamentos = [
   Medicamento(
     nombre: 'HCO3 del paciente',
@@ -73,10 +70,10 @@ final List<Medicamento> sodioMedicamentos = [
 class CalculosEspecialesScreen extends StatefulWidget {
   final Paciente paciente;
 
-  const CalculosEspecialesScreen({Key? key, required this.paciente})
-    : super(key: key);
+  const CalculosEspecialesScreen({super.key, required this.paciente});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CalculosEspecialesScreenState createState() =>
       _CalculosEspecialesScreenState();
 }
@@ -137,7 +134,6 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
     }
   }
 
-  // **NUEVO: Lógica de cálculo y display para la reposición de Sodio**
   String _getSodioDisplay(Medicamento medicamento) {
     final sodioDoses = DosisCalculatorMeses.calculateSodioDosis(
       widget.paciente,
@@ -158,7 +154,6 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
     }
   }
 
-  // Lógica de cálculo para Líquidos IV
   String _getDosisDisplay(Medicamento medicamento) {
     final Map<String, dynamic> calculatedDoses =
         DosisCalculatorMeses.calculateDosis(
@@ -174,7 +169,6 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
     }
   }
 
-  // Widget reutilizable para el ListTile
   Widget _buildMedicamentoListTile(
     Medicamento medicamento,
     String dosisDisplay, {
@@ -209,13 +203,14 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
         tileColor: Colors.white,
         selectedTileColor: Theme.of(
           context,
+          // ignore: deprecated_member_use
         ).colorScheme.primary.withOpacity(0.05),
+        // ignore: deprecated_member_use
         splashColor: Theme.of(context).colorScheme.primary.withOpacity(0.1),
       ),
     );
   }
 
-  // NUEVO: Función para calcular todas las dosis para el reporte de impresión
   List<MedicamentoCalculado> _calcularTodasLasDosis() {
     final List<MedicamentoCalculado> medicamentosCalculados = [];
 
@@ -250,9 +245,8 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
       ),
     ];
 
-    // 1. Agregar los medicamentos de Líquidos IV
     for (var med in liquidosIVMedicamentos) {
-      final String dosisDisplay = _getDosisDisplay(med);
+      _getDosisDisplay(med);
       medicamentosCalculados.add(
         MedicamentoCalculado(
           medicamentoOriginal: med,
@@ -264,9 +258,8 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
       );
     }
 
-    // 2. Agregar los medicamentos de Reposición de HCO3
     for (var med in hco3Medicamentos.skip(1)) {
-      final String dosisDisplay = _getHco3Display(med);
+      _getHco3Display(med);
       medicamentosCalculados.add(
         MedicamentoCalculado(
           medicamentoOriginal: med,
@@ -280,7 +273,7 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
 
     // 3. Agregar los medicamentos de Reposición de Sodio
     for (var med in sodioMedicamentos.skip(1)) {
-      final String dosisDisplay = _getSodioDisplay(med);
+      _getSodioDisplay(med);
       medicamentosCalculados.add(
         MedicamentoCalculado(
           medicamentoOriginal: med,
@@ -366,11 +359,9 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
                   borderRadius: BorderRadius.circular(0.0),
                 ),
                 child: ListTile(
-                  //se asercan los dos contenidos 20.0
                   contentPadding: const EdgeInsets.symmetric(horizontal: 20.0),
                   title: const Text('Cálculo por porcentaje de líquids IV'),
                   trailing: SizedBox(
-                    //tamano del cuadro del número
                     width: 65,
                     height: 35,
                     child: TextField(
@@ -412,7 +403,7 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
               ),
             ),
           ),
-          // Sección de Reposición de HCO3 (NUEVA)
+
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(
@@ -597,14 +588,13 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
             ),
           ),
 
-          // lib/screens/calculos_especiales_screen.dart
           SliverList(
             delegate: SliverChildBuilderDelegate((
               BuildContext context,
               int index,
             ) {
               final medicamento = hco3Medicamentos[index + 1];
-              final hco3Doses = DosisCalculatorMeses.calculateHco3Dosis(
+              DosisCalculatorMeses.calculateHco3Dosis(
                 widget.paciente,
                 _hco3Valor,
               );
@@ -662,7 +652,7 @@ class _CalculosEspecialesScreenState extends State<CalculosEspecialesScreen> {
                         paciente: widget.paciente,
                         medicamento: medicamento,
                         porcentajeLiquidos: 0.0,
-                        sodioValor: _sodioValor, // Pasa el valor del Sodio
+                        sodioValor: _sodioValor,
                       ),
                     ),
                   );

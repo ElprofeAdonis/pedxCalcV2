@@ -12,12 +12,13 @@ class MedicamentoDetailMesesScreen extends StatefulWidget {
   final Paciente paciente;
 
   const MedicamentoDetailMesesScreen({
-    Key? key,
+    super.key,
     required this.medicamento,
     required this.paciente,
-  }) : super(key: key);
+  });
 
   @override
+  // ignore: library_private_types_in_public_api
   _MedicamentoDetailMesesScreenState createState() =>
       _MedicamentoDetailMesesScreenState();
 }
@@ -67,9 +68,11 @@ class _MedicamentoDetailMesesScreenState
   void copyToClipboard(String text) {
     if (text == 'N/A') return;
     Clipboard.setData(ClipboardData(text: text)).then((_) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('"${text}" copiado al portapapeles'),
+          content: Text('"$text" copiado al portapapeles'),
+          // ignore: use_build_context_synchronously
           backgroundColor: Theme.of(context).colorScheme.secondary,
           duration: const Duration(seconds: 2),
         ),
@@ -151,28 +154,25 @@ class _MedicamentoDetailMesesScreenState
                         widget.medicamento.subcategoria!,
                         onSurfaceColor,
                       ),
-                    if (widget.medicamento.rangoDosisOriginal != null &&
-                        widget.medicamento.rangoDosisOriginal!.isNotEmpty)
+                    if (widget.medicamento.rangoDosisOriginal.isNotEmpty)
                       _buildDetailRow(
                         context,
                         'Rango Dosis Original:',
-                        widget.medicamento.rangoDosisOriginal!,
+                        widget.medicamento.rangoDosisOriginal,
                         onSurfaceColor,
                       ),
-                    if (widget.medicamento.dosisActualMG != null &&
-                        widget.medicamento.dosisActualMG!.isNotEmpty)
+                    if (widget.medicamento.dosisActualMG.isNotEmpty)
                       _buildDetailRow(
                         context,
                         'Dosis:',
-                        widget.medicamento.dosisActualMG!,
+                        widget.medicamento.dosisActualMG,
                         onSurfaceColor,
                       ),
-                    if (widget.medicamento.observaciones != null &&
-                        widget.medicamento.observaciones!.isNotEmpty)
+                    if (widget.medicamento.observaciones.isNotEmpty)
                       _buildDetailRow(
                         context,
                         'Observaciones:',
-                        widget.medicamento.observaciones!,
+                        widget.medicamento.observaciones,
                         onSurfaceColor,
                       ),
                     const SizedBox(height: 18.0),

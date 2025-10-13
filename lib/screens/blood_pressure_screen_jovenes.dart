@@ -84,7 +84,10 @@ class BloodPressureScreenJ extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Table(
-              border: TableBorder.all(color: Colors.black, width: 1.0),
+              border: TableBorder.all(
+                color: const Color.fromARGB(255, 83, 232, 103),
+                width: 1.0,
+              ),
               columnWidths: const {
                 0: FlexColumnWidth(1.8),
                 1: FlexColumnWidth(1.0),

@@ -629,7 +629,7 @@ class DosisCalculator {
         dosisMl = (peso * 2).clamp(0.0, 2000.0);
       } else if (medicamento.categoria == 'Electrolitos' ||
           medicamento.categoria ==
-              'HIPOCALCEMIA SEVERA, HIPERMAGNESEMIA Ó INTOXICACION CON BLOQUEADORES DE LOS CANALES DE CALCIO') {
+              'Hipocalcemia severa, Hipermagnesemia ó Intoxicación con bloqueadores de los canales de calcio') {
         dosisMl = ((peso * 50) / 100).clamp(0.0, 2000.0);
       } else {
         dosisMl = 0.0;

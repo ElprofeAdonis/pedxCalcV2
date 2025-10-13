@@ -21,6 +21,7 @@ class MedicamentosListMesesScreen extends StatefulWidget {
   const MedicamentosListMesesScreen({super.key, required this.paciente});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MedicamentosListMesesScreenState createState() =>
       _MedicamentosListMesesScreenState();
 }
@@ -156,20 +157,25 @@ class _MedicamentosListMesesScreenState
     }).toList();
   }
 
-  // --- FUNCIONES PARA LOS BOTONES SING V Y PAM ---
-
   void _showSignosVitalesOptions(BuildContext context) {
+    final Color highlightGreen = const Color.fromARGB(255, 83, 232, 103);
     showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.white,
       builder: (BuildContext bc) {
         return SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
+
             children: <Widget>[
               ListTile(
-                title: const Text(
+                title: Text(
                   'Signos Vitales',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: highlightGreen,
+                  ),
                 ),
               ),
               const Divider(),
@@ -187,17 +193,24 @@ class _MedicamentosListMesesScreenState
   }
 
   void _showPAMOptions(BuildContext context) {
+    final Color highlightGreen = const Color.fromARGB(255, 83, 232, 103);
+
     showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.white,
       builder: (BuildContext bc) {
         return SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               ListTile(
-                title: const Text(
+                title: Text(
                   'Presión Arterial Media (PAM)',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: highlightGreen,
+                  ),
                 ),
               ),
               const Divider(),
@@ -212,9 +225,18 @@ class _MedicamentosListMesesScreenState
   }
 
   Widget _buildModalListTile(BuildContext context, String title) {
+    final Color primaryBlueDark = const Color.fromARGB(255, 14, 113, 194);
+    final Color highlightGreen = const Color.fromARGB(255, 83, 232, 103);
     return ListTile(
-      title: Text(title),
-      trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+      title: Text(
+        title,
+        style: TextStyle(
+          color: primaryBlueDark,
+          fontSize: 17,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      trailing: Icon(Icons.arrow_forward_ios, size: 18, color: highlightGreen),
       onTap: () {
         Navigator.pop(context);
         if (title == 'Frecuencia Cardíaca') {
@@ -350,7 +372,6 @@ class _MedicamentosListMesesScreenState
       ),
       body: GestureDetector(
         onTap: () {
-          // Oculta el teclado y quita el foco al tocar fuera del TextField
           FocusScope.of(context).unfocus();
         },
         child: Column(
@@ -439,7 +460,7 @@ class _MedicamentosListMesesScreenState
                           83,
                           232,
                           103,
-                        ), // Color verde
+                        ),
                         padding: const EdgeInsets.symmetric(vertical: 15),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -465,7 +486,7 @@ class _MedicamentosListMesesScreenState
                           14,
                           113,
                           194,
-                        ), // Color azul
+                        ),
                         padding: const EdgeInsets.symmetric(vertical: 15),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),

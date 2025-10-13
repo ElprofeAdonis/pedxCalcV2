@@ -203,7 +203,7 @@ class DosisCalculatorMeses {
         dosisMl = peso * 4;
       }
     } else if (medicamento.nombre == 'Dexametasona IV') {
-      if (medicamento.categoria == 'ASMA') {
+      if (medicamento.categoria == 'Asma') {
         dosisMg = peso * 0.1;
       } else if (medicamento.categoria ==
           'Medicación específica según patología respiratoria') {

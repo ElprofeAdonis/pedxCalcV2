@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class OxygenSaturationScreenJ extends StatelessWidget {
   const OxygenSaturationScreenJ({super.key});
 
-  static const Color infoBoxColor = Color.fromARGB(255, 100, 149, 237);
+  static const Color infoBoxColor = Color.fromARGB(255, 14, 113, 194);
   static const TextStyle headerTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     color: Colors.white,
@@ -51,7 +51,10 @@ class OxygenSaturationScreenJ extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(20.0),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey.shade400, width: 1.0),
+                border: Border.all(
+                  color: const Color.fromARGB(255, 83, 232, 103),
+                  width: 1.0,
+                ),
                 borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(8.0),
                   bottomRight: Radius.circular(8.0),

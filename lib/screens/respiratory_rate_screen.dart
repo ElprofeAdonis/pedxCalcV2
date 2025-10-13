@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class RespiratoryRateScreen extends StatelessWidget {
-  const RespiratoryRateScreen({Key? key}) : super(key: key);
+  const RespiratoryRateScreen({super.key});
 
-  static const Color tableHeaderColor = Color.fromARGB(255, 30, 130, 45);
+  static const Color tableHeaderColor = Color.fromARGB(255, 14, 113, 194);
   static const TextStyle headerTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     color: Colors.white,
@@ -66,15 +66,18 @@ class RespiratoryRateScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Table(
-              border: TableBorder.all(color: Colors.black, width: 1.0),
+              border: TableBorder.all(
+                color: const Color.fromARGB(255, 83, 232, 103),
+                width: 1.0,
+              ),
               columnWidths: const {
-                0: FlexColumnWidth(1.5), // Ancho para la columna Age
-                1: FlexColumnWidth(1.0), // Ancho para la columna Normal
+                0: FlexColumnWidth(1.5),
+                1: FlexColumnWidth(1.0),
               },
               children: [
                 _buildHeaderRow(),
-                _buildDataRow('(<1 y) (RN)', '30-53'),
-                _buildDataRow('(1-2 y) (niños)', '22-37'),
+                _buildDataRow('(<1 años) (RN)', '30-53'),
+                _buildDataRow('(1-2 años) (niños)', '22-37'),
               ],
             ),
 

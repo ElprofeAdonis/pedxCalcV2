@@ -13,22 +13,21 @@ class CalculosJovenesDetailScreen extends StatefulWidget {
   final Medicamento medicamento;
   final double sodioValor;
   final double hco3Valor;
-  // AÑADE ESTE NUEVO PARÁMETRO
   final double liquidosIvValor;
   final String calculoType;
 
   const CalculosJovenesDetailScreen({
-    Key? key,
+    super.key,
     required this.paciente,
     required this.medicamento,
     required this.sodioValor,
     required this.hco3Valor,
-    // AÑADE ESTE NUEVO PARÁMETRO
     required this.liquidosIvValor,
     required this.calculoType,
-  }) : super(key: key);
+  });
 
   @override
+  // ignore: library_private_types_in_public_api
   _CalculosJovenesDetailScreenState createState() =>
       _CalculosJovenesDetailScreenState();
 }
@@ -51,7 +50,6 @@ class _CalculosJovenesDetailScreenState
         widget.hco3Valor,
       );
     } else {
-      // NUEVA LÓGICA PARA LÍQUIDOS IV
       _calculatedDoses = DosisCalculatorJovenes.calculateLiquidosIvDosis(
         widget.paciente.pesoKg,
         widget.liquidosIvValor,
@@ -62,9 +60,11 @@ class _CalculosJovenesDetailScreenState
   void copyToClipboard(String text) {
     if (text == 'N/A') return;
     Clipboard.setData(ClipboardData(text: text)).then((_) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('"${text}" copiado al portapapeles'),
+          content: Text('"$text" copiado al portapapeles'),
+          // ignore: use_build_context_synchronously
           backgroundColor: Theme.of(context).colorScheme.secondary,
           duration: const Duration(seconds: 2),
         ),
@@ -89,6 +89,7 @@ class _CalculosJovenesDetailScreenState
               label,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontWeight: FontWeight.w500,
+                // ignore: deprecated_member_use
                 color: textColor.withOpacity(0.6),
               ),
             ),
@@ -175,7 +176,6 @@ class _CalculosJovenesDetailScreenState
           break;
       }
     } else if (widget.calculoType == 'Liquidos IV') {
-      // NUEVA LÓGICA PARA IMPRIMIR LÍQUIDOS IV
       switch (widget.medicamento.nombre) {
         case 'Solución mixta mantenimiento':
           displayString = _calculatedDoses['solucion_mixta'];
@@ -211,7 +211,6 @@ class _CalculosJovenesDetailScreenState
     String dosisLabel = '';
     String dosisValue = 'N/A';
 
-    // Lógica para obtener el resultado único a mostrar
     if (widget.calculoType == 'Sodio') {
       switch (widget.medicamento.nombre) {
         case 'Déficit de Sodio':
@@ -247,7 +246,6 @@ class _CalculosJovenesDetailScreenState
           break;
       }
     } else if (widget.calculoType == 'Liquidos IV') {
-      // NUEVA LÓGICA PARA MOSTRAR LÍQUIDOS IV
       switch (widget.medicamento.nombre) {
         case 'Solución mixta mantenimiento':
           dosisLabel = 'Solución:';
@@ -328,7 +326,7 @@ class _CalculosJovenesDetailScreenState
                     _buildDetailRow(
                       context: context,
                       label: 'Observaciones:',
-                      value: widget.medicamento.observaciones ?? 'N/A',
+                      value: widget.medicamento.observaciones,
                       textColor: onSurfaceColor,
                     ),
                     const SizedBox(height: 18.0),

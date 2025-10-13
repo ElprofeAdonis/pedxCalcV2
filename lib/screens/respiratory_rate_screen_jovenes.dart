@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class RespiratoryRateScreenJ extends StatelessWidget {
   const RespiratoryRateScreenJ({super.key});
 
-  static const Color tableHeaderColor = Color.fromARGB(255, 30, 130, 45);
+  static const Color tableHeaderColor = Color.fromARGB(255, 14, 113, 194);
   static const TextStyle headerTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     color: Colors.white,
@@ -66,7 +66,10 @@ class RespiratoryRateScreenJ extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Table(
-              border: TableBorder.all(color: Colors.black, width: 1.0),
+              border: TableBorder.all(
+                color: const Color.fromARGB(255, 83, 232, 103),
+                width: 1.0,
+              ),
               columnWidths: const {
                 0: FlexColumnWidth(1.5),
                 1: FlexColumnWidth(1.0),
