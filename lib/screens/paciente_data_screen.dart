@@ -264,6 +264,7 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                                 Icons.calendar_month,
                                 color: Theme.of(
                                   context,
+                                  // ignore: deprecated_member_use
                                 ).colorScheme.onSurface.withOpacity(0.7),
                               ),
                               floatingLabelStyle: TextStyle(
@@ -337,7 +338,7 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 83, 232, 103),
-                    foregroundColor: Theme.of(context).colorScheme.onSecondary,
+                    foregroundColor: const Color.fromARGB(255, 14, 113, 194),
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40,
                       vertical: 15,
