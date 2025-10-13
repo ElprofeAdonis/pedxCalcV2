@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mi_app/models/paciente.dart'; // Asegúrate de que este modelo exista
-import 'package:mi_app/screens/select_medicamento_screen.dart'; // Para la siguiente pantalla de selección de medicamento
-import 'package:mi_app/screens/instrucciones_screen_with_terms.dart'; // Para el botón de instrucciones
-import 'package:mi_app/screens/edad_selection_screen.dart'; // Para poder regresar o cambiar de modo
+import 'package:mi_app/models/paciente.dart';
+import 'package:mi_app/screens/select_medicamento_screen.dart';
+import 'package:mi_app/screens/instrucciones_screen_with_terms.dart';
+import 'package:mi_app/screens/edad_selection_screen.dart';
 
 class PacienteDataScreen extends StatefulWidget {
-  final bool isEdadAniosMode; // Nuevo parámetro para controlar el modo
+  final bool isEdadAniosMode;
 
-  const PacienteDataScreen({
-    super.key,
-    this.isEdadAniosMode = false,
-  }); // Default a false si no se especifica
+  const PacienteDataScreen({super.key, this.isEdadAniosMode = false});
 
   @override
   State<PacienteDataScreen> createState() => _PacienteDataScreenState();
@@ -143,7 +140,6 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 30),
-                        // Campo de Peso: Ahora opcional bajo ciertas condiciones
                         TextFormField(
                           controller: _pesoController,
                           keyboardType: TextInputType.number,
@@ -154,10 +150,9 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                 color: Theme.of(context).colorScheme.primary,
-                              ), // Borde azul principal
+                              ),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              // Borde cuando el campo está enfocado
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                 color: const Color.fromARGB(
@@ -167,29 +162,22 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                                   194,
                                 ), // azul acento
                                 width: 2.0,
-                              ), // Un poco más grueso al enfocar
+                              ),
                             ),
                             prefixIcon: Icon(
                               Icons.scale,
-                              color: const Color.fromARGB(
-                                255,
-                                14,
-                                113,
-                                194,
-                              ), // Icono en gris suave
+                              color: const Color.fromARGB(255, 14, 113, 194),
                             ),
                             floatingLabelStyle: TextStyle(
-                              // Estilo del label cuando está flotando
                               color: const Color.fromARGB(255, 14, 113, 194),
                             ),
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              // Es opcional si estamos en modo años Y hay un peso estimado válido
                               if (widget.isEdadAniosMode &&
                                   _pesoEstimadoValue != null &&
                                   _pesoEstimadoValue! > 0) {
-                                return null; // No se requiere si podemos usar el peso estimado
+                                return null;
                               }
                               return 'Ingrese el peso o una edad válida en años para estimarlo.';
                             }
@@ -204,8 +192,7 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                           controller: _edadAniosController,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
-                            labelText:
-                                'Edad (Años - 1 a 14 años)', // Texto ajustado para iOS
+                            labelText: 'Edad (Años - 1 a 14 años)',
                             hintText: 'Ej: 4',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
@@ -228,19 +215,16 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                               color: const Color.fromARGB(255, 14, 113, 194),
                             ),
                           ),
-                          // onChanged ya llama a _calcularPesoEstimado
+
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              // Si NO estamos en modo años Y el campo de meses también está vacío,
-                              // O si estamos en modo años Y el campo de peso está vacío,
-                              // entonces este campo (edad en años) es requerido.
                               if ((!widget.isEdadAniosMode &&
                                       _edadMesesController.text.isEmpty) ||
                                   (widget.isEdadAniosMode &&
                                       _pesoController.text.isEmpty)) {
                                 return 'Ingrese edad en años o meses (o peso si aplica).';
                               }
-                              return null; // Es opcional en otros casos
+                              return null;
                             }
                             if (int.tryParse(value) == null) {
                               return 'Entrada inválida. Ingrese un número entero.';
@@ -253,7 +237,7 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                           },
                         ),
                         const SizedBox(height: 20),
-                        // Campo de edad en meses: Oculto si estamos en modo años
+
                         if (!widget.isEdadAniosMode)
                           TextFormField(
                             controller: _edadMesesController,
@@ -287,7 +271,6 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                               ),
                             ),
                             validator: (value) {
-                              // Solo se valida si NO estamos en modo años Y el campo de años está vacío
                               if (!widget.isEdadAniosMode &&
                                   _edadAniosController.text.isEmpty) {
                                 if (value == null || value.isEmpty) {
@@ -304,8 +287,8 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                               return null;
                             },
                           ),
-                        // Mostrar el Peso Estimado según la Edad
-                        if (widget.isEdadAniosMode) // Solo para el modo años
+
+                        if (widget.isEdadAniosMode)
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -353,16 +336,8 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                     style: TextStyle(fontSize: 18),
                   ),
                   style: ElevatedButton.styleFrom(
-                    // Los estilos ya se aplican desde main.dart si los configuraste allí
-                    backgroundColor: const Color.fromARGB(
-                      255,
-                      83,
-                      232,
-                      103,
-                    ), // Verde brillante
-                    foregroundColor: Theme.of(
-                      context,
-                    ).colorScheme.onSecondary, // Blanco calcular dosis
+                    backgroundColor: const Color.fromARGB(255, 83, 232, 103),
+                    foregroundColor: Theme.of(context).colorScheme.onSecondary,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40,
                       vertical: 15,
