@@ -150,7 +150,6 @@ class _PacienteDataMesesScreenState extends State<PacienteDataMesesScreen> {
                             prefixIcon: const Icon(Icons.fitness_center),
                           ),
                           validator: (value) {
-                            // Este campo no es obligatorio, por eso devuelve null si está vacío
                             if (value == null || value.isEmpty) {
                               return null;
                             }
@@ -234,7 +233,7 @@ class _PacienteDataMesesScreenState extends State<PacienteDataMesesScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromARGB(255, 83, 232, 103),
-                    foregroundColor: Theme.of(context).colorScheme.onSecondary,
+                    foregroundColor: Color.fromARGB(255, 14, 113, 194),
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40,
                       vertical: 15,
