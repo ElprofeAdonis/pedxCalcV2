@@ -58,7 +58,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return Container(
+        return SizedBox(
           height: 400,
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -80,7 +80,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return Container(
+        return SizedBox(
           height: 250,
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -271,7 +271,9 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
         tileColor: Colors.white,
         selectedTileColor: Theme.of(
           context,
+          // ignore: deprecated_member_use
         ).colorScheme.primary.withOpacity(0.05),
+        // ignore: deprecated_member_use
         splashColor: Theme.of(context).colorScheme.primary.withOpacity(0.1),
       ),
     );
@@ -470,9 +472,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
         ),
         body: Stack(
           children: [
-            // Contenido Principal Desplazable (lista de medicamentos)
             Padding(
-              // Añade un padding inferior para que el contenido no quede oculto por los botones
               padding: const EdgeInsets.only(bottom: _buttonBarHeight),
               child: CustomScrollView(
                 slivers: [
@@ -489,9 +489,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
                           style: Theme.of(context).textTheme.bodyLarge!
                               .copyWith(
                                 fontWeight: FontWeight.bold,
-                                color: Theme.of(
-                                  context,
-                                ).colorScheme.onBackground,
+                                color: Theme.of(context).colorScheme.onSurface,
                               ),
                         ),
                       ),
@@ -509,7 +507,6 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
               ),
             ),
 
-            // Botones SING V y PAM Fijos en la parte inferior
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
@@ -517,8 +514,7 @@ class _SelectMedicamentoScreenState extends State<SelectMedicamentoScreen> {
                 child: Container(
                   height: _buttonBarHeight,
                   decoration: const BoxDecoration(
-                    color: Colors
-                        .white, // Fondo blanco para que los botones destaquen
+                    color: Colors.white,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black12,

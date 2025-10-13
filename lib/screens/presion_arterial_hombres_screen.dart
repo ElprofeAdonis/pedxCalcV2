@@ -18,7 +18,10 @@ class PresionArterialHombresScreen extends StatelessWidget {
         width: 65,
         child: Text(
           label,
-          style: headerTextStyle.copyWith(color: Colors.black),
+          style: headerTextStyle.copyWith(
+            color: Color.fromARGB(255, 14, 113, 194),
+            fontSize: 14,
+          ),
           textAlign: TextAlign.center,
           maxLines: 2,
         ),
@@ -32,7 +35,7 @@ class PresionArterialHombresScreen extends StatelessWidget {
   ]) {
     return DataCell(
       SizedBox(
-        width: 65,
+        width: 75,
         child: Text(
           text,
           style: cellTextStyle.copyWith(fontWeight: fontWeight),
@@ -69,7 +72,7 @@ class PresionArterialHombresScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Presión Arterial Hombres'),
-        backgroundColor: tableHeaderColor,
+        backgroundColor: Color.fromARGB(255, 14, 113, 194),
         foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
@@ -83,8 +86,11 @@ class PresionArterialHombresScreen extends StatelessWidget {
                 headingRowHeight: 60,
                 columnSpacing: 10,
                 // ignore: deprecated_member_use
-                dataRowHeight: 70,
-                border: TableBorder.all(color: Colors.grey.shade400, width: 1),
+                dataRowHeight: 75,
+                border: TableBorder.all(
+                  color: const Color.fromARGB(255, 83, 232, 103),
+                  width: 1,
+                ),
 
                 columns: [
                   _buildDataColumn('EDAD'),
