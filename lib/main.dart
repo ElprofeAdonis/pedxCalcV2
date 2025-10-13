@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mi_app/screens/splash_screen.dart'; // Importa la nueva SplashScreen
+import 'package:mi_app/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
       title: 'Pedx Calc',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue, // Puedes usar el azul de tu logo aquí
-        primaryColor: const Color.fromARGB(255, 14, 113, 194), // Azul de tu logo
-        hintColor: const Color(0xFF4CAF50), // Verde de acento (para Pedx)
+        primarySwatch: Colors.blue,
+        primaryColor: const Color.fromARGB(255, 14, 113, 194),
+        hintColor: const Color(0xFF4CAF50),
         scaffoldBackgroundColor: const Color(0xFFF8F8F8),
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color.fromARGB(255, 14, 113, 194), // Azul de tu logo para AppBar
+          backgroundColor: Color.fromARGB(255, 14, 113, 194),
           foregroundColor: Colors.white,
           elevation: 0,
           centerTitle: true,
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             fontSize: 24.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,
-          ), // Texto blanco en AppBar
+          ),
           bodyLarge: TextStyle(fontSize: 14.0, color: Color(0xFF333333)),
           bodyMedium: TextStyle(fontSize: 14.0, color: Color(0xFF757575)),
         ),
@@ -45,8 +45,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home:
-          const SplashScreen(), // Ahora la primera pantalla es la Splash Screen
+      home: const SplashScreen(),
     );
   }
 }

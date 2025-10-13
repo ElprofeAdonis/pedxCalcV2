@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mi_app/screens/instrucciones_screen_with_terms.dart'; // La nueva pantalla de instrucciones
+import 'package:mi_app/screens/instrucciones_screen_with_terms.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,8 +12,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Espera un momento y luego navega a la pantalla de Instrucciones
     Future.delayed(const Duration(seconds: 3), () {
+      // ignore: use_build_context_synchronously
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => const InstruccionesScreenWithTerms(),

@@ -11,7 +11,7 @@ class InstruccionesScreenWithTerms extends StatefulWidget {
 
 class _InstruccionesScreenWithTermsState
     extends State<InstruccionesScreenWithTerms> {
-  bool _termsAccepted = false; // Estado para el checkbox
+  bool _termsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,6 @@ class _InstruccionesScreenWithTermsState
                   ),
                 ),
               ),
-              // *** FIN DE LOS CAMBIOS PARA HACER LAS TARJETAS MÁS FINAS ***
             ),
           ),
           Padding(
@@ -88,15 +87,10 @@ class _InstruccionesScreenWithTermsState
             child: Column(
               children: [
                 Center(
-                  // Centra el ConstrainedBox
                   child: ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      maxWidth: 400,
-                    ), // Ancho máximo para el checkbox y texto
-                    // Ajusta este valor para que quede a tu gusto
+                    constraints: const BoxConstraints(maxWidth: 400),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment
-                          .center, // Sigue centrando los elementos dentro del Row
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Checkbox(
                           value: _termsAccepted,
@@ -105,12 +99,21 @@ class _InstruccionesScreenWithTermsState
                               _termsAccepted = newValue!;
                             });
                           },
+                          activeColor: const Color.fromARGB(255, 14, 113, 194),
                         ),
                         Expanded(
-                          // Expanded sigue siendo útil para que el texto se ajuste
                           child: Text(
                             'He leído y acepto los términos y condiciones.',
-                            style: Theme.of(context).textTheme.bodyLarge,
+                            style: Theme.of(context).textTheme.bodyMedium!
+                                .copyWith(
+                                  color: const Color.fromARGB(
+                                    255,
+                                    14,
+                                    113,
+                                    194,
+                                  ),
+                                ),
+
                             overflow: TextOverflow.clip,
                           ),
                         ),
@@ -155,9 +158,6 @@ class _InstruccionesScreenWithTermsState
   }
 }
 
-// Mantén el widget InstructionAccordion sin cambios si sus estilos internos ya te gustan.
-// Si quieres que las líneas del acordeón sean más finas, puedes ajustar el 'elevation' del Card
-// o los 'padding' dentro del ListTile o el Padding del contenido.
 class InstructionAccordion extends StatefulWidget {
   final String title;
   final String content;
@@ -181,10 +181,8 @@ class _InstructionAccordionState extends State<InstructionAccordion> {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.only(bottom: 10.0),
-      elevation: 1, // Reducido de 2 a 1 para un aspecto más "fino"
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      ), // Un poco menos redondeado para más finura
+      elevation: 1,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: Column(
         children: [
           ListTile(
