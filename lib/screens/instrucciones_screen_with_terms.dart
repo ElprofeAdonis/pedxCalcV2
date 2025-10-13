@@ -193,11 +193,15 @@ class _InstructionAccordionState extends State<InstructionAccordion> {
                 fontSize: 13,
                 color: widget.isImportant
                     ? Colors.red.shade700
-                    : Theme.of(context).textTheme.titleMedium!.color,
+                    : const Color.fromARGB(255, 0, 0, 0),
               ),
             ),
             trailing: Icon(
               _isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+              color: widget.isImportant
+                  ? Colors.red.shade700
+                  : const Color.fromARGB(255, 83, 232, 103),
+              size: 32,
             ),
             onTap: () {
               setState(() {
@@ -214,7 +218,7 @@ class _InstructionAccordionState extends State<InstructionAccordion> {
                   fontSize: 13,
                   color: widget.isImportant
                       ? Colors.red.shade900
-                      : Color.fromARGB(255, 14, 113, 194),
+                      : const Color.fromARGB(255, 31, 120, 43),
                 ),
               ),
             ),
