@@ -1,105 +1,179 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 
 class OxygenSaturationScreenJ extends StatelessWidget {
   const OxygenSaturationScreenJ({super.key});
 
-  static const Color infoBoxColor = Color.fromARGB(255, 14, 113, 194);
-  static const TextStyle headerTextStyle = TextStyle(
-    fontWeight: FontWeight.bold,
-    color: Colors.white,
-    fontSize: 16,
-  );
-  static const TextStyle bodyTextStyle = TextStyle(fontSize: 16, height: 1.5);
+  // 🎨 Colores base (igual que tu app)
+  static const Color _primaryBlueDark = Color.fromARGB(255, 14, 113, 194);
+  static const Color _highlightGreen = Color.fromARGB(255, 83, 232, 103);
 
-  static const TextStyle boldBodyTextStyle = TextStyle(
-    fontSize: 16,
-    height: 1.5,
-    fontWeight: FontWeight.bold,
+  static const TextStyle _titleStyle = TextStyle(
+    fontWeight: FontWeight.w900,
+    color: _primaryBlueDark,
+    fontSize: 18,
+  );
+
+  static const TextStyle _bodyStyle = TextStyle(fontSize: 15.5, height: 1.55);
+
+  static const TextStyle _boldBodyStyle = TextStyle(
+    fontSize: 15.5,
+    height: 1.55,
+    fontWeight: FontWeight.w800,
+    color: _primaryBlueDark,
   );
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    final scheme = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Saturación de oxígeno (SpO₂)'),
-        backgroundColor: infoBoxColor,
+        title: Text(t.o2AppBarTitle),
+        backgroundColor: _primaryBlueDark,
+        foregroundColor: Colors.white,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(
-                vertical: 12.0,
-                horizontal: 16.0,
-              ),
-              decoration: const BoxDecoration(
-                color: infoBoxColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(8.0),
-                  topRight: Radius.circular(8.0),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // =======================
+              // ✅ CARD PRINCIPAL
+              // =======================
+              Card(
+                elevation: 1,
+                color: const Color(0xFFF6F3FB),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
                 ),
-              ),
-              child: const Text(
-                'Saturación de oxígeno (SpO₂)',
-                style: headerTextStyle,
-                textAlign: TextAlign.center,
-              ),
-            ),
+                child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Header
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.air,
+                            color: _primaryBlueDark,
+                            size: 22,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(t.o2CardTitle, style: _titleStyle),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Divider(
+                        height: 1,
+                        color: _primaryBlueDark.withAlpha((0.12 * 255).round()),
+                      ),
+                      const SizedBox(height: 12),
 
-            Container(
-              padding: const EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: const Color.fromARGB(255, 83, 232, 103),
-                  width: 1.0,
-                ),
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(8.0),
-                  bottomRight: Radius.circular(8.0),
+                      // Contenido
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(14),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withAlpha((0.75 * 255).round()),
+                          borderRadius: BorderRadius.circular(14),
+                          border: Border.all(
+                            color: _highlightGreen.withAlpha(
+                              (0.55 * 255).round(),
+                            ),
+                            width: 1,
+                          ),
+                        ),
+                        child: RichText(
+                          textAlign: TextAlign.justify,
+                          text: TextSpan(
+                            style: DefaultTextStyle.of(context).style.copyWith(
+                              color: scheme.onSurface.withAlpha(
+                                (0.92 * 255).round(),
+                              ),
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: '${t.o2Paragraph1}\n\n',
+                                style: _bodyStyle,
+                              ),
+                              TextSpan(
+                                text: t.o2Paragraph2Part1,
+                                style: _bodyStyle,
+                              ),
+                              TextSpan(
+                                text: t.o2ThresholdBold,
+                                style: _boldBodyStyle,
+                              ),
+                              TextSpan(
+                                text: t.o2Paragraph2Part2,
+                                style: _bodyStyle,
+                              ),
+                              TextSpan(
+                                text: t.o2RespConditionBold,
+                                style: _boldBodyStyle,
+                              ),
+                              TextSpan(text: t.o2Or, style: _bodyStyle),
+                              TextSpan(
+                                text: t.o2CyanoticHeartBold,
+                                style: _boldBodyStyle,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              child: RichText(
-                textAlign: TextAlign.justify,
-                text: TextSpan(
-                  style: DefaultTextStyle.of(
-                    context,
-                  ).style.copyWith(color: Colors.black),
-                  children: const <TextSpan>[
-                    TextSpan(
-                      text: 'SpO₂ es menor en el período neonatal inmediato.\n',
-                      style: bodyTextStyle,
+
+              const SizedBox(height: 14),
+
+              // =======================
+              // ✅ NOTA EN TARJETA
+              // =======================
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(
+                    color: _primaryBlueDark.withAlpha((0.18 * 255).round()),
+                  ),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(
+                      Icons.info_outline,
+                      color: _highlightGreen,
+                      size: 20,
                     ),
-                    TextSpan(
-                      text: 'Más allá de este período, una SpO₂ de ',
-                      style: bodyTextStyle,
-                    ),
-                    TextSpan(text: '<90-92%', style: boldBodyTextStyle),
-                    TextSpan(text: ' puede sugerir una ', style: bodyTextStyle),
-                    TextSpan(
-                      text: 'condición respiratoria',
-                      style: boldBodyTextStyle,
-                    ),
-                    TextSpan(text: ' o ', style: bodyTextStyle),
-                    TextSpan(
-                      text: 'cardiopatía cianótica.',
-                      style: boldBodyTextStyle,
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        t.o2Note,
+                        style: TextStyle(
+                          fontSize: 13.5,
+                          height: 1.45,
+                          fontStyle: FontStyle.italic,
+                          color: scheme.onSurface.withAlpha(
+                            (0.78 * 255).round(),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'La saturación de oxígeno se considera un signo vital clave para evaluar la oxigenación.',
-              style: TextStyle(
-                fontSize: 14,
-                fontStyle: FontStyle.italic,
-                color: Colors.grey,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

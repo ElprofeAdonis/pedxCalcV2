@@ -3,6 +3,7 @@ import 'package:mi_app/models/paciente.dart';
 import 'package:mi_app/screens/select_medicamento_screen.dart';
 import 'package:mi_app/screens/instrucciones_screen_with_terms.dart';
 import 'package:mi_app/screens/edad_selection_screen.dart';
+import '../l10n/app_localizations.dart';
 
 class PacienteDataScreen extends StatefulWidget {
   final bool isEdadAniosMode;
@@ -30,13 +31,19 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
     }
 
     _edadAniosController.addListener(_calcularPesoEstimado);
+
+    // refrescar UI
+    _pesoController.addListener(_refrescarUI);
+    _edadMesesController.addListener(_refrescarUI);
   }
 
   @override
   void dispose() {
+    _pesoController.removeListener(_refrescarUI);
     _pesoController.dispose();
     _edadAniosController.removeListener(_calcularPesoEstimado);
     _edadAniosController.dispose();
+    _edadMesesController.removeListener(_refrescarUI);
     _edadMesesController.dispose();
     super.dispose();
   }
@@ -52,7 +59,7 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
       }
       setState(() {
         _pesoEstimadoValue = estimado;
-        _pesoEstimadoText = estimado.toStringAsFixed(1) + ' Kg';
+        _pesoEstimadoText = '${estimado.toStringAsFixed(1)} Kg';
       });
     } else {
       setState(() {
@@ -62,15 +69,45 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
     }
   }
 
-  void _calcularDosis() {
+  void _refrescarUI() {
+    if (mounted) setState(() {});
+  }
+
+  bool get _tienePesoValido {
+    final p = double.tryParse(_pesoController.text.trim());
+    return p != null && p > 0;
+  }
+
+  // bool get _tieneEdadAniosValida {
+  //   final e = int.tryParse(_edadAniosController.text.trim());
+  //   return e != null && e >= 1 && e <= 14;
+  // }
+
+  bool get _mostrarPesoEstimadoPrincipal {
+    return widget.isEdadAniosMode &&
+        !_tienePesoValido &&
+        _pesoEstimadoValue != null;
+  }
+
+  String _labelBoton(AppLocalizations t) {
+    if (_tienePesoValido) return t.patientBtnWithEnteredWeight;
+    if (widget.isEdadAniosMode && _pesoEstimadoValue != null) {
+      return t.patientBtnWithEstimatedWeight;
+    }
+    return t.patientBtnCalculateDose;
+  }
+
+  void _calcularDosis(AppLocalizations t) {
     if (_formKey.currentState!.validate()) {
       final double? pesoIngresado = double.tryParse(_pesoController.text);
       final int? edadAnios = int.tryParse(_edadAniosController.text);
       final int? edadMeses = int.tryParse(_edadMesesController.text);
+      final bool usoPesoEstimado =
+          (pesoIngresado == null || pesoIngresado <= 0);
 
       double? pesoFinalParaCalculo;
 
-      if (pesoIngresado != null) {
+      if (pesoIngresado != null && pesoIngresado > 0) {
         pesoFinalParaCalculo = pesoIngresado;
       } else if (widget.isEdadAniosMode && _pesoEstimadoValue != null) {
         pesoFinalParaCalculo = _pesoEstimadoValue;
@@ -87,15 +124,16 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SelectMedicamentoScreen(paciente: paciente),
+            builder: (context) => SelectMedicamentoScreen(
+              paciente: paciente,
+              esPesoEstimado: usoPesoEstimado,
+            ),
           ),
         );
       } else {
-        String errorMessage =
-            'Por favor, ingresa el peso del paciente O la edad en años (para cálculo estimado).';
+        String errorMessage = t.patientSnackNeedWeightOrAge;
         if (!widget.isEdadAniosMode) {
-          errorMessage =
-              'Por favor, ingresa un peso y al menos la edad en años o meses.';
+          errorMessage = t.patientSnackNeedWeightAndAge;
         }
 
         ScaffoldMessenger.of(context).showSnackBar(
@@ -110,8 +148,10 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Datos del Paciente')),
+      appBar: AppBar(title: Text(t.patientAppBarTitleYears)),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
@@ -131,7 +171,7 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          'Ingrese los datos del paciente',
+                          t.patientHeaderTitle,
                           style: Theme.of(context).textTheme.headlineMedium!
                               .copyWith(
                                 color: const Color.fromARGB(255, 14, 113, 194),
@@ -139,13 +179,49 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                               ),
                           textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 30),
+                        const SizedBox(height: 20),
+
+                        // ✅ Bloque "Cómo funciona"
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFEAF3FF),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: const Color.fromARGB(
+                                255,
+                                14,
+                                113,
+                                194,
+                              ).withAlpha((0.25 * 255).round()),
+                            ),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Icon(
+                                Icons.info_outline,
+                                color: Color.fromARGB(255, 14, 113, 194),
+                              ),
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: Text(
+                                  '${t.patientHowItWorks}\n${t.patientHowItWorksBody}',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        const SizedBox(height: 18),
+
                         TextFormField(
                           controller: _pesoController,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
-                            labelText: 'Peso actual (Kg)',
-                            hintText: 'Ej: 22.6',
+                            labelText: t.patientWeightLabel,
+                            hintText: t.patientWeightHint,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
@@ -154,22 +230,17 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide(
-                                color: const Color.fromARGB(
-                                  255,
-                                  14,
-                                  113,
-                                  194,
-                                ), // azul acento
+                              borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 14, 113, 194),
                                 width: 2.0,
                               ),
                             ),
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.scale,
-                              color: const Color.fromARGB(255, 14, 113, 194),
+                              color: Color.fromARGB(255, 14, 113, 194),
                             ),
-                            floatingLabelStyle: TextStyle(
-                              color: const Color.fromARGB(255, 14, 113, 194),
+                            floatingLabelStyle: const TextStyle(
+                              color: Color.fromARGB(255, 14, 113, 194),
                             ),
                           ),
                           validator: (value) {
@@ -179,75 +250,79 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                                   _pesoEstimadoValue! > 0) {
                                 return null;
                               }
-                              return 'Ingrese el peso o una edad válida en años para estimarlo.';
+                              return t.patientValWeightOrValidAgeToEstimate;
                             }
                             if (double.tryParse(value) == null) {
-                              return 'Entrada inválida. Ingrese un número.';
+                              return t.patientValInvalidNumber;
                             }
                             return null;
                           },
                         ),
-                        const SizedBox(height: 20),
+
+                        const SizedBox(height: 10),
+
                         TextFormField(
                           controller: _edadAniosController,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
-                            labelText: 'Edad (Años - 1 a 14 años)',
-                            hintText: 'Ej: 4',
+                            labelText: t.patientAgeYearsLabel,
+                            hintText: t.patientAgeYearsHint,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(
                                 color: Theme.of(context).colorScheme.primary,
                               ),
                             ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
+                            focusedBorder: const OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
                               borderSide: BorderSide(
-                                color: const Color.fromARGB(255, 14, 113, 194),
+                                color: Color.fromARGB(255, 14, 113, 194),
                                 width: 2.0,
                               ),
                             ),
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.cake,
-                              color: const Color.fromARGB(255, 14, 113, 194),
+                              color: Color.fromARGB(255, 14, 113, 194),
                             ),
-                            floatingLabelStyle: TextStyle(
-                              color: const Color.fromARGB(255, 14, 113, 194),
+                            floatingLabelStyle: const TextStyle(
+                              color: Color.fromARGB(255, 14, 113, 194),
                             ),
                           ),
-
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               if ((!widget.isEdadAniosMode &&
                                       _edadMesesController.text.isEmpty) ||
                                   (widget.isEdadAniosMode &&
                                       _pesoController.text.isEmpty)) {
-                                return 'Ingrese edad en años o meses (o peso si aplica).';
+                                return t.patientValEnterAgeYears;
                               }
                               return null;
                             }
                             if (int.tryParse(value) == null) {
-                              return 'Entrada inválida. Ingrese un número entero.';
+                              return t.patientValInvalidNumber;
                             }
                             final int? edad = int.tryParse(value);
                             if (edad != null && (edad < 1 || edad > 14)) {
-                              return 'La edad debe ser entre 1 y 14 años.';
+                              return t.patientValAgeRangeYears;
                             }
                             return null;
                           },
                         ),
-                        const SizedBox(height: 20),
+
+                        const SizedBox(height: 1),
 
                         if (!widget.isEdadAniosMode)
                           TextFormField(
                             controller: _edadMesesController,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
-                              labelText: 'Edad (Meses - si < 1 año)',
-                              hintText: 'Ej: 6',
+                              labelText: t.patientAgeMonthsLabel,
+                              hintText: t.patientAgeMonthsHint,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color.fromARGB(255, 14, 113, 194),
                                 ),
                               ),
@@ -262,10 +337,8 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                               ),
                               prefixIcon: Icon(
                                 Icons.calendar_month,
-                                color: Theme.of(
-                                  context,
-                                  // ignore: deprecated_member_use
-                                ).colorScheme.onSurface.withOpacity(0.7),
+                                color: Theme.of(context).colorScheme.onSurface
+                                    .withAlpha((0.7 * 255).round()),
                               ),
                               floatingLabelStyle: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
@@ -275,21 +348,21 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                               if (!widget.isEdadAniosMode &&
                                   _edadAniosController.text.isEmpty) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Ingrese edad en años o meses.';
+                                  return t.patientValEnterAgeYears;
                                 }
                                 if (int.tryParse(value) == null) {
-                                  return 'Entrada inválida. Ingrese un número.';
+                                  return t.patientValInvalidNumber;
                                 }
                                 final int? edad = int.tryParse(value);
                                 if (edad != null && (edad < 1 || edad > 11)) {
-                                  return 'La edad en meses debe ser entre 1 y 11.';
+                                  return t.patientValAgeMonthsRange;
                                 }
                               }
                               return null;
                             },
                           ),
 
-                        if (widget.isEdadAniosMode)
+                        if (_mostrarPesoEstimadoPrincipal)
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -299,12 +372,16 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                                   style: Theme.of(
                                     context,
                                   ).textTheme.titleMedium,
-                                  children: <TextSpan>[
-                                    const TextSpan(
-                                      text: 'Peso estimado según edad: ',
+                                  children: [
+                                    TextSpan(
+                                      text: '${t.patientEstimatedWeightLabel} ',
+                                      style: const TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                     TextSpan(
-                                      text: _pesoEstimadoText,
+                                      text:
+                                          '${_pesoEstimadoValue!.toStringAsFixed(1)} Kg',
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleMedium!
@@ -323,18 +400,26 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                               ),
                             ],
                           ),
+
+                        const SizedBox(height: 10),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: _pesoSourceChip(context, t),
+                        ),
                         const SizedBox(height: 30),
                       ],
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 24),
+
                 ElevatedButton.icon(
-                  onPressed: _calcularDosis,
+                  onPressed: () => _calcularDosis(t),
                   icon: const Icon(Icons.arrow_forward),
-                  label: const Text(
-                    'Calcular Dosis',
-                    style: TextStyle(fontSize: 18),
+                  label: Text(
+                    _labelBoton(t),
+                    style: const TextStyle(fontSize: 18),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 83, 232, 103),
@@ -353,18 +438,19 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
           ),
         ),
       ),
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         onTap: (index) {
           if (index == 0) {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) => const EdadSelectionScreen(),
               ),
             );
           } else if (index == 1) {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) => const InstruccionesScreenWithTerms(),
@@ -373,12 +459,9 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
           }
         },
         items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Paciente'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Edad - Paciente',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.info),
+            icon: Icon(Icons.info_outline),
             label: 'Instrucciones',
           ),
         ],
@@ -387,6 +470,40 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
         unselectedItemColor: const Color.fromARGB(255, 14, 113, 194),
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
+        unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
+      ),
+    );
+  }
+
+  Widget _pesoSourceChip(BuildContext context, AppLocalizations t) {
+    final bool usaPesoReal = _tienePesoValido;
+    final bool usaEstimado =
+        widget.isEdadAniosMode && !usaPesoReal && _pesoEstimadoValue != null;
+
+    if (!usaPesoReal && !usaEstimado) return const SizedBox.shrink();
+
+    if (usaPesoReal) {
+      return Chip(
+        label: Text(t.patientChipRealWeight),
+        visualDensity: VisualDensity.compact,
+        backgroundColor: const Color(0xFFE9F7EF),
+        side: const BorderSide(color: Color(0xFFB7E4C7)),
+        labelStyle: const TextStyle(
+          color: Color(0xFF1B5E20),
+          fontWeight: FontWeight.w600,
+        ),
+      );
+    }
+
+    return Chip(
+      label: Text(t.patientChipEstimated),
+      visualDensity: VisualDensity.compact,
+      backgroundColor: const Color(0xFFFFF7E6),
+      side: const BorderSide(color: Color(0xFFFFE0B2)),
+      labelStyle: const TextStyle(
+        color: Color(0xFF8A6D1D),
+        fontWeight: FontWeight.w600,
       ),
     );
   }

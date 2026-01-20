@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mi_app/screens/edad_selection_screen.dart';
+import 'package:mi_app/screens/about_screen.dart';
+import '../l10n/app_localizations.dart';
+import 'package:mi_app/main.dart'; // para usar localeController
+
+enum _TermsMenu { about, language }
 
 class InstruccionesScreenWithTerms extends StatefulWidget {
   const InstruccionesScreenWithTerms({super.key});
@@ -12,11 +17,118 @@ class InstruccionesScreenWithTerms extends StatefulWidget {
 class _InstruccionesScreenWithTermsState
     extends State<InstruccionesScreenWithTerms> {
   bool _termsAccepted = false;
+  static const _primaryBlue = Color.fromARGB(255, 14, 113, 194);
+
+  void _showLanguageDialog() {
+    final t = AppLocalizations.of(context);
+
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (ctx) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 420),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 12),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    // puedes traducir esto también si quieres
+                    'Seleccionar idioma',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  const Divider(),
+
+                  ListTile(
+                    leading: const Icon(Icons.language),
+                    title: const Text('Español'),
+                    onTap: () {
+                      // ✅ Cambia a Español
+                      AppLocaleController.set(const Locale('es'));
+                      Navigator.pop(ctx);
+                    },
+                  ),
+
+                  ListTile(
+                    leading: const Icon(Icons.language_outlined),
+                    title: const Text('English'),
+                    onTap: () {
+                      // ✅ Cambia a Inglés
+                      AppLocaleController.set(const Locale('en'));
+                      Navigator.pop(ctx);
+                    },
+                  ),
+
+                  const SizedBox(height: 6),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  AppBar _buildAppBar() {
+    final t = AppLocalizations.of(context);
+
+    return AppBar(
+      title: Text(t.termsTitle),
+      actions: [
+        PopupMenuButton<_TermsMenu>(
+          icon: const Icon(Icons.more_vert),
+          onSelected: (value) {
+            switch (value) {
+              case _TermsMenu.about:
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const AboutScreen()),
+                );
+                break;
+
+              case _TermsMenu.language:
+                _showLanguageDialog();
+                break;
+            }
+          },
+          itemBuilder: (context) => [
+            PopupMenuItem(
+              value: _TermsMenu.about,
+              child: ListTile(
+                dense: true,
+                leading: const Icon(Icons.info_outline),
+                title: Text(t.menuAbout),
+              ),
+            ),
+            PopupMenuItem(
+              value: _TermsMenu.language,
+              child: ListTile(
+                dense: true,
+                leading: const Icon(Icons.language),
+                title: Text(t.menuLanguage),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Instrucciones y Términos')),
+      appBar: _buildAppBar(),
       body: Column(
         children: [
           Expanded(
@@ -27,53 +139,68 @@ class _InstruccionesScreenWithTermsState
                   constraints: const BoxConstraints(maxWidth: 600),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Resumen rápido
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        margin: const EdgeInsets.only(bottom: 14),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFEAF3FF),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: _primaryBlue.withAlpha((0.25 * 255).round()),
+                          ),
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Icon(Icons.info_outline, color: _primaryBlue),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Text(
+                                '${t.quickSummaryTitle}\n${t.quickSummaryBody}',
+                                style: Theme.of(context).textTheme.bodyMedium,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
 
-                    children: const [
                       InstructionAccordion(
-                        title: '1. Contenido de la tabla',
-                        content:
-                            'La siguiente tabla contiene información sobre medicación de más frecuente uso en emergencias.',
+                        title: t.accordion1Title,
+                        content: t.accordion1Body,
                       ),
                       InstructionAccordion(
-                        title: '2. Aplicabilidad a niños',
-                        content:
-                            'Es aplicable a niños mayores a un mes de edad.',
+                        title: t.accordion2Title,
+                        content: t.accordion2Body,
                       ),
                       InstructionAccordion(
-                        title: '3. Determinación de Peso/Edad',
-                        content:
-                            'Se debe ingresar: EDAD en AÑOS y PESO en KILOGRAMOS... En caso de peso desconocido, se pone solo la edad, y en la columna de la derecha se calcula automáticamente el peso según la edad, una vez realizado es cálculo se DEBE poner MANUALMENTE este peso calculado en la casilla de peso del paciente, para que se puedan realizar los cálculos de los medicamentos.',
+                        title: t.accordion3Title,
+                        content: t.accordion3Body,
                       ),
                       InstructionAccordion(
-                        title: '4. Volumen de las soluciones de mantenimiento',
-                        content:
-                            'En el cálculo del volumen de las soluciones de mantenimiento se puede variar el PORCENTAJE de requerimientos al cual se desea la solución.',
+                        title: t.accordion4Title,
+                        content: t.accordion4Body,
                       ),
                       InstructionAccordion(
-                        title: '5. Cálculos automáticos',
-                        content:
-                            'Todas las dosis están calculadas de forma automática con el peso o la edad de paciente (tamaño de TET).',
+                        title: t.accordion5Title,
+                        content: t.accordion5Body,
                       ),
                       InstructionAccordion(
-                        title: '6. Verificación de rangos',
-                        content:
-                            'Aquellas dosis que tienen rangos han sido calculadas a un solo número preferido que puede ser verificado en la fórmula de medicamento.',
+                        title: t.accordion6Title,
+                        content: t.accordion6Body,
                       ),
                       InstructionAccordion(
-                        title:
-                            '7. Requerimientos de cálculo de dosis diferentes',
-                        content:
-                            'En caso de requerir cálculos a dosis diferentes a la propuesta se debe de hacer manual la propuesta ya que esta tabla NO es modificable.',
+                        title: t.accordion7Title,
+                        content: t.accordion7Body,
                       ),
                       InstructionAccordion(
-                        title: '8. Cálculo del tamaño del CAF (XS, S, etc.)',
-                        content:
-                            'El cálculo del tamaño del CAF (XS, S, etc.) se realiza mediante el peso del paciente y a la derecha de las tablas aparecerá un Check en aquellas sugeridas para ese paciente, en caso de que el tamaño del CAF NO sea apropiado para el paciente, el espacio queda en blanco.',
+                        title: t.accordion8Title,
+                        content: t.accordion8Body,
                       ),
                       InstructionAccordion(
-                        title: '9. Responsabilidad del Usuario',
-                        content:
-                            'EL USO DE ESTA TABLA ES RESPONSABILIDAD COMPLETA E INDIVIDUAL DE QUIEN LA UTILICE. NO EXIME EL DEBER TÉCNICO DE CORROBORAR LOS DATOS CON UN LIBRO DE TEXTO ACTUALIZADO Y CORRECTO PREVIA LA ADMINISTRACIÓN DE MEDICAMENTOS.',
+                        title: t.accordion9Title,
+                        content: t.accordion9Body,
                         isImportant: true,
                       ),
                     ],
@@ -82,77 +209,133 @@ class _InstruccionesScreenWithTermsState
               ),
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.all(24.0),
-            child: Column(
-              children: [
-                Center(
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 400),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Checkbox(
-                          value: _termsAccepted,
-                          onChanged: (bool? newValue) {
-                            setState(() {
-                              _termsAccepted = newValue!;
-                            });
-                          },
-                          activeColor: const Color.fromARGB(255, 14, 113, 194),
-                        ),
-                        Expanded(
-                          child: Text(
-                            'He leído y acepto los términos y condiciones.',
-                            style: Theme.of(context).textTheme.bodyMedium!
-                                .copyWith(
-                                  color: const Color.fromARGB(
-                                    255,
-                                    14,
-                                    113,
-                                    194,
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 600),
+                child: Column(
+                  children: [
+                    CheckboxListTile(
+                      value: _termsAccepted,
+                      onChanged: (v) =>
+                          setState(() => _termsAccepted = v ?? false),
+                      activeColor: _primaryBlue,
+                      title: Text(
+                        t.termsAccept,
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyMedium!.copyWith(color: _primaryBlue),
+                      ),
+                      controlAffinity: ListTileControlAffinity.leading,
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                    const SizedBox(height: 16),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: _termsAccepted
+                            ? () {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const EdadSelectionScreen(),
                                   ),
-                                ),
-
-                            overflow: TextOverflow.clip,
+                                );
+                              }
+                            : null,
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 50,
+                            vertical: 15,
                           ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          backgroundColor: _primaryBlue,
+                          foregroundColor: Colors.white,
+                          disabledBackgroundColor: _primaryBlue.withAlpha(
+                            (0.35 * 255).round(),
+                          ),
+                          disabledForegroundColor: Colors.white70,
                         ),
-                      ],
+                        child: Text(
+                          t.btnContinue,
+                          style: const TextStyle(fontSize: 18),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: _termsAccepted
-                      ? () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const EdadSelectionScreen(),
-                            ),
-                          );
-                        }
-                      : null,
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 50,
-                      vertical: 15,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    backgroundColor: Theme.of(context).primaryColor,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: const Text(
-                    'Continuar',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _LanguageTile extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
+
+  const _LanguageTile({
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+  });
+
+  static const Color _primaryBlue = Color.fromARGB(255, 14, 113, 194);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+          decoration: BoxDecoration(
+            color: Colors.white.withAlpha((0.70 * 255).round()),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: _primaryBlue.withAlpha((0.15 * 255).round()),
+            ),
+          ),
+          child: Row(
+            children: [
+              const Icon(Icons.language, color: _primaryBlue),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      subtitle,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right, color: Colors.black38),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -176,13 +359,14 @@ class InstructionAccordion extends StatefulWidget {
 
 class _InstructionAccordionState extends State<InstructionAccordion> {
   bool _isExpanded = false;
+  static const _primaryBlue = Color.fromARGB(255, 14, 113, 194);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.only(bottom: 10.0),
       elevation: 1,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Column(
         children: [
           ListTile(
@@ -191,36 +375,43 @@ class _InstructionAccordionState extends State<InstructionAccordion> {
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: 13,
-                color: widget.isImportant
-                    ? Colors.red.shade700
-                    : const Color.fromARGB(255, 0, 0, 0),
+                color: widget.isImportant ? Colors.red.shade700 : Colors.black,
               ),
             ),
             trailing: Icon(
               _isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
-              color: widget.isImportant
-                  ? Colors.red.shade700
-                  : const Color.fromARGB(255, 83, 232, 103),
+              color: widget.isImportant ? Colors.red.shade700 : _primaryBlue,
               size: 32,
             ),
-            onTap: () {
-              setState(() {
-                _isExpanded = !_isExpanded;
-              });
-            },
+            onTap: () => setState(() => _isExpanded = !_isExpanded),
           ),
           if (_isExpanded)
             Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-              child: Text(
-                widget.content,
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontSize: 13,
-                  color: widget.isImportant
-                      ? Colors.red.shade900
-                      : const Color.fromARGB(255, 31, 120, 43),
-                ),
-              ),
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              child: widget.isImportant
+                  ? Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFFEBEE),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.red.shade200),
+                      ),
+                      child: Text(
+                        widget.content,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontSize: 13,
+                          color: Colors.red.shade900,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  : Text(
+                      widget.content,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontSize: 13,
+                        color: Colors.black.withAlpha((0.75 * 255).round()),
+                      ),
+                    ),
             ),
         ],
       ),

@@ -3,6 +3,7 @@ import 'package:mi_app/models/medicamento.dart';
 final List<Medicamento> allMedicamentos = [
   // --- Electrolitos ---
   Medicamento(
+    id: '',
     nombre: 'Gluconato de calcio 10%',
     categoria: 'Electrolitos',
     subcategoria:
@@ -14,6 +15,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Salbutamol nebulizado',
     categoria: 'Electrolitos',
     subcategoria:
@@ -23,6 +25,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Cloruro de calcio 10%',
     categoria: 'Electrolitos',
     subcategoria:
@@ -34,6 +37,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Bicarbonato de sodio 1M',
     categoria: 'Electrolitos',
     subcategoria:
@@ -45,6 +49,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Solución glucosada al 10%',
     categoria: 'Electrolitos',
     subcategoria:
@@ -54,6 +59,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Insulina simple',
     categoria: 'Electrolitos',
     subcategoria:
@@ -65,6 +71,7 @@ final List<Medicamento> allMedicamentos = [
   ),
   // --- Calcio de mantenimiento ---
   Medicamento(
+    id: '',
     nombre: 'Gluconato de calcio 10%',
     categoria: 'Calcio de mantenimiento',
     observaciones: '0,5cc/kg IV STAT pasar lento vía periférica',
@@ -76,6 +83,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Anafilaxia ---
   Medicamento(
+    id: '',
     nombre: 'Adrenalina IV',
     categoria: 'Anafilaxia',
     observaciones: 'Solución 1:1000  (sin diluir)',
@@ -85,6 +93,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Adrenalina IM',
     categoria: 'Anafilaxia',
     observaciones: ' 1:1000',
@@ -93,6 +102,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Adrenalina IM.',
     categoria: 'Anafilaxia',
     observaciones: ' 1:1000',
@@ -102,6 +112,7 @@ final List<Medicamento> allMedicamentos = [
   ),
   // --- Bradiarritmias ---
   Medicamento(
+    id: '',
     nombre: 'Adrenalina IV',
     categoria: 'Bradiarritmias',
     observaciones: 'Máximo 10 ml',
@@ -111,6 +122,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Atropina',
     categoria: 'Bradiarritmias',
     observaciones: 'Máximo 10 ml',
@@ -122,6 +134,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Analgesia ---
   Medicamento(
+    id: '',
     nombre: 'Morfina.',
     categoria: 'Analgesia',
     observaciones: 'Puede repetir la misma dosis una vez.',
@@ -131,6 +144,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Fentanilo.',
     categoria: 'Analgesia',
     observaciones: 'Puede repetir la misma dosis una vez. (por 50 o por 100?)',
@@ -140,6 +154,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Ketamina',
     categoria: 'Analgesia',
     observaciones: 'Puede repetir la misma dosis una vez. ',
@@ -150,6 +165,7 @@ final List<Medicamento> allMedicamentos = [
   ),
   // --- ANTIBIÓTICOS ---
   Medicamento(
+    id: '',
     nombre: 'Ampicilina',
     categoria: 'Antibióticos',
     observaciones: 'Máximo: 3 gr/dosis, cada 6 h',
@@ -158,6 +174,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Cefotaxima',
     categoria: 'Antibióticos',
     observaciones: 'Máximo: 2-4 gr/dosis, cada 6 h',
@@ -166,6 +183,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Ceftazidime',
     categoria: 'Antibióticos',
     observaciones: 'Máximo: 6g/dia, cada 8 h',
@@ -174,6 +192,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Meropenem',
     categoria: 'Antibióticos',
     observaciones: 'Máximo: 1 gr /dosis, cada 8 h',
@@ -182,6 +201,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Vancomicina',
     categoria: 'Antibióticos',
     observaciones: 'Máximo: 500mg/dosis, cada 6 h',
@@ -190,6 +210,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Aciclovir',
     categoria: 'Antibióticos',
     observaciones: 'Máximo: 1 gr, cada 8 h',
@@ -198,6 +219,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Ceftriaxona',
     categoria: 'Antibióticos',
     observaciones: 'Maximo: 4g/dia, cada 24 h',
@@ -206,6 +228,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Pipe-tazo',
     categoria: 'Antibióticos',
     observaciones:
@@ -215,6 +238,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Amoxi-clav',
     categoria: 'Antibióticos',
     observaciones:
@@ -224,6 +248,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Amikacina',
     categoria: 'Antibióticos',
     observaciones: 'Maximo: 1.5 g/dia, cada 8 h',
@@ -232,6 +257,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Clindamicina',
     categoria: 'Antibióticos',
     observaciones: 'Maximo: 1.8 g/dia, cada 8 h',
@@ -242,6 +268,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Bronquiolitis / Laringitis/Croup ---
   Medicamento(
+    id: '',
     nombre: 'Adrenalina nebulizada',
     categoria: 'Bronquiolitis / Laringitis/Croup',
     subcategoria: 'Medicación específica según enfermedades',
@@ -252,6 +279,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Budesonida nebulizada',
     categoria: 'Bronquiolitis / Laringitis/Croup',
     subcategoria: 'Medicación específica según enfermedades',
@@ -261,6 +289,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Dexametasona IV',
     categoria: 'Bronquiolitis / Laringitis/Croup',
     subcategoria: 'Medicación específica según enfermedades',
@@ -272,30 +301,35 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Broncoespasmo/Asma ---
   Medicamento(
+    id: '',
     nombre: 'Salbutamol neb 1-5 años',
     categoria: 'Broncoespasmo/Asma',
     dosisMl: 0.0,
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Salbutamol neb > 5 años',
     categoria: 'Broncoespasmo/Asma',
     dosisMl: 0.0,
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Atrovent neb 1-5 años',
     categoria: 'Broncoespasmo/Asma',
     dosisMl: 0.0,
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Atrovent neb > 5 años',
     categoria: 'Broncoespasmo/Asma',
     dosisMl: 0.0,
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Dexametazona',
     categoria: 'Broncoespasmo/Asma',
     observaciones: 'cada 6 hrs x 24 hrs',
@@ -304,6 +338,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Hidrocortisona IV',
     categoria: 'Broncoespasmo/Asma',
     observaciones:
@@ -313,6 +348,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Metilprednisolona',
     categoria: 'Broncoespasmo/Asma',
     observaciones:
@@ -322,6 +358,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Sulf magnesio IV bolus',
     categoria: 'Broncoespasmo/Asma',
     observaciones:
@@ -331,12 +368,14 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Ipratropium neb 1 - 5 años',
     categoria: 'Broncoespasmo/Asma',
     dosisMl: 0.0,
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Ipratropium neb > 5 años',
     categoria: 'Broncoespasmo/Asma',
     dosisMl: 0.0,
@@ -345,6 +384,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- DESFIBRILACION -> ---
   Medicamento(
+    id: '',
     nombre: 'Primera descarga eléctrica',
     categoria: 'Desfibrilación',
     observaciones: '2 J/kg',
@@ -353,6 +393,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Segunda descarga eléctrica',
     categoria: 'Desfibrilación',
     observaciones: '2 J/kg',
@@ -361,6 +402,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Descarga máxima',
     categoria: 'Desfibrilación',
     observaciones: '10 J/kg',
@@ -371,6 +413,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Endocrino / Renal ---
   Medicamento(
+    id: '',
     nombre: 'Insulina simple',
     categoria: 'Endocrino / Renal',
     observaciones: 'RANG: 0,05 - 0,1 UI/kg/h',
@@ -379,6 +422,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Furosemida',
     categoria: 'Endocrino / Renal',
     observaciones: '0,5-1 mg/kg/dosis',
@@ -388,6 +432,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Fiebre ---
   Medicamento(
+    id: '',
     nombre: 'Paracetamol oral IV',
     categoria: 'Fiebre',
     observaciones: 'c/6 horas',
@@ -397,6 +442,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Metamizol IV',
     categoria: 'Fiebre',
     observaciones: 'c/8 horas',
@@ -406,6 +452,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Ibuprofeno VO',
     categoria: 'Fiebre',
     observaciones: 'c/8 horas',
@@ -417,6 +464,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Hipocalcemia severa, Hipermagnesemia ó Intoxicación con bloqueadores de los canales de calcio' ---
   Medicamento(
+    id: '',
     nombre: 'Gluconato de calcio 10%',
     categoria:
         'Hipocalcemia severa, Hipermagnesemia ó Intoxicación con bloqueadores de los canales de calcio',
@@ -427,6 +475,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Cloruro de calcio 10%',
     categoria:
         'Hipocalcemia severa, Hipermagnesemia ó Intoxicación con bloqueadores de los canales de calcio',
@@ -439,6 +488,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Hipoglicemia ---
   Medicamento(
+    id: '',
     nombre: 'Solución glucosada al 10%',
     categoria: 'Hipoglicemia',
     subcategoria: 'Glicemia <60mg/dl)',
@@ -450,6 +500,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Hemorragia severa intratable  ---
   Medicamento(
+    id: '',
     nombre: 'Ácido tranexámico',
     categoria: 'Hemorragia severa intratable',
     observaciones: 'Fluidos tibios',
@@ -459,6 +510,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'GRE/PFC',
     categoria: 'Hemorragia severa intratable',
     observaciones: 'Fluidos tibios',
@@ -467,6 +519,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Plaquetas',
     categoria: 'Hemorragia severa intratable',
     observaciones: 'Fluidos tibios',
@@ -474,6 +527,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Crioprecipitados',
     categoria: 'Hemorragia severa intratable',
     observaciones: 'Fluidos tibios',
@@ -483,6 +537,7 @@ final List<Medicamento> allMedicamentos = [
   // --- HIPERTENSION INTRACRANEAL  ---
   // --- Hipertension intracraneal  ---
   Medicamento(
+    id: '',
     nombre: 'Solución hipertónica',
     categoria: 'Hipertension intracraneal',
     observaciones: 'Vigilar aumento de FC',
@@ -492,6 +547,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Manitol',
     categoria: 'Hipertension intracraneal',
     observaciones: 'Vigilar aumento de FC',
@@ -503,6 +559,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Hiponatremia aguda sintomatica (convulsiones)  ---
   Medicamento(
+    id: '',
     nombre: 'Solución hipertónica.',
     categoria: 'Hiponatremia aguda sintomatica (convulsiones)',
     observaciones: 'Vigilar cese de convulsión',
@@ -514,6 +571,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Infusiones ---
   Medicamento(
+    id: '',
     nombre: 'Morfina',
     categoria: 'Infusiones - Sedación',
     subcategoria:
@@ -525,6 +583,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Midazolam',
     categoria: 'Infusiones - Sedación',
     subcategoria:
@@ -536,6 +595,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Fentanilo',
     categoria: 'Infusiones - Sedación',
     subcategoria:
@@ -549,6 +609,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Inotrópicos ---
   Medicamento(
+    id: '',
     nombre: 'Adrenalina / Noradrenalina',
     categoria: 'Inotrópicos',
     subcategoria:
@@ -559,6 +620,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Dopamina / Dobutamina',
     categoria: 'Inotrópicos',
     subcategoria:
@@ -572,12 +634,14 @@ final List<Medicamento> allMedicamentos = [
   // --- Líquidos endovenosos ---
   //falta estos dos
   Medicamento(
+    id: '',
     nombre: 'Sol glucosada mayor 1 mes edad',
     categoria: 'Líquidos endovenosos',
     rangoDosisOriginal: '(0.5-1g/kg/dosis)',
     dosisActualMG: 'Usar SG 25% ',
   ),
   Medicamento(
+    id: '',
     nombre: 'SG 25%',
     categoria: 'Líquidos endovenosos',
     rangoDosisOriginal: '(2-4 mL/kg/dosis)',
@@ -586,6 +650,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Parálisis muscular ---
   Medicamento(
+    id: '',
     nombre: 'Rocuronio IV',
     categoria: 'Parálisis muscular',
     observaciones: 'Efecto por 30min.',
@@ -595,6 +660,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Pancuronio',
     categoria: 'Parálisis muscular',
     observaciones: 'Efecto por 40min.',
@@ -604,6 +670,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Succinilcolina',
     categoria: 'Parálisis muscular',
     observaciones: 'Efecto de minutos.',
@@ -613,6 +680,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Atracurio',
     categoria: 'Parálisis muscular',
     observaciones: 'Efecto por 20 min.',
@@ -624,6 +692,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Paro cardiaco ---
   Medicamento(
+    id: '',
     nombre: 'Adrenalina IV',
     categoria: 'Paro cardiaco',
     observaciones: 'Máximo 10 ml',
@@ -633,6 +702,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Adrenalina ET',
     categoria: 'Paro cardiaco',
     observaciones: 'Máximo 10 ml',
@@ -642,6 +712,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Bicarbonato de sodio 1M',
     categoria: 'Paro cardiaco',
     observaciones: 'Máximo 100 ml diluido',
@@ -651,6 +722,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Sulfato de magnesio',
     categoria: 'Paro cardiaco',
     observaciones: 'Máximo 2 g',
@@ -660,6 +732,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Amiodarona',
     categoria: 'Paro cardiaco',
     observaciones: 'Máximo 300 mg',
@@ -670,6 +743,7 @@ final List<Medicamento> allMedicamentos = [
   ),
   // --- Revertir ---
   Medicamento(
+    id: '',
     nombre: 'Flumazenilo IV',
     categoria: 'Revertir',
     observaciones: 'MÁX 0,25 cada 1 min (5 dosis o BIC a 5 microg/kg/h)',
@@ -679,6 +753,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Naloxona',
     categoria: 'Revertir',
     observaciones: 'MÁX 0,4 mg / 2 mins (4 dosis)',
@@ -689,6 +764,7 @@ final List<Medicamento> allMedicamentos = [
   ),
   // --- Resposición de potasio ---
   Medicamento(
+    id: '',
     nombre: 'Volumen de SF',
     categoria: 'Resposición de potasio',
     subcategoria: '(K<2,5mEq/l)',
@@ -702,6 +778,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Midazolam IV ---ß
   Medicamento(
+    id: '',
     nombre: 'Midazolam IV',
     categoria: 'Sedación y amnesia',
     subcategoria: 'Secuencia rapida de intubación',
@@ -713,6 +790,7 @@ final List<Medicamento> allMedicamentos = [
   ),
   // --- SHOCK ---
   Medicamento(
+    id: '',
     nombre: 'Solución fisiológica',
     categoria: 'Shock',
     observaciones: 'Considerar inotrópicos',
@@ -724,6 +802,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Status epileptico ---
   Medicamento(
+    id: '',
     nombre: 'Diazepam IV',
     categoria: 'Status epileptico',
     observaciones: 'Máximo 2ml',
@@ -733,6 +812,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Diazepam VR',
     categoria: 'Status epileptico',
     observaciones: 'Máximo 2ml',
@@ -742,6 +822,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Midazolam IV o IM',
     categoria: 'Status epileptico',
     observaciones: 'Máximo 2ml',
@@ -751,6 +832,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Midazolam IN',
     categoria: 'Status epileptico',
     observaciones: 'Máximo 2ml',
@@ -760,6 +842,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Fenitoína IV',
     categoria: 'Status epileptico',
     observaciones: 'Diluir en SF, nunca en glucosado',
@@ -769,6 +852,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Fenobarbital',
     categoria: 'Status epileptico',
     observaciones: 'Diluir en SF, nunca en glucosado',
@@ -779,6 +863,7 @@ final List<Medicamento> allMedicamentos = [
   ),
   // --- SNC  (crisis convulsivas) ---
   Medicamento(
+    id: '',
     nombre: 'Diazepam IV.',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones: 'MAX 10 mg (menores de 5 años: 0.5 mg/kg/dosis máximo 5 mg',
@@ -787,6 +872,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Valproato IV',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones: 'Max 1 gr una sola dosis',
@@ -795,6 +881,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Fenitoína IV.',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones:
@@ -804,6 +891,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Clonazepam VO',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones: '>10 años cada 8-12 hrs, aumentar cada 2 días',
@@ -812,6 +900,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Tiopental',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones: 'Max: 500 mgr',
@@ -820,6 +909,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Levetirazetam',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones: 'Max: 4.5 gr',
@@ -828,6 +918,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Sol hipertónica 3%',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones: 'Sol fisiológica 455mL + 45 mL de NaCl al 4 molar',
@@ -836,6 +927,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Fenobarbital.',
     categoria: 'SNC  (crisis convulsivas)',
     rangoDosisOriginal: '(20mg/kg/dosis carga)',
@@ -843,6 +935,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Paracetamol',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones: 'Oral, IV o rectal',
@@ -851,6 +944,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Midazolam IV.',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones: 'Mayor de 3 años: 5mg/kg/dosis',
@@ -859,6 +953,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Metamizol IV.',
     categoria: 'SNC  (crisis convulsivas)',
     observaciones: 'Max: 1 gr por dosis max: 4 gr por día',
@@ -869,6 +964,7 @@ final List<Medicamento> allMedicamentos = [
 
   // --- Taquicardia supraventrivular ---
   Medicamento(
+    id: '',
     nombre: 'Adenosina primera',
     categoria: 'Taquicardia supraventrivular',
     observaciones: 'Máximo 2ml',
@@ -878,6 +974,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Adenosina segunda',
     categoria: 'Taquicardia supraventrivular',
     observaciones: 'Máximo 4ml',
@@ -887,6 +984,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Adenosina tercera',
     categoria: 'Taquicardia supraventrivular',
     observaciones: 'Máximo 4ml',
@@ -896,6 +994,7 @@ final List<Medicamento> allMedicamentos = [
     dosisJulios: null,
   ),
   Medicamento(
+    id: '',
     nombre: 'Amiodarona',
     categoria: 'Taquicardia supraventrivular',
     observaciones: 'Máximo 300mg',
@@ -906,18 +1005,21 @@ final List<Medicamento> allMedicamentos = [
   ),
   // --- Vías centrales y drenajes pleurales ---
   Medicamento(
+    id: '',
     nombre: 'Catéter femoral:',
     categoria: 'Vías centrales y drenajes pleurales',
     dosisActualMG: '2-6a: 5-5,5F -------30cm',
     observaciones: '>7a: 7F ------30-50cm',
   ),
   Medicamento(
+    id: '',
     nombre: 'Catéter yugular:',
     categoria: 'Vías centrales y drenajes pleurales',
     dosisActualMG: '2-6 a: 5-5.5 F------8-3-15 cm',
     observaciones: '>7a: 7F-------15-20 cm',
   ),
   Medicamento(
+    id: '',
     nombre: 'Catéter para drenaje pleural:',
     categoria: 'Vías centrales y drenajes pleurales',
     dosisActualMG: 'Pre-escolar 8-20F',

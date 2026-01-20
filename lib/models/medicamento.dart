@@ -1,4 +1,5 @@
 class Medicamento {
+  final String id;
   final String nombre;
   final String categoria;
   final String? subcategoria;
@@ -24,6 +25,7 @@ class Medicamento {
   String? dosisFinalJulios; // Si aplica para descargas eléctricas
 
   Medicamento({
+    required this.id,
     required this.nombre,
     required this.categoria,
     this.Infusion = '',

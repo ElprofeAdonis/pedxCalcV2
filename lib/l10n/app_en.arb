@@ -1,0 +1,1002 @@
+{
+  "@@locale": "en",
+  "termsTitle": "Instructions & Terms",
+  "menuAbout": "About",
+  "menuLanguage": "Languages",
+  "languageTitle": "Select language",
+  "languageSpanish": "Spanish",
+  "languageEnglish": "English",
+  "quickSummaryTitle": "Quick summary:",
+  "quickSummaryBody": "• Real weight is recommended when available.\n• If no weight is available, the app estimates weight by age automatically.\n• Always verify doses with your local protocol/guideline before administering.",
+  "termsAccept": "I have read and accept the terms and conditions.",
+  "btnContinue": "Continue",
+  "accordion1Title": "1. Table content",
+  "accordion1Body": "This table contains information about commonly used emergency medications.",
+  "accordion2Title": "2. Applicability to children",
+  "accordion2Body": "Applicable to children older than one month.",
+  "accordion3Title": "3. Weight/Age determination",
+  "accordion3Body": "Enter weight in kilograms when available (recommended). If you don't know the weight, enter age (years or months as applicable) and the app will estimate weight automatically. The screen will show whether “Real weight ✅” or “Estimated ⚠️” is used.",
+  "accordion4Title": "4. Maintenance solution volume",
+  "accordion4Body": "For maintenance fluids, you may adjust the percentage of requirements used for the solution.",
+  "accordion5Title": "5. Automatic calculations",
+  "accordion5Body": "All doses are calculated automatically using real or estimated weight (if applicable), plus other clinical variables depending on the medication.",
+  "accordion6Title": "6. Range verification",
+  "accordion6Body": "When a dose has a range, the app shows a suggested value. Verify range and formula according to your local protocol.",
+  "accordion7Title": "7. Alternative dose calculations",
+  "accordion7Body": "If you need a different dose than the proposed one, calculate it manually, since this table/app is not editable.",
+  "accordion8Title": "8. CAF size calculation (XS, S, etc.)",
+  "accordion8Body": "CAF size is suggested based on patient weight. If there is no suitable recommendation, the field may be blank.",
+  "accordion9Title": "9. User responsibility",
+  "accordion9Body": "USING THIS APPLICATION IS THE COMPLETE AND INDIVIDUAL RESPONSIBILITY OF THE USER. IT DOES NOT REMOVE THE PROFESSIONAL DUTY TO VERIFY DATA WITH AN UPDATED TEXT/PROTOCOL BEFORE ADMINISTERING MEDICATIONS.",
+  "aboutTitle": "About",
+  "aboutDevelopedBy": "Developed by",
+  "aboutPurpose": "Purpose",
+  "aboutSupport": "Support",
+  "aboutPurposeBody": "Clinical tool for pediatric calculations and quick access to vital sign ranges.",
+  "aboutSupportBody": "If you need support or want new features, contact the developer.",
+  "aboutBack": "Back",
+  "aboutCopyright": "© {year} {company}. All rights reserved.",
+  "aboutTitle": "About",
+  "developedBy": "Developed by",
+  "purpose": "Purpose",
+  "support": "Support",
+  "aboutPurposeText": "Clinical tool for pediatric calculations and quick access to vital signs ranges.",
+  "aboutSupportText": "If you need support or want new features, contact the developer.",
+  "back": "Back",
+  "rightsReserved": "All rights reserved.",
+  "proTag": "PRO",
+  "ageSelectTitle": "Select age type",
+  "ageSelectQuestion": "How do you want to enter the age?",
+  "ageSelectSubtitle": "Choose the option that matches how you have the patient's data.",
+  "ageYearsTitle": "Age in Years",
+  "ageYearsSubtitle": "For patients from 1 to 14 years old",
+  "ageMonthsTitle": "Age in Months",
+  "ageMonthsSubtitle": "For infants from 1 to 11 months old",
+  "commonBadge": "Most common",
+  "ageSelectNote": "If you don’t have the weight, the next screens can estimate it using age.",
+  "patientAppBarTitleYears": "Patient Data (Years)",
+  "patientHeaderTitle": "Enter patient information",
+
+  "patientHowItWorks": "How it works:",
+  "patientHowItWorksBody": "• If you enter weight, calculation uses it.\n• If you don't have weight, enter Age (1–14) and we use an estimated weight.\n• Estimated weight is a guide; confirm with real weight if possible.",
+
+  "patientWeightLabel": "Current weight (Kg)",
+  "patientWeightHint": "e.g. 22.6",
+
+  "patientAgeYearsLabel": "Age (Years - 1 to 14 years)",
+  "patientAgeYearsHint": "e.g. 4",
+
+  "patientAgeMonthsLabel": "Age (Months - if < 1 year)",
+  "patientAgeMonthsHint": "e.g. 6",
+
+  "patientEstimatedWeightLabel": "Estimated weight by age:",
+
+  "patientChipRealWeight": "Real weight ✅",
+  "patientChipEstimated": "Estimated ⚠️",
+
+  "patientBtnWithEnteredWeight": "Calculate using entered weight",
+  "patientBtnWithEstimatedWeight": "Calculate using estimated weight",
+  "patientBtnCalculateDose": "Calculate Dose",
+
+  "patientValWeightOrValidAgeToEstimate": "Enter weight or a valid age in years to estimate it.",
+  "patientValInvalidNumber": "Invalid input. Enter a number.",
+  "patientValEnterAgeYears": "Please enter age in years.",
+  "patientValAgeRangeYears": "Age must be between 1 and 14 years.",
+  "patientValAgeMonthsRange": "Age in months must be between 1 and 11.",
+  "patientSnackNeedWeightOrAge": "Please enter patient weight OR age in years (for estimated weight).",
+  "patientSnackNeedWeightAndAge": "Please enter weight and at least age in years or months.",
+  "medsTitleYears": "Medications (1 - 14 years)",
+  "medsSubtitleViewDetails": "View details",
+
+  "medsChipEstimated": "Estimated ⚠️",
+  "medsChipRealWeight": "Real weight ✅",
+
+  "medsBtnChange": "Change",
+
+  "medsSearchHint": "Search medication...",
+
+  "medsAlphaAll": "ALL",
+  "medsAlphaFavs": "Favorites",
+
+  "medsSpecialCalculations": "Special calculations",
+
+  "medsModalClose": "Close",
+  "medsVitalsTitle": "Vital Signs (SING V)",
+  "medsPamTitle": "Mean Arterial Pressure (MAP)",
+  "medsOptionHeartRate": "Heart Rate",
+  "medsOptionRespRate": "Respiratory Rate",
+  "medsOptionBloodPressure": "Blood Pressure",
+  "medsOptionTemperature": "Temperature",
+  "medsOptionOxygenSat": "Oxygen Saturation",
+  "medsOptionBloodPressureWomen": "Blood Pressure (Women)",
+  "medsOptionBloodPressureMen": "Blood Pressure (Men)",
+
+  "medsPrintTooltip": "Print all calculated medications",
+
+  "medsBottomSINGV": "SING V",
+  "medsBottomPAM": "MAP",
+  "patientHeaderSummaryYears": "{weight} kg · {age} years",
+  "medDetailPrintTooltip": "Print report",
+
+  "medDetailInfoTitle": "Medication information",
+  "medDetailDoseTitle": "Calculated dose for the patient",
+
+  "medDetailCategory": "Category:",
+  "medDetailSubcategory": "Subcategory:",
+  "medDetailOriginalDoseRange": "Original dose range:",
+  "medDetailPediatricDose": "Pediatric dose:",
+  "medDetailNotes": "Notes:",
+
+  "medDetailCopy": "Copy",
+  "medDetailCopied": "\"{text}\" copied",
+
+  "commonNA": "N/A",
+  "commonDash": "—",
+  "printPatientReportTitle": "Patient Report",
+  "printAppSubtitle": "Pedx Calc · Calculations",
+
+  "printGeneratedBy": "Generated by Pedx Calc",
+  "printDateLabel": "Date",
+  "printPageLabel": "Page",
+
+  "printPatientDataTitle": "Patient Data",
+  "printWeightLabel": "Weight",
+  "printAgeLabel": "Age",
+  "printYearsUnit": "years",
+  "printMonthsUnit": "months",
+
+  "printMedsCalculatedTitle": "Calculated medications",
+
+  "printTableHeaderMedication": "Medication",
+  "printTableHeaderDose": "Calculated dose",
+  "printTableHeaderNotes": "Notes",
+
+  "printPreviewError": "Error generating PDF: {error}",
+  
+  
+  "@printPreviewError": {
+  "placeholders": {
+      "error": {}
+    }
+  },
+  "specialCalcTitle": "Special calculations (youth)",
+  "specialCalcResetTooltip": "Reset values",
+  "specialCalcPrintTooltip": "Print full report",
+
+  "specialCalcPatientHeader": "Patient: {weight} kg · {age} {ageUnit}",
+  "specialCalcYearsUnit": "years",
+  "specialCalcMonthsUnit": "months",
+
+  "specialCalcInputPercentTitle": "Percentage calculation",
+  "specialCalcInputPercentHint": "100",
+  "specialCalcInputPercentHelper": "Adjust fluid percentage (e.g., 80, 60, 45…).",
+
+  "specialCalcInputSodiumTitle": "Patient sodium (Na)",
+  "specialCalcInputSodiumHint": "120",
+  "specialCalcInputSodiumHelper": "Enter current Na (mEq/L).",
+
+  "specialCalcInputHco3Title": "HCO3 replacement",
+  "specialCalcInputHco3Hint": "7",
+  "specialCalcInputHco3Helper": "Enter current HCO3 (mEq/L).",
+
+  "specialCalcSectionLiquids": "IV fluids",
+  "specialCalcSectionSodium": "Sodium replacement",
+  "specialCalcSectionHco3": "HCO3 replacement",
+
+  "specialCalcTotalLabel": "Result (final total)",
+
+  "specialCalcPercentInfoFallback": "You can adjust the percentage based on the patient's condition.",
+  "@specialCalcPatientHeader": {
+    "placeholders": { "weight": {}, "age": {}, "ageUnit": {} }
+  },
+  "patientMonthsAppBarTitle": "Patient data (Months)",
+  "patientMonthsCardTitle": "Enter data (1–11 months)",
+
+  "howItWorksTitle": "How it works:",
+  "howItWorksMonthsBody": "• If you enter Weight, we calculate using that weight.\n• If you don’t have weight, enter Age (1–11 months) and we use an estimated weight.\n• Estimated weight is guidance; confirm with real weight if possible.",
+
+  "patientWeightLabel": "Current weight (kg)",
+  "patientWeightHintMonths": "e.g., 7.5",
+
+  "patientAgeMonthsLabel": "Age (Months - 1 to 11 months)",
+  "patientAgeMonthsHint": "e.g., 6",
+
+  "patientMonthsValidatorEmpty": "Please enter age in months.",
+  "patientMonthsValidatorRange": "Age must be between 1 and 11 months.",
+
+  "estimatedWeightByAge": "Estimated weight by age: ",
+  "snackNeedWeightOrValidAgeMonths": "Please enter a valid weight or a valid age (1–11 months) to estimate it.",
+
+  "btnCalcWithEnteredWeight": "Calculate with entered weight",
+  "btnCalcWithEstimatedWeight": "Calculate with estimated weight",
+  "btnCalcDose": "Calculate dose",
+
+  "chipRealWeight": "Real weight ✅",
+  "chipEstimated": "Estimated ⚠️",
+
+  "navPatient": "Patient",
+  "navInstructions": "Instructions",
+  "medsMonthsAppBarTitle": "Medications (1 - 11 months)",
+  "searchMedicationHint": "Search medication...",
+  "viewDetails": "View details",
+  "btnChange": "Change",
+
+  "chipRealWeight": "Real weight ✅",
+  "chipEstimated": "Estimated ⚠️",
+
+  "filterAll": "ALL",
+  "filterFavorites": "Favorites",
+
+  "specialCalculations": "Special calculations",
+
+  "modalClose": "Close",
+  "modalVitalsTitle": "Vital Signs (SING V)",
+  "modalPamTitle": "Mean Arterial Pressure (MAP)",
+
+  "vitalHeartRate": "Heart rate",
+  "vitalRespRate": "Respiratory rate",
+  "vitalBloodPressure": "Blood pressure",
+  "vitalTemperature": "Temperature",
+  "vitalOxygenSat": "Oxygen saturation",
+  "vitalBloodPressureWomen": "Blood pressure (Women)",
+  "vitalBloodPressureMen": "Blood pressure (Men)",
+
+  "printFullReport": "Print full report",
+
+  "patientHeaderMonthsUnit": "months",
+  "specialCalcMonthsTitle": "Special calculations (1 - 11 months)",
+  "restoreValues": "Restore values",
+  "printFullReport": "Print full report",
+
+  "patientHeaderPrefix": "Patient",
+  "patientHeaderMonthsUnit": "months",
+
+  "inputLiquidsPercentTitle": "IV fluids percentage calculation",
+  "inputLiquidsPercentHelper": "Adjust % by condition (e.g., 80, 60, 45…).",
+
+  "inputHco3Title": "HCO3 replacement",
+  "inputHco3Helper": "Enter current HCO3.",
+
+  "inputSodiumTitle": "Sodium replacement (Na)",
+  "inputSodiumHelper": "Enter current Na.",
+
+  "sectionLiquidsIV": "IV Fluids",
+  "sectionHco3": "HCO3 replacement",
+  "sectionSodium": "Sodium replacement",
+
+  "resultTotalFinal": "Result (final total)",
+  "medsMonthsAppBarTitle": "Medications (1 - 11 months)",
+  "printFullReport": "Print full report",
+
+  "searchMedicationHint": "Search medication...",
+  "viewDetails": "View details",
+
+  "patientHeaderMonthsUnit": "months",
+  "chipEstimated": "Estimated ⚠️",
+  "chipRealWeight": "Actual weight ✅",
+  "btnChange": "Change",
+
+  "filterAll": "ALL",
+  "filterFavorites": "Favorites",
+
+  "specialCalculations": "Special calculations",
+
+  "modalVitalsTitle": "Vital Signs (SING V)",
+  "modalPamTitle": "Mean Arterial Pressure (MAP)",
+  "modalClose": "Close",
+
+  "vitalHeartRate": "Heart rate",
+  "vitalRespRate": "Respiratory rate",
+  "vitalBloodPressure": "Blood pressure",
+  "vitalTemperature": "Temperature",
+  "vitalOxygenSat": "Oxygen saturation",
+  "vitalBloodPressureWomen": "Blood pressure (Women)",
+  "vitalBloodPressureMen": "Blood pressure (Men)",
+  "printReportTooltip": "Print report",
+  "medInfoTitle": "Medication information",
+  "medInfoCategoryLabel": "Category:",
+  "medInfoSubcategoryLabel": "Subcategory:",
+  "medInfoOriginalDoseRangeLabel": "Original dose range:",
+  "medInfoPediatricDoseLabel": "Pediatric dose:",
+  "medInfoObservationsLabel": "Notes:",
+  "patientCalculatedDoseTitle": "Calculated dose for the patient",
+  "copyTooltip": "Copy",
+  "snackbarCopied": "\"{text}\" copied",
+  "@snackbarCopied": {
+    "placeholders": { "text": {} }
+  },
+  "calcInfoTitle": "Calculation information",
+  "calcTypeLabel": "Type:",
+  "calcMedicationLabel": "Medication:",
+  "calcObservationsLabel": "Notes:",
+  "patientCalculatedDoseTitle": "Calculated dose for the patient",
+  "copyTooltip": "Copy",
+  "printReportTooltip": "Print report",
+  "notAvailable": "N/A",
+  "snackbarCopied": "\"{text}\" copied to clipboard",
+  "@snackbarCopied": {
+    "placeholders": { "text": {} }
+  },
+   "bpAppBarTitle": "Blood Pressure",
+  "bpColAge": "Age",
+  "bpColSystolic": "Systolic",
+  "bpColDiastolic": "Diastolic",
+  "bpColHypotensionSystolic": "Systolic\nhypotension",
+  "bpRowAge1to2": "1–2 years (Toddler)",
+  "bpRowAge3to5": "3–5 years (Preschool)",
+  "bpRowAge6to9": "6–9 years (School age)",
+  "bpRowAge10to11": "10–11 years (Pre-adolescent)",
+  "bpRowAge12to15": "12–15 years (Adolescent)",
+  "bpRowHypotensionFormula": "<70 + (age × 2)",
+  "bpNoteFormula": "Note: The systolic hypotension threshold for preschool ages is calculated as: 70 + (age in years × 2).",
+  "bpNeoAppBarTitle": "Blood Pressure",
+  "bpNeoColAge": "Age",
+  "bpNeoColSystolic": "Systolic",
+  "bpNeoColDiastolic": "Diastolic",
+  "bpNeoColHypotensionSystolic": "Systolic\nhypotension",
+
+  "bpNeoRowBirth12hLt1kg": "Birth (12 h) <1 kg",
+  "bpNeoRowBirth12h3kg": "Birth (12 h) 3 kg",
+  "bpNeoRowNeonate96h": "Neonate (96 h)",
+  "bpNeoRowInfant1to12mo": "Infant (1–12 months)",
+
+  "bpNeoNote": "Note: Normal ranges and hypotension thresholds by age (mmHg).",
+  "hrAppBarTitle": "Heart Rate (beats/min)",
+  "hrColAge": "Age",
+  "hrColAwake": "Awake",
+  "hrColAsleep": "Asleep",
+
+  "hrRowToddler": "1–2 years (Toddler)",
+  "hrRowPreschool": "3–5 years (Preschool)",
+  "hrRowSchoolAge": "6–11 years (School age)",
+  "hrRowAdolescent": "12–15 years (Adolescent)",
+
+  "hrNote": "Note: Ranges vary depending on whether the patient is awake or asleep.",
+  "hrInfantAppBarTitle": "Heart Rate (beats/min)",
+
+  "hrColAge": "Age",
+  "hrColAwake": "Awake",
+  "hrColAsleep": "Asleep",
+
+  "hrInfantRowNeonate": "(<28 days) (Neonate)",
+  "hrInfantRowInfant": "(1–12 months) (Infant)",
+
+  "hrNote": "Note: Ranges vary depending on whether the patient is awake or asleep.",
+  "medInfoTitle": "Medication information",
+  "calculatedDoseTitle": "Calculated dose for the patient",
+
+  "medCategory": "Category:",
+  "medSubcategory": "Subcategory:",
+  "medOriginalDoseRange": "Original dose range:",
+  "medPediatricDose": "Pediatric dose:",
+  "medObservations": "Observations:",
+
+  "copy": "Copy",
+  "printReport": "Print report",
+  "copiedText": "\"{text}\" copied",
+  "o2AppBarTitle": "Oxygen saturation (SpO₂)",
+  "o2CardTitle": "Oxygen saturation (SpO₂)",
+  "o2Paragraph1": "SpO₂ is lower in the immediate neonatal period.",
+  "o2Paragraph2Part1": "Beyond this period, an SpO₂ of ",
+  "o2ThresholdBold": "<90–92%",
+  "o2Paragraph2Part2": " may suggest a ",
+  "o2RespConditionBold": "respiratory condition",
+  "o2Or": " or ",
+  "o2CyanoticHeartBold": "cyanotic congenital heart disease.",
+  "o2Note": "Oxygen saturation is considered a key vital sign to assess oxygenation.",
+  "rrAppBarTitle": "Respiratory Rate",
+  "rrCardTitle": "Normal ranges by age",
+  "rrTableHeaderAge": "Age",
+  "rrTableHeaderNormal": "Normal",
+  "rrAgeRow1": "1–2 years (Toddler)",
+  "rrAgeRow2": "3–5 years (Preschool)",
+  "rrAgeRow3": "6–11 years (School age)",
+  "rrAgeRow4": "12–15 years (Adolescent)",
+  "rrSourceNote": "Source: Pediatric Reference Guidelines.",
+   "rrAppBarTitleWithUnit": "Respiratory Rate (breaths/min)",
+  "rrCardTitle": "Normal ranges by age",
+  "rrTableHeaderAge": "Age",
+  "rrTableHeaderNormal": "Normal",
+  "rrAgeInfant": "(<1 year) (Neonate)",
+  "rrAgeToddler": "(1–2 years) (Children)",
+  "rrSourceNote": "Source: Pediatric Reference Guidelines.",
+  "tempAppBarTitleByMethod": "Temperature (by method)",
+  "tempCardTitleNormalRangesByMethod": "Normal ranges by method",
+
+  "tempTableHeaderMethod": "Method",
+  "tempTableHeaderNormal": "Normal",
+
+  "tempMethodRectal": "Rectal",
+  "tempMethodTympanic": "Tympanic",
+  "tempMethodOral": "Oral",
+  "tempMethodAxillary": "Axillary",
+
+  "tempNoteRangesDoNotVary": "Ranges do not vary by age.",
+
+  "tempGuideScreeningLabel": "Screening:",
+  "tempGuideScreeningText": "axillary, temporal, tympanic (↓ accuracy)",
+  "tempGuideDefinitiveLabel": "Definitive:",
+  "tempGuideDefinitiveText": "rectal & oral (↑ reflection of core temperature)",
+
+  "tempReferenceCps2015": "Reference: CPS position statement on temperature measurement in pediatrics (2015)",
+  "tempAppBarTitleCelsiusByMethod": "Temperature (°C) (By method)",
+
+  "tempGuideScreeningTextAlt": "axillary, temporal, tympanic (↓ accuracy)",
+
+  "tempReferenceCps2015Alt": "Reference: CPS position statement on temperature measurement in pediatrics (2015)",
+   "bpWomenTitle": "Blood Pressure (Women)",
+  "bpColAge": "Age",
+  "bpColMin": "Minimum",
+  "bpColMean": "Mean",
+  "bpColMax": "Maximum",
+  "bpGroupSystolicDiastolic": "Systolic/diastolic\nblood pressure",
+  "bpGroupMeanArterialPressure": "Mean arterial\npressure",
+  "bpAgeLt7Days": "<7 days",
+  "bpAge8to30Days": "8-30 days",
+  "bpAge1to5Months": "1-5 months",
+  "bpAge6to11Months": "6-11 months",
+  "bpFormulasTitle": "Blood Pressure Formulas",
+  "bpFormulaLine1": "Mean arterial pressure = (diastolic pressure) + (systolic - diastolic) / 3",
+  "bpFormulaLine2": "or MAP = DP + (SP-DP)/3",
+  "bpFormulaLine3": "or MAP = (SP + (2×DP)) / 3",
+  "bpWomenTitle": "Blood Pressure (Women)",
+
+  "bpColAge": "Age",
+  "bpColMin": "Minimum",
+  "bpColMean": "Mean",
+  "bpColMax": "Maximum",
+
+  "bpGroupSystolicDiastolic": "Systolic/diastolic\nblood pressure",
+  "bpGroupMeanArterialPressure": "Mean arterial\npressure",
+
+  "bpAge1y": "1 year",
+  "bpAge2y": "2 years",
+  "bpAge3y": "3 years",
+  "bpAge4y": "4 years",
+  "bpAge5y": "5 years",
+  "bpAge6y": "6 years",
+  "bpAge7y": "7 years",
+  "bpAge8y": "8 years",
+  "bpAge9y": "9 years",
+  "bpAge10y": "10 years",
+  "bpAge11y": "11 years",
+  "bpAge12y": "12 years",
+  "bpAge13y": "13 years",
+  "bpAge14y": "14 years",
+  "bpAge15y": "15 years",
+  "bpAge16y": "16 years",
+  "bpAge17y": "17 years",
+  "bpAge18y": "18 years",
+  "bpAge19y": "19 years",
+
+  "bpFormulasTitle": "Blood Pressure Formulas",
+  "bpFormulaLine1": "Mean arterial pressure = (diastolic pressure) + (systolic - diastolic) / 3",
+  "bpFormulaLine2": "or MAP = DP + (SP-DP)/3",
+  "bpFormulaLine3": "or MAP = (SP + (2×DP)) / 3",
+  "bpMenTitle": "Blood Pressure (Men)",
+
+  "bpColAge": "Age",
+  "bpColMin": "Minimum",
+  "bpColMean": "Mean",
+  "bpColMax": "Maximum",
+
+  "bpGroupSystolicDiastolic": "Systolic/diastolic\nblood pressure",
+  "bpGroupMeanArterialPressure": "Mean arterial\npressure",
+
+  "bpAgeLt7Days": "<7 days",
+  "bpAge8To30Days": "8-30 days",
+  "bpAge1To5Months": "1-5 months",
+  "bpAge6To11Months": "6-11 months",
+
+  "bpMenNote": "Note: the time interval for measuring mean arterial pressure is not fixed; it depends on the patient's condition, ranging from every 15 minutes in severe cases to every 24 hours in stable patients. If mean arterial pressure falls below the minimum level, crystalloid infusion should be initiated according to protocol. If mean arterial pressure tends to rise above the normal maximum, fluid infusion should be stopped to avoid volume overload.",
+
+  "bpFormulasTitle": "Blood Pressure Formulas",
+  "bpFormulaLine1": "Mean arterial pressure = (diastolic pressure) + (systolic - diastolic) / 3",
+  "bpFormulaLine2": "or MAP = DP + (SP-DP)/3",
+  "bpFormulaLine3": "or MAP = (SP + (2×DP)) / 3",
+
+  "bpMenTitle": "Blood Pressure (Men)",
+
+  "bpColAge": "Age",
+  "bpColMin": "Minimum",
+  "bpColMean": "Mean",
+  "bpColMax": "Maximum",
+
+  "bpGroupSystolicDiastolic": "Systolic/diastolic\nblood pressure",
+  "bpGroupMeanArterialPressure": "Mean arterial\npressure",
+
+  "bpAge1Year": "1 year",
+  "bpAge2Years": "2 years",
+  "bpAge3Years": "3 years",
+  "bpAge4Years": "4 years",
+  "bpAge5Years": "5 years",
+  "bpAge6Years": "6 years",
+  "bpAge7Years": "7 years",
+  "bpAge8Years": "8 years",
+  "bpAge9Years": "9 years",
+  "bpAge10Years": "10 years",
+  "bpAge11Years": "11 years",
+  "bpAge12Years": "12 years",
+  "bpAge13Years": "13 years",
+  "bpAge14Years": "14 years",
+  "bpAge15Years": "15 years",
+  "bpAge16Years": "16 years",
+  "bpAge17Years": "17 years",
+  "bpAge18Years": "18 years",
+  "bpAge19Years": "19 years",
+
+  "bpFormulasTitle": "Blood Pressure Formulas",
+  "bpFormulaLine1": "Mean arterial pressure = (diastolic pressure) + (systolic - diastolic) / 3",
+  "bpFormulaLine2": "or MAP = DP + (SP-DP)/3",
+  "bpFormulaLine3": "or MAP = (SP + (2×DP)) / 3",
+  "catAnaphylaxis": "Anaphylaxis",
+  "catAnalgesia": "Analgesia",
+  "catAntibiotics": "Antibiotics",
+
+  "medAnaEpiImStandard": "Epinephrine IM",
+  "medAnaEpiImWeightBased": "Epinephrine IM.",
+  "medAnalgesiaFentanyl": "Fentanyl",
+  "medAnalgesiaMorphine": "Morphine",
+  "medAnalgesiaKetamine": "Ketamine",
+  "medAbxAmpicillin": "Ampicillin",
+  "medAbxCefotaxime": "Cefotaxime",
+  "medAbxCeftazidime": "Ceftazidime",
+  "medAbxMeropenem": "Meropenem",
+  "medAbxVancomycin": "Vancomycin",
+  "medAbxAcyclovir": "Acyclovir",
+  "medAbxPipTazo": "Pipe-tazo",
+  "medAbxAmoxClav": "Amoxicillin-clavulanate",
+  "medAbxAmikacin": "Amikacin",
+  "medAbxClindamycin": "Clindamycin",
+  "medAnaEpiImStandardRange": "1mg/ml (1:1000)",
+  "medAnaEpiImStandardDose": "0.01 mg/kg",
+  "medAnaEpiImStandardNotes": "Max 0.5 ml",
+
+  "medAnaEpiImWeightBasedRange": "1mg/ml (1:1000) <= 30kg",
+  "medAnaEpiImWeightBasedDose": "",
+  "medAnaEpiImWeightBasedNotes": "1mg/ml (1:1000) > 30kg",
+
+  "medAnalgesiaFentanylRange": "(50mcg/ml; 2ml)",
+  "medAnalgesiaFentanylDose": "1–5 mcg/kg",
+  "medAnalgesiaFentanylNotes": "May repeat the dose.",
+
+  "medAnalgesiaMorphineRange": "(15mg/ml; 1ml) (1ml + 14cc NS)",
+  "medAnalgesiaMorphineDose": "0.1 mg/kg",
+  "medAnalgesiaMorphineNotes": "May repeat the dose.",
+
+  "medAnalgesiaKetamineRange": "(10mg/ml; 20ml)",
+  "medAnalgesiaKetamineDose": "1–2 mg/kg",
+  "medAnalgesiaKetamineNotes": "May repeat the dose.",
+
+  "medAbxAmpicillinRange": "25–50 mg/kg/dose",
+  "medAbxAmpicillinDose": "every 6 h",
+  "medAbxAmpicillinNotes": "Max: 3 g/dose",
+
+  "medAbxCefotaximeRange": "50 mg/kg/dose",
+  "medAbxCefotaximeDose": "every 8 h or every 6 h",
+  "medAbxCefotaximeNotes": "Max: 2–4 g/dose",
+
+  "medAbxCeftazidimeRange": "50 mg/kg/dose",
+  "medAbxCeftazidimeDose": "every 8 h",
+  "medAbxCeftazidimeNotes": "Max: 6 g/day",
+
+  "medAbxMeropenemRange": "60 mg/kg/day",
+  "medAbxMeropenemDose": "every 8 h",
+  "medAbxMeropenemNotes": "Max: 1 g/dose",
+
+  "medAbxVancomycinRange": "15 mg/kg/dose",
+  "medAbxVancomycinDose": "every 6 h",
+  "medAbxVancomycinNotes": "Max: 500 mg/dose",
+
+  "medAbxAcyclovirRange": "60 mg/kg/day",
+  "medAbxAcyclovirDose": "every 8 h",
+  "medAbxAcyclovirNotes": "Max: 1 g",
+
+  "medAbxPipTazoRange": "300 mg/kg/day",
+  "medAbxPipTazoDose": "every 8 h",
+  "medAbxPipTazoNotes": "",
+
+  "medAbxAmoxClavRange": "90 mg/kg/day",
+  "medAbxAmoxClavDose": "every 12 h",
+  "medAbxAmoxClavNotes": "",
+
+  "medAbxAmikacinRange": "22.5 mg/kg/day",
+  "medAbxAmikacinDose": "daily",
+  "medAbxAmikacinNotes": "",
+
+  "medAbxClindamycinRange": "40 mg/kg/day",
+  "medAbxClindamycinDose": "every 8 h",
+  "medAbxClindamycinNotes": "",
+  "calcTypeSodium": "Sodium",
+  "calcTypeHco3": "Bicarbonate (HCO₃)",
+  "calcTypeIvFluids": "IV Fluids",
+  "specNaPatient": "Patient sodium",
+  "specNaDeficit": "Sodium deficit",
+  "specNaSg5Volume": "D5W volume",
+  "specNaWithNs": "With normal saline",
+  "specNaInfusionRate": "Infusion rate",
+
+  "specHco3Patient": "Patient HCO₃",
+  "specHco3Deficit": "HCO₃ deficit",
+  "specHco3Sg5Volume": "D5W volume to dilute HCO₃ deficit",
+  "specHco3InfusionRate": "Infusion rate",
+
+  "specIvMixedSolution": "Maintenance mixed solution",
+  "specIvPercentInfoTitle": "Percentage calculation",
+  "specIvResult": "Result",
+  "specIvDrip": "Drip rate",
+  "specIvDripAdjusted": "Drip rate (adjusted)",
+  "bottomVitals": "VITALS",
+  "bottomPam": "MAP",
+  "catAntidotes": "Antidotes",
+  "catAsthma": "Asthma",
+  "catBradyarrhythmias": "Bradyarrhythmias",
+  "catHighFlowNasalCannula": "High-flow nasal cannula",
+
+  "medAntidoteNaloxone": "Naloxone",
+  "medAntidoteNaloxoneRange": "0.4 mg/mL",
+  "medAntidoteNaloxoneDose": "0.01 mg/kg",
+  "medAntidoteNaloxoneNotes": "Opioid antidote",
+
+  "medAntidoteFlumazenil": "Flumazenil",
+  "medAntidoteFlumazenilRange": "0.1 mg/mL",
+  "medAntidoteFlumazenilDose": "0.01 mg/kg",
+  "medAntidoteFlumazenilNotes": "Benzodiazepine antidote",
+
+  "medAsthmaSalbutamol1to5": "Salbutamol 1–5 years",
+  "medAsthmaSalbutamol1to5Notes": "Maximum #6 nebulizations",
+  "medAsthmaSalbutamolOver5": "Salbutamol > 5 years",
+  "medAsthmaSalbutamolOver5Notes": "Maximum #6 nebulizations",
+
+  "medAsthmaAtrovent2to5": "Ipratropium (Atrovent) 2–5 years",
+  "medAsthmaAtrovent2to5Notes": "Maximum #3 nebulizations",
+  "medAsthmaAtroventOver5": "Ipratropium (Atrovent) > 5 years",
+  "medAsthmaAtroventOver5Notes": "Maximum #3 nebulizations",
+
+  "medAsthmaPrednisone": "Prednisone",
+  "medAsthmaPrednisoneDose": "1–2 mg/kg for 3–5 days",
+  "medAsthmaPrednisoneNotes": "Maximum 50 mg",
+
+  "medAsthmaDexamethasoneIV": "Dexamethasone IV",
+  "medAsthmaDexamethasoneIVRange": "(4 mg/mL)",
+  "medAsthmaDexamethasoneIVDose": "every 6 h IV for 3–5 days",
+
+  "medAsthmaHydrocortisoneIV": "Hydrocortisone IV",
+  "medAsthmaHydrocortisoneIVRange": "(50 mg/mL; 2 mL)",
+  "medAsthmaHydrocortisoneIVDose": "Max: 100 mg; (every 6 h day 1) (every 12 h day 2) (every 24 h day 3)",
+
+  "medAsthmaMethylprednisolone": "Methylprednisolone",
+  "medAsthmaMethylprednisoloneRange": "(Loading dose: 2 mg/kg)",
+  "medAsthmaMethylprednisoloneDose": "Max: 60 mg; Maintenance: 1 mg/kg/dose (q6h day 1); (q12h day 2) and (q24h day 3)",
+
+  "medAsthmaMagnesiumSulfate": "Magnesium sulfate",
+  "medAsthmaMagnesiumSulfateRange": "(200 mg/mL; 10 mL)",
+  "medAsthmaMagnesiumSulfateDose": "In 100 mL NS over 20 min IV (maximum 2 doses)",
+  "medAsthmaMagnesiumSulfateNotes": "Maximum: 2 g.",
+
+  "medBradyEpinephrineIV": "Epinephrine IV",
+  "medBradyEpinephrineIVRange": "1 mg/mL (1 mL + 9 mL NS)",
+  "medBradyEpinephrineIVDose": "(1 mL = 0.1 mg) (0.01 mg/kg)",
+  "medBradyEpinephrineIVNotes": "Maximum 10 mL",
+
+  "medBradyAtropine": "Atropine",
+  "medBradyAtropineRange": "0.5 mg/mL (dilute 2 mL + 8 mL NS)",
+  "medBradyAtropineDose": "(1 mL = 0.1 mg) (0.02 mg/kg)",
+
+  "medHfncFlow": "Flow",
+  "medHfncFlowDose": "Adjust FiO2 to keep oxygen saturation > 94%",
+  "medHfncFlowNotes": "Start FiO2 at 50%",
+
+  "medHfncCannulaSizeByWeight": "Cannula size by weight",
+  "medHfncCannulaSizeByWeightNotes": "\"X\" indicates possible cannula sizes to use based on patient weight",
+  "printPageOfLabel": "of",
+  "catCalciumMaintenance": "Maintenance calcium",
+  "catEndocrineRenal": "Endocrine / Renal",
+  "catElectrolytes": "Electrolytes",
+  "catFeverPain": "Fever/Pain",
+  "catUncontrolledSevereBleeding": "Uncontrolled severe bleeding",
+  "catIntracranialHypertension": "Intracranial hypertension",
+  "medCaMaintCalciumGluconate10": "Calcium gluconate 10%",
+  "medCaMaintCalciumGluconate10Range": "(100 mg/mL; 10 mL)",
+  "medCaMaintCalciumGluconate10Dose": "2–4 mL/kg/day in maintenance solution over 24 h",
+  "medCaMaintCalciumGluconate10Notes": "Max: 2 g/dose (20 mL)",
+
+  "medEndoRenalRegularInsulinInfusion": "Regular insulin",
+  "medEndoRenalRegularInsulinInfusionRange": "(100 IU/mL; 10 mL) (0.5 mL insulin in 50 mL NS)",
+  "medEndoRenalRegularInsulinInfusionDose": "0.05–0.1 IU/kg/h",
+
+  "medEndoRenalFurosemide": "Furosemide",
+  "medEndoRenalFurosemideDose": "0.5–1 mg/kg/dose",
+
+  "medElectrolytesCalciumGluconate10HyperK": "Calcium gluconate 10%",
+  "medElectrolytesCalciumGluconate10HyperKRange": "(100 mg/mL; 10 mL)",
+  "medElectrolytesCalciumGluconate10HyperKDose": "0.5 mL/kg IV STAT, slow via peripheral line",
+  "medElectrolytesCalciumGluconate10HyperKNotes": "Max: 2 g/dose (20 mL)",
+
+  "medElectrolytesCalciumChloride10HyperK": "Calcium chloride 10%",
+  "medElectrolytesCalciumChloride10HyperKRange": "(100 mg/mL; 10 mL)",
+  "medElectrolytesCalciumChloride10HyperKDose": "0.1–0.2 mL/kg IV STAT, slow via central line",
+  "medElectrolytesCalciumChloride10HyperKNotes": "Max: 1 g/dose (10 mL)",
+
+  "medElectrolytesNebSalbutamolHyperK": "Nebulized salbutamol",
+  "medElectrolytesNebSalbutamolHyperKDose": "<25 kg = 0.5 mL; >25 kg = 1 mL",
+
+  "medElectrolytesD10WPlusHyperK": "Dextrose 10% solution +",
+  "medElectrolytesD10WPlusHyperKDose": "5 mL/kg +",
+
+  "medElectrolytesRegularInsulinBolusHyperK": "Regular insulin",
+  "medElectrolytesRegularInsulinBolusHyperKRange": "(100 IU/mL; 10 mL) (0.5 mL insulin in 50 mL NS)",
+  "medElectrolytesRegularInsulinBolusHyperKDose": "0.1 IU/kg IV over 1 h with dextrose 10%",
+
+  "medElectrolytesSodiumBicarb1MHyperK": "Sodium bicarbonate 1 M",
+  "medElectrolytesSodiumBicarb1MHyperKRange": "(1 mEq/mL)",
+  "medElectrolytesSodiumBicarb1MHyperKDose": "Dilute with NS: central line (1 bicarb : 1 NS); peripheral line (1 bicarb : 6 NS)",
+
+  "medFeverPainParacetamolPoIv": "Paracetamol PO/IV",
+  "medFeverPainParacetamolPoIvDose": "15 mg/kg/dose every 6 h",
+
+  "medFeverPainMetamizoleIv": "Metamizole IV",
+  "medFeverPainMetamizoleIvDose": "15 mg/kg/dose every 8 h",
+  "medFeverPainMetamizoleIvNotes": "Max: 1 g per dose / 4 g per day",
+
+  "medMassiveBleedingTranexamicAcid": "Tranexamic acid",
+  "medMassiveBleedingTranexamicAcidRange": "100 mg/mL",
+  "medMassiveBleedingTranexamicAcidDose": "15 mg/kg",
+  "medMassiveBleedingTranexamicAcidNotes": "Warm fluids",
+
+  "medMassiveBleedingRbcFfp": "PRBC/FFP",
+  "medMassiveBleedingRbcFfpRange": "(1:1 dilution)",
+  "medMassiveBleedingRbcFfpDose": "5 mL/kg",
+  "medMassiveBleedingRbcFfpNotes": "Warm fluids",
+
+  "medMassiveBleedingPlatelets": "Platelets",
+  "medMassiveBleedingPlateletsDose": "10–15 mL/kg",
+  "medMassiveBleedingPlateletsNotes": "Warm fluids",
+
+  "medMassiveBleedingCryo": "Cryoprecipitate",
+  "medMassiveBleedingCryoDose": "10 mL/kg",
+  "medMassiveBleedingCryoNotes": "Warm fluids",
+
+  "medIchHypertonicSaline3": "Hypertonic saline 3%",
+  "medIchHypertonicSaline3Range": "(30 mL NaCl 4M + 70 mL NS)",
+  "medIchHypertonicSaline3Dose": "2–5 mL/kg over 10 min",
+  "medIchHypertonicSaline3Notes": "Monitor HR increase",
+
+  "medIchMannitol": "Mannitol",
+  "medIchMannitolRange": "20 g/100 mL",
+  "medIchMannitolDose": "0.5–1 g/kg over 10 min",
+  "medIchMannitolNotes": "Monitor HR increase",
+  "catSevereHypocalcemiaHypermagCCB": "Severe hypocalcemia / hypermagnesemia / calcium channel blocker intoxication",
+  "catAcuteSymptomaticHyponatremia": "Acute symptomatic hyponatremia (seizures)",
+  "catHypoglycemia": "Hypoglycemia",
+  "catSedationInfusions": "Sedation infusions",
+  "catInotropes": "Inotropes",
+  "catIVFluids": "IV fluids",
+  "catRespiratorySpecificMeds": "Respiratory condition-specific medication",
+  "catNeuromuscularParalysis": "Neuromuscular paralysis",
+  "catCardiacArrest": "Cardiac arrest",
+  "medHypocalcemiaCalciumGluconate10": "Calcium gluconate 10%",
+  "medHypocalcemiaCalciumGluconate10Range": "(100 mg/mL; 10 mL)",
+  "medHypocalcemiaCalciumGluconate10Dose": "0.5 mL/kg IV STAT, slow via peripheral line",
+  "medHypocalcemiaCalciumGluconate10Notes": "Max: 2 g/dose (20 mL)",
+
+  "medHypocalcemiaCalciumChloride10": "Calcium chloride 10%",
+  "medHypocalcemiaCalciumChloride10Range": "(100 mg/mL; 10 mL)",
+  "medHypocalcemiaCalciumChloride10Dose": "0.1–0.2 mL/kg IV STAT, slow via central line",
+  "medHypocalcemiaCalciumChloride10Notes": "Max: 1 g/dose (10 mL)",
+
+  "medHyponatremiaHypertonicSaline3": "Hypertonic saline 3%",
+  "medHyponatremiaHypertonicSaline3Range": "(30 mL NaCl 4M + 70 mL NS)",
+  "medHyponatremiaHypertonicSaline3Dose": "4 mL/kg over 20 min",
+  "medHyponatremiaHypertonicSaline3Notes": "Monitor seizure cessation",
+
+  "medHypoglycemiaDextrose10": "Dextrose 10% solution",
+  "medHypoglycemiaDextrose10Dose": "0.5–1 g/kg/dose = 5–10 mL/kg/dose IV STAT",
+  "medHypoglycemiaDextrose10Notes": "Check bedside glucose in 1 min",
+
+  "medSedationInfusionMorphine": "Morphine",
+  "medSedationInfusionMorphineRange": "(15 mg/mL; 1 mL)",
+  "medSedationInfusionMorphineDose": "20 mcg/kg/h",
+
+  "medSedationInfusionMidazolam": "Midazolam",
+  "medSedationInfusionMidazolamRange": "(5 mg/mL; 3 mL)",
+  "medSedationInfusionMidazolamDose": "2 mcg/kg/min",
+
+  "medSedationInfusionFentanyl": "Fentanyl",
+  "medSedationInfusionFentanylRange": "(50 mcg/mL; 2 mL)",
+  "medSedationInfusionFentanylDose": "5 mcg/kg/h",
+
+  "medInotropesEpiNorepiInfusion": "Epinephrine / norepinephrine",
+  "medInotropesEpiNorepiInfusionDose": "0.3 mg/kg in 50 mL D5W, start 1 mL/h up to 5 mL/h",
+  "medInotropesEpiNorepiInfusionNotes": "0.1 mcg/kg/min",
+
+  "medInotropesDopamineDobutamineInfusion": "Dopamine / dobutamine",
+  "medInotropesDopamineDobutamineInfusionDose": "15 mg/kg in 50 mL D5W, start 1 mL/h up to 4 mL/h",
+  "medInotropesDopamineDobutamineInfusionNotes": "5 mcg/kg/min",
+
+  "medIvFluidsMixedSolution": "Mixed maintenance solution",
+  "medIvFluidsMixedSolutionRange": "(100% requirements)",
+  "medIvFluidsMixedSolutionDose": "Run on infusion pump continuously over 24 h IV",
+
+  "medIvFluidsDrip": "Drip rate",
+  "medIvFluidsDripNotes": "Daily requirements",
+
+  "medIvFluidsResult": "Result",
+  "medIvFluidsResultDose": "Subtract medications",
+
+  "medIvFluidsDripAdjusted": "Drip rate (adjusted)",
+  "medIvFluidsDripAdjustedDose": "Subtract infusions",
+  "medIvFluidsDripAdjustedNotes": "Fluid calculation by percentage",
+
+  "medRespCroupDexamethasoneIv": "Dexamethasone IV",
+  "medRespCroupDexamethasoneIvRange": "(4 mg/mL)",
+  "medRespCroupDexamethasoneIvDose": "0.6 mg/kg single dose",
+
+  "medRespCroupNebEpinephrine": "Nebulized epinephrine",
+  "medRespCroupNebEpinephrineRange": "(L-epinephrine 1:1000)",
+  "medRespCroupNebEpinephrineDose": "0.5 mg/kg (Dilute 1:1 with normal saline)",
+  "medRespCroupNebEpinephrineNotes": "Max 5 mL",
+
+  "medRespCroupNebBudesonide": "Nebulized budesonide",
+  "medRespCroupNebBudesonideRange": "(0.5 mg/mL; 2 mL)",
+
+  "medParalysisSuccinylcholine": "Succinylcholine",
+  "medParalysisSuccinylcholineRange": "(50 mg/mL; 10 mL) (1 mL + 5 mL NS)",
+  "medParalysisSuccinylcholineDose": "1–2 mg/kg",
+  "medParalysisSuccinylcholineNotes": "Effect lasts minutes.",
+
+  "medParalysisPancuronium": "Pancuronium",
+  "medParalysisPancuroniumRange": "(2 mg/mL)",
+  "medParalysisPancuroniumDose": "0.1 mg/kg",
+  "medParalysisPancuroniumNotes": "Effect ~40 min.",
+
+  "medParalysisRocuronium": "Rocuronium",
+  "medParalysisRocuroniumRange": "(10 mg/mL)",
+  "medParalysisRocuroniumDose": "1 mg/kg",
+  "medParalysisRocuroniumNotes": "Effect ~30 min.",
+
+  "medParalysisAtracurium": "Atracurium",
+  "medParalysisAtracuriumRange": "(10 mg/mL)",
+  "medParalysisAtracuriumDose": "0.4 mg/kg",
+  "medParalysisAtracuriumNotes": "Effect ~20 min.",
+
+  "medParalysisEttUncuffed": "ETT (uncuffed)",
+  "medParalysisEttUncuffedDose": "Have ETT 0.5 mm smaller and larger available",
+
+  "medParalysisEttCuffed": "ETT (cuffed)",
+  "medParalysisEttCuffedDose": "Have ETT 0.5 mm smaller and larger available",
+
+  "medParalysisEttDepthLip": "Insertion depth at lip corner",
+  "medParalysisEttDepthLipDose": "Also use ETT x 3",
+
+  "medCardiacArrestEpinephrineIv": "Epinephrine IV",
+  "medCardiacArrestEpinephrineIvRange": "1 mg/mL (1 mL + 9 mL NS)",
+  "medCardiacArrestEpinephrineIvDose": "(1 mL = 0.1 mg) (0.01 mg/kg)",
+  "medCardiacArrestEpinephrineIvNotes": "Max 10 mL",
+
+  "medCardiacArrestEpinephrineEt": "Epinephrine ET",
+  "medCardiacArrestEpinephrineEtRange": "1 mg/mL (1 mL + 9 mL NS)",
+  "medCardiacArrestEpinephrineEtDose": "(1 mL = 0.1 mg) (0.1 mg/kg)",
+  "medCardiacArrestEpinephrineEtNotes": "Max 10 mL",
+
+  "medCardiacArrestFirstShock": "First shock",
+  "medCardiacArrestFirstShockDose": "2 J/kg",
+  "medCardiacArrestFirstShockNotes": "Double with each shock",
+
+  "medCardiacArrestSecondShock": "Second shock",
+  "medCardiacArrestSecondShockDose": "2 J/kg",
+  "medCardiacArrestSecondShockNotes": "Max 10 J/kg",
+
+  "medCardiacArrestAmiodarone": "Amiodarone",
+  "medCardiacArrestAmiodaroneRange": "(50 mg/mL; 3 mL) (3 mL + 22 mL D5W)",
+  "medCardiacArrestAmiodaroneDose": "5 mg/kg",
+  "medCardiacArrestAmiodaroneNotes": "Max 300 mg",
+
+  "medCardiacArrestMagnesiumSulfate": "Magnesium sulfate",
+  "medCardiacArrestMagnesiumSulfateRange": "(200 mg/mL; 10 mL)",
+  "medCardiacArrestMagnesiumSulfateDose": "50 mg/kg; dilute to 5 mL with NS and give over 3–5 min",
+  "medCardiacArrestMagnesiumSulfateNotes": "Max 2 g",
+
+  "medCardiacArrestSodiumBicarb1M": "Sodium bicarbonate 1 M",
+  "medCardiacArrestSodiumBicarb1MRange": "(Dilute 1:1 with NS)",
+  "medCardiacArrestSodiumBicarb1MDose": "(1 mEq/kg)",
+  "catSVT": "Supraventricular tachycardia",
+  "catHco3Replacement": "Bicarbonate (HCO₃⁻) replacement",
+  "catPotassiumReplacement": "Potassium replacement",
+  "catRSI": "Rapid sequence intubation",
+  "catShock": "Shock",
+  "catStatusEpilepticus": "Status epilepticus",
+  "catCentralLinesPleuralDrains": "Central lines and pleural drains",
+  "medSvtAdenosineFirst": "Adenosine (first)",
+  "medSvtAdenosineFirstRange": "3 mg/mL (First dose)",
+  "medSvtAdenosineFirstDose": "0.1 mg/kg",
+  "medSvtAdenosineFirstNotes": "Max 2 mL",
+
+  "medSvtAdenosineSecond": "Adenosine (second)",
+  "medSvtAdenosineSecondRange": "3 mg/mL (Second dose)",
+  "medSvtAdenosineSecondDose": "0.2 mg/kg",
+  "medSvtAdenosineSecondNotes": "Max 4 mL",
+
+  "medSvtAdenosineThird": "Adenosine (third)",
+  "medSvtAdenosineThirdRange": "3 mg/mL (Third dose)",
+  "medSvtAdenosineThirdDose": "0.3 mg/kg",
+  "medSvtAdenosineThirdNotes": "Max 4 mL",
+
+  "medSvtAmiodarone": "Amiodarone",
+  "medSvtAmiodaroneRange": "(50 mg/mL; 3 mL) (3 mL + 22 mL D5W)",
+  "medSvtAmiodaroneDose": "5 mg/kg over 30 min–1 h",
+  "medSvtAmiodaroneNotes": "Max 300 mg",
+
+  "medHco3PatientValue": "Patient HCO₃⁻",
+  "medHco3PatientValueNotes": "Check Na and blood gases at the end",
+
+  "medHco3Deficit": "HCO₃⁻ deficit",
+  "medHco3DeficitDose": "of sodium bicarbonate 1M (1 mEq/mL)",
+
+  "medHco3Sg5Volume": "D5W volume",
+  "medHco3Sg5VolumeRange": "to dilute HCO₃⁻ deficit",
+  "medHco3Sg5VolumeDose": "Run over 3 h",
+
+  "medHco3InfusionRate3h": "Infusion rate (over 3 h)",
+  "medHco3InfusionRate3hRange": "to dilute HCO₃⁻ deficit",
+  "medHco3InfusionRate3hDose": "Run over 3 h",
+
+  "medKReplacementSfVolume": "NS volume",
+  "medKReplacementSfVolumeRange": "500 mL + 10 mL KCl 2M",
+  "medKReplacementSfVolumeDose": "Run over 2 h via peripheral line",
+  "medKReplacementSfVolumeNotes": "Recheck potassium at the end",
+
+  "medRsiMidazolam": "Midazolam",
+  "medRsiMidazolamRange": "(5 mg/mL; 3 mL)",
+  "medRsiMidazolamDose": "0.3 mg/kg",
+
+  "medShockNormalSaline": "Normal saline",
+  "medShockNormalSalineRange": "0.9% (10 mL/kg bolus)",
+  "medShockNormalSalineDose": "10–20 mL/kg every 5 min. Max 60 mL/kg.",
+  "medShockNormalSalineNotes": "Consider inotropes",
+
+  "medSeizureDiazepamIv": "Diazepam IV",
+  "medSeizureDiazepamIvRange": "(5 mg/mL; 2 mL)",
+  "medSeizureDiazepamIvDose": "0.3 mg/kg every 5 min ×3 doses",
+  "medSeizureDiazepamIvNotes": "Max 2 mL",
+
+  "medSeizureDiazepamPr": "Diazepam PR",
+  "medSeizureDiazepamPrRange": "(5 mg/mL; 2 mL)",
+  "medSeizureDiazepamPrDose": "0.5 mg/kg; Insert rectal angiocath 5 cm",
+  "medSeizureDiazepamPrNotes": "Max 2 mL",
+
+  "medSeizureMidazolamIvIm": "Midazolam IV or IM",
+  "medSeizureMidazolamIvImRange": "(5 mg/mL; 3 mL)",
+  "medSeizureMidazolamIvImDose": "0.3 mg/kg every 5 min ×3 doses",
+  "medSeizureMidazolamIvImNotes": "Max 2 mL",
+
+  "medSeizureMidazolamIn": "Midazolam IN",
+  "medSeizureMidazolamInRange": "(5 mg/mL; 3 mL)",
+  "medSeizureMidazolamInDose": "0.4 mg/kg every 5 min ×3 doses. Use nasal atomizer",
+  "medSeizureMidazolamInNotes": "Max 2 mL",
+
+  "medSeizurePhenytoinIv": "Phenytoin IV",
+  "medSeizurePhenytoinIvRange": "(50 mg/mL; 5 mL)",
+  "medSeizurePhenytoinIvDose": "20 mg/kg; dilute 10× with NS and run over 30 min",
+  "medSeizurePhenytoinIvNotes": "Dilute in NS, never in dextrose",
+
+  "medSeizurePhenobarbitalIv": "Phenobarbital IV",
+  "medSeizurePhenobarbitalIvRange": "(50 mg/mL; 1 mL)",
+  "medSeizurePhenobarbitalIvDose": "20 mg/kg; dilute 10× with sterile water and run over 15 min",
+  "medSeizurePhenobarbitalIvNotes": "Dilute in water, never in dextrose",
+
+  "medCentralLinesFemoralDepth": "Femoral catheter:",
+  "medCentralLinesFemoralDepthDose": "Insertion depth",
+  "medCentralLinesFemoralDepthNotes": "13–30 cm",
+
+  "medCentralLinesJugularDepth": "Jugular catheter:",
+  "medCentralLinesJugularDepthDose": "Insertion depth",
+  "medCentralLinesJugularDepthNotes": "5–8 cm",
+
+  "medPleuralDrainCatheter": "Pleural drain catheter:",
+  "medPleuralDrainCatheterDose": "Preschool: 8–20F",
+  "medPleuralDrainCatheterNotes": "Adolescents: 14–36F"
+
+
+
+}
