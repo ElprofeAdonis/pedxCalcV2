@@ -54,14 +54,14 @@ class AppLocalizationsEs extends AppLocalizations {
       'Ingresa el peso en kilogramos cuando esté disponible (recomendado). Si no conoces el peso, ingresa la edad (años o meses según corresponda) y la app calculará un peso estimado automáticamente para realizar los cálculos. La pantalla mostrará si se usará “Peso real ✅” o “Estimado ⚠️”.';
 
   @override
-  String get accordion4Title => '3. Volumen de las soluciones de mantenimiento';
+  String get accordion4Title => '8. Volumen de las soluciones de mantenimiento';
 
   @override
   String get accordion4Body =>
       'En el cálculo del volumen de las soluciones de mantenimiento se puede variar el porcentaje de requerimientos al cual se desea la solución.';
 
   @override
-  String get accordion5Title => '4. Cálculos automáticos';
+  String get accordion5Title => '3. Cálculos automáticos';
 
   @override
   String get accordion5Body =>
@@ -69,21 +69,21 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get accordion7Title =>
-      '5. Requerimientos de cálculo de dosis diferentes';
+      '4. Requerimientos de cálculo de dosis diferentes';
 
   @override
   String get accordion7Body =>
       'Cualquier ajuste de dosis necesario debe realizarse manualmente, ya que esta aplicación no admite la modificación de dosis.';
 
   @override
-  String get accordion8Title => '6. Cálculo del tamaño del CAF (XS, S, etc.)';
+  String get accordion8Title => '5. Cálculo del tamaño del CAF (XS, S, etc.)';
 
   @override
   String get accordion8Body =>
       'El tamaño sugerido del CAF se calcula según el peso del paciente. Si no hay una recomendación adecuada para ese paciente.';
 
   @override
-  String get accordion9Title => '7. Responsabilidad del Usuario';
+  String get accordion9Title => '6. Responsabilidad del Usuario';
 
   @override
   String get accordion9Body =>
@@ -185,10 +185,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get patientHowItWorksBody =>
-      '• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–14) y usamos un peso estimado.\n• El peso estimado es guía; confirma con peso real si es posible.';
+      '• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–14) y usamos un peso estimado.\n• Confirma TAN PRONTO sea posible el peso real del paciente.';
 
   @override
-  String get patientWeightLabel => 'Peso actual (kg)';
+  String get patientWeightLabel => 'Peso actual/ medido (kg)';
 
   @override
   String get patientWeightHint => 'Ej: 22.6';
@@ -479,7 +479,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get howItWorksMonthsBody =>
-      '• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–11 meses) y usamos un peso estimado.\n• El peso estimado es guía; confirma con peso real si es posible.';
+      '• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–11 meses) y usamos un peso estimado.\n• Confirma TAN PRONTO sea posible el peso real del paciente.';
 
   @override
   String get patientWeightHintMonths => 'Ej: 7.5';

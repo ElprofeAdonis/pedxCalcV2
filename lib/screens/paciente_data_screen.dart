@@ -422,14 +422,19 @@ class _PacienteDataScreenState extends State<PacienteDataScreen> {
                     style: const TextStyle(fontSize: 18),
                   ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 83, 232, 103),
+                    backgroundColor: const Color.fromARGB(255, 233, 247, 239),
                     foregroundColor: const Color.fromARGB(255, 14, 113, 194),
+
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40,
                       vertical: 15,
                     ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
+                      side: const BorderSide(
+                        color: Color(0xFFB7E4C7), // ✅ borde
+                        width: 1.5, // opcional (1–2 se ve muy bien)
+                      ),
                     ),
                   ),
                 ),

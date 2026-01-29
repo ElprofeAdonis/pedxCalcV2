@@ -14,15 +14,15 @@
   "accordion1Body": "La siguiente tabla contiene información sobre medicación de más frecuente uso en emergencias.",
   "accordion3Title": "2. Determinación de Peso/Edad",
   "accordion3Body": "Ingresa el peso en kilogramos cuando esté disponible (recomendado). Si no conoces el peso, ingresa la edad (años o meses según corresponda) y la app calculará un peso estimado automáticamente para realizar los cálculos. La pantalla mostrará si se usará “Peso real ✅” o “Estimado ⚠️”.",
-  "accordion4Title": "3. Volumen de las soluciones de mantenimiento",
+  "accordion4Title": "8. Volumen de las soluciones de mantenimiento",
   "accordion4Body": "En el cálculo del volumen de las soluciones de mantenimiento se puede variar el porcentaje de requerimientos al cual se desea la solución.",
-  "accordion5Title": "4. Cálculos automáticos",
+  "accordion5Title": "3. Cálculos automáticos",
   "accordion5Body": "• Todas las dosis se calculan automáticamente con el peso real o el peso estimado (si aplica), además de otras variables clínicas según el medicamento.\n• Cuando una dosis tiene rango, la app muestra un valor sugerido. Verifica el rango y la fórmula del medicamento según el protocolo local.",
-  "accordion7Title": "5. Requerimientos de cálculo de dosis diferentes",
+  "accordion7Title": "4. Requerimientos de cálculo de dosis diferentes",
   "accordion7Body": "Cualquier ajuste de dosis necesario debe realizarse manualmente, ya que esta aplicación no admite la modificación de dosis.",
-  "accordion8Title": "6. Cálculo del tamaño del CAF (XS, S, etc.)",
+  "accordion8Title": "5. Cálculo del tamaño del CAF (XS, S, etc.)",
   "accordion8Body": "El tamaño sugerido del CAF se calcula según el peso del paciente. Si no hay una recomendación adecuada para ese paciente.",
-  "accordion9Title": "7. Responsabilidad del Usuario",
+  "accordion9Title": "6. Responsabilidad del Usuario",
   "accordion9Body": "EL USO DE ESTA APLICACIÓN ES RESPONSABILIDAD COMPLETA E INDIVIDUAL DE QUIEN LA UTILICE. NO EXIME EL DEBER TÉCNICO DE CORROBORAR LOS DATOS CON UN LIBRO DE TEXTO/PROTOCOLO ACTUALIZADO ANTES DE LA ADMINISTRACIÓN DE MEDICAMENTOS.",
   "aboutTitle": "Acerca de",
   "aboutDevelopedBy": "Desarrollado por",
@@ -53,9 +53,9 @@
   "patientHeaderTitle": "Ingrese los datos del paciente",
 
   "patientHowItWorks": "Cómo funciona:",
-  "patientHowItWorksBody": "• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–14) y usamos un peso estimado.\n• El peso estimado es guía; confirma con peso real si es posible.",
+  "patientHowItWorksBody": "• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–14) y usamos un peso estimado.\n• Confirma TAN PRONTO sea posible el peso real del paciente.",
 
-  "patientWeightLabel": "Peso actual (Kg)",
+  "patientWeightLabel": "Peso actual/ medido (Kg)",
   "patientWeightHint": "Ej: 22.6",
 
   "patientAgeYearsLabel": "Edad (Años - 1 a 14 años)",
@@ -186,9 +186,9 @@
   "patientMonthsCardTitle": "Ingrese los datos (1–11 meses)",
 
   "howItWorksTitle": "Cómo funciona:",
-  "howItWorksMonthsBody": "• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–11 meses) y usamos un peso estimado.\n• El peso estimado es guía; confirma con peso real si es posible.",
+  "howItWorksMonthsBody": "• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–11 meses) y usamos un peso estimado.\n• Confirma TAN PRONTO sea posible el peso real del paciente.",
 
-  "patientWeightLabel": "Peso actual (kg)",
+  "patientWeightLabel": "Peso actual/ medido (kg)",
   "patientWeightHintMonths": "Ej: 7.5",
 
   "patientAgeMonthsLabel": "Edad (Meses - de 1 a 11 meses)",

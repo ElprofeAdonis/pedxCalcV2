@@ -185,7 +185,7 @@ abstract class AppLocalizations {
   /// No description provided for @accordion4Title.
   ///
   /// In es, this message translates to:
-  /// **'3. Volumen de las soluciones de mantenimiento'**
+  /// **'8. Volumen de las soluciones de mantenimiento'**
   String get accordion4Title;
 
   /// No description provided for @accordion4Body.
@@ -197,7 +197,7 @@ abstract class AppLocalizations {
   /// No description provided for @accordion5Title.
   ///
   /// In es, this message translates to:
-  /// **'4. Cálculos automáticos'**
+  /// **'3. Cálculos automáticos'**
   String get accordion5Title;
 
   /// No description provided for @accordion5Body.
@@ -209,7 +209,7 @@ abstract class AppLocalizations {
   /// No description provided for @accordion7Title.
   ///
   /// In es, this message translates to:
-  /// **'5. Requerimientos de cálculo de dosis diferentes'**
+  /// **'4. Requerimientos de cálculo de dosis diferentes'**
   String get accordion7Title;
 
   /// No description provided for @accordion7Body.
@@ -221,7 +221,7 @@ abstract class AppLocalizations {
   /// No description provided for @accordion8Title.
   ///
   /// In es, this message translates to:
-  /// **'6. Cálculo del tamaño del CAF (XS, S, etc.)'**
+  /// **'5. Cálculo del tamaño del CAF (XS, S, etc.)'**
   String get accordion8Title;
 
   /// No description provided for @accordion8Body.
@@ -233,7 +233,7 @@ abstract class AppLocalizations {
   /// No description provided for @accordion9Title.
   ///
   /// In es, this message translates to:
-  /// **'7. Responsabilidad del Usuario'**
+  /// **'6. Responsabilidad del Usuario'**
   String get accordion9Title;
 
   /// No description provided for @accordion9Body.
@@ -413,13 +413,13 @@ abstract class AppLocalizations {
   /// No description provided for @patientHowItWorksBody.
   ///
   /// In es, this message translates to:
-  /// **'• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–14) y usamos un peso estimado.\n• El peso estimado es guía; confirma con peso real si es posible.'**
+  /// **'• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–14) y usamos un peso estimado.\n• Confirma TAN PRONTO sea posible el peso real del paciente.'**
   String get patientHowItWorksBody;
 
   /// No description provided for @patientWeightLabel.
   ///
   /// In es, this message translates to:
-  /// **'Peso actual (kg)'**
+  /// **'Peso actual/ medido (kg)'**
   String get patientWeightLabel;
 
   /// No description provided for @patientWeightHint.
@@ -971,7 +971,7 @@ abstract class AppLocalizations {
   /// No description provided for @howItWorksMonthsBody.
   ///
   /// In es, this message translates to:
-  /// **'• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–11 meses) y usamos un peso estimado.\n• El peso estimado es guía; confirma con peso real si es posible.'**
+  /// **'• Si ingresas Peso, calculamos con ese peso.\n• Si no tienes peso, ingresa Edad (1–11 meses) y usamos un peso estimado.\n• Confirma TAN PRONTO sea posible el peso real del paciente.'**
   String get howItWorksMonthsBody;
 
   /// No description provided for @patientWeightHintMonths.

@@ -14,15 +14,15 @@
   "accordion1Body": "This table contains information about commonly used emergency medications.",
   "accordion3Title": "2. Weight/Age determination",
   "accordion3Body": "Enter weight in kilograms when available (recommended). If you don't know the weight, enter age (years or months as applicable) and the app will estimate weight automatically. The screen will show whether “Real weight ✅” or “Estimated ⚠️” is used.",
-  "accordion4Title": "3. Maintenance solution volume",
+  "accordion4Title": "8. Maintenance solution volume",
   "accordion4Body": "For maintenance fluids, you may adjust the percentage of requirements used for the solution.",
-  "accordion5Title": "4. Automatic calculations",
+  "accordion5Title": "3. Automatic calculations",
   "accordion5Body": "• All doses are calculated automatically using real or estimated weight (if applicable), plus other clinical variables depending on the medication.\n• When a dose has a range, the app shows a suggested value. Verify range and formula according to your local protocol.",
-  "accordion7Title": "5. Alternative dose calculations",
+  "accordion7Title": "4. Alternative dose calculations",
   "accordion7Body": "Any required dose adjustment must be performed manually, as this application does not support dose modification.",
-  "accordion8Title": "6. CAF size calculation (XS, S, etc.)",
+  "accordion8Title": "5. CAF size calculation (XS, S, etc.)",
   "accordion8Body": "CAF size is suggested based on patient weight. If there is no suitable recommendation.",
-  "accordion9Title": "7. User responsibility",
+  "accordion9Title": "6. User responsibility",
   "accordion9Body": "USING THIS APPLICATION IS THE COMPLETE AND INDIVIDUAL RESPONSIBILITY OF THE USER. IT DOES NOT REMOVE THE PROFESSIONAL DUTY TO VERIFY DATA WITH AN UPDATED TEXT/PROTOCOL BEFORE ADMINISTERING MEDICATIONS.",
   "aboutTitle": "About",
   "aboutDevelopedBy": "Developed by",
@@ -54,9 +54,9 @@
   "patientHeaderTitle": "Enter patient information",
 
   "patientHowItWorks": "How it works:",
-  "patientHowItWorksBody": "• If you enter weight, calculation uses it.\n• If you don't have weight, enter Age (1–14) and we use an estimated weight.\n• Estimated weight is a guide; confirm with real weight if possible.",
+  "patientHowItWorksBody": "• If you enter weight, calculation uses it.\n• If you don't have weight, enter Age (1–14) and we use an estimated weight.\n• Confirm the patient’s actual weight as soon as possible.",
 
-  "patientWeightLabel": "Current weight (Kg)",
+  "patientWeightLabel": "Current weight/ measured (Kg)",
   "patientWeightHint": "e.g. 22.6",
 
   "patientAgeYearsLabel": "Age (Years - 1 to 14 years)",
@@ -189,9 +189,9 @@
   "patientMonthsCardTitle": "Enter data (1–11 months)",
 
   "howItWorksTitle": "How it works:",
-  "howItWorksMonthsBody": "• If you enter Weight, we calculate using that weight.\n• If you don’t have weight, enter Age (1–11 months) and we use an estimated weight.\n• Estimated weight is guidance; confirm with real weight if possible.",
+  "howItWorksMonthsBody": "• If you enter Weight, we calculate using that weight.\n• If you don’t have weight, enter Age (1–11 months) and we use an estimated weight.\n• Confirm the patient’s actual weight as soon as possible.",
 
-  "patientWeightLabel": "Current weight (kg)",
+  "patientWeightLabel": "Current weight/ measured (kg)",
   "patientWeightHintMonths": "e.g., 7.5",
 
   "patientAgeMonthsLabel": "Age (Months - 1 to 11 months)",

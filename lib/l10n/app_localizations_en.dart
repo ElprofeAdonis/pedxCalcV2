@@ -54,35 +54,35 @@ class AppLocalizationsEn extends AppLocalizations {
       'Enter weight in kilograms when available (recommended). If you don\'t know the weight, enter age (years or months as applicable) and the app will estimate weight automatically. The screen will show whether “Real weight ✅” or “Estimated ⚠️” is used.';
 
   @override
-  String get accordion4Title => '3. Maintenance solution volume';
+  String get accordion4Title => '8. Maintenance solution volume';
 
   @override
   String get accordion4Body =>
       'For maintenance fluids, you may adjust the percentage of requirements used for the solution.';
 
   @override
-  String get accordion5Title => '4. Automatic calculations';
+  String get accordion5Title => '3. Automatic calculations';
 
   @override
   String get accordion5Body =>
       '• All doses are calculated automatically using real or estimated weight (if applicable), plus other clinical variables depending on the medication.\n• When a dose has a range, the app shows a suggested value. Verify range and formula according to your local protocol.';
 
   @override
-  String get accordion7Title => '5. Alternative dose calculations';
+  String get accordion7Title => '4. Alternative dose calculations';
 
   @override
   String get accordion7Body =>
       'Any required dose adjustment must be performed manually, as this application does not support dose modification.';
 
   @override
-  String get accordion8Title => '6. CAF size calculation (XS, S, etc.)';
+  String get accordion8Title => '5. CAF size calculation (XS, S, etc.)';
 
   @override
   String get accordion8Body =>
       'CAF size is suggested based on patient weight. If there is no suitable recommendation.';
 
   @override
-  String get accordion9Title => '7. User responsibility';
+  String get accordion9Title => '6. User responsibility';
 
   @override
   String get accordion9Body =>
@@ -184,10 +184,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get patientHowItWorksBody =>
-      '• If you enter weight, calculation uses it.\n• If you don\'t have weight, enter Age (1–14) and we use an estimated weight.\n• Estimated weight is a guide; confirm with real weight if possible.';
+      '• If you enter weight, calculation uses it.\n• If you don\'t have weight, enter Age (1–14) and we use an estimated weight.\n• Confirm the patient’s actual weight as soon as possible.';
 
   @override
-  String get patientWeightLabel => 'Current weight (kg)';
+  String get patientWeightLabel => 'Current weight/ measured (kg)';
 
   @override
   String get patientWeightHint => 'e.g. 22.6';
@@ -479,7 +479,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get howItWorksMonthsBody =>
-      '• If you enter Weight, we calculate using that weight.\n• If you don’t have weight, enter Age (1–11 months) and we use an estimated weight.\n• Estimated weight is guidance; confirm with real weight if possible.';
+      '• If you enter Weight, we calculate using that weight.\n• If you don’t have weight, enter Age (1–11 months) and we use an estimated weight.\n• Confirm the patient’s actual weight as soon as possible.';
 
   @override
   String get patientWeightHintMonths => 'e.g., 7.5';

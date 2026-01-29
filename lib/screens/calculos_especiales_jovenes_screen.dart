@@ -424,6 +424,37 @@ class _CalculosEspecialesJovenesScreenState
     );
   }
 
+  Widget _infoCard({required String text}) {
+    if (text.trim().isEmpty) return const SizedBox.shrink();
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: const Color(0xFFEAF3FF),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: _primaryBlue.withAlpha((0.25 * 255).round()),
+          ),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Icon(Icons.info_outline, color: _primaryBlue),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                text,
+                style: const TextStyle(color: Colors.black87, fontSize: 13),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _inputRow({
     required String title,
     required TextEditingController controller,
@@ -698,6 +729,9 @@ class _CalculosEspecialesJovenesScreenState
         ),
         body: CustomScrollView(
           slivers: [
+            SliverToBoxAdapter(
+              child: _infoCard(text: t.accordion4Body), // ✅ tu texto i18n
+            ),
             SliverToBoxAdapter(child: _patientHeader(t)),
 
             // INPUTS

@@ -182,10 +182,7 @@ class _InstruccionesScreenWithTermsState
                         title: t.accordion3Title,
                         content: t.accordion3Body,
                       ),
-                      InstructionAccordion(
-                        title: t.accordion4Title,
-                        content: t.accordion4Body,
-                      ),
+
                       InstructionAccordion(
                         title: t.accordion5Title,
                         content: t.accordion5Body,
